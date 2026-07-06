@@ -182,9 +182,14 @@ export function Sidebar({ open = false, onClose }: SidebarProps) {
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
               <MessageSquare className="h-4 w-4" />
             </div>
-            <span className="text-sm font-semibold text-foreground">
-              CRM Template for WhatsApp
-            </span>
+            <div className="flex flex-col">
+              <span className="text-sm font-semibold text-foreground">
+                Futurexa.ai
+              </span>
+              <span className="text-xs text-muted-foreground">
+                WhatsApp CRM
+              </span>
+            </div>
           </Link>
           <button
             type="button"

@@ -107,7 +107,10 @@ export function Step3Personalize({
   }, []);
 
   const placeholders = useMemo(() => {
-    const matches = template.body_text.match(/\{\{(\d+)\}\}/g);
+    // Match both numbered ({{1}}) and named ({{name}}) placeholders.
+    // WACRM templates use named placeholders for readability; Meta
+    // maps them to positional {{N}} on submission.
+    const matches = template.body_text.match(/\{\{(\w+)\}\}/g);
     if (!matches) return [];
     return [...new Set(matches)].sort();
   }, [template.body_text]);

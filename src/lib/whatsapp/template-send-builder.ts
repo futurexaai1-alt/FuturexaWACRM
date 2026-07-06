@@ -31,7 +31,7 @@
  */
 
 import type { MessageTemplate, TemplateButton } from '@/types';
-import { extractVariableIndices } from './template-validators';
+import { extractVariableIndices, extractAllPlaceholders } from './template-validators';
 
 export interface SendTimeParams {
   /** Values for body {{1}}, {{2}}, … indexed by variable position. */
@@ -62,7 +62,7 @@ export type MetaSendComponent =
     };
 
 type MetaSendParameter =
-  | { type: 'text'; text: string }
+  | { type: 'text'; text: string; parameter_name?: string }
   | { type: 'image'; image: { link?: string; id?: string } }
   | { type: 'video'; video: { link?: string; id?: string } }
   | { type: 'document'; document: { link?: string; id?: string } }
@@ -127,7 +127,16 @@ function buildBodyComponent(
   template: MessageTemplate,
   params: SendTimeParams,
 ): MetaSendComponent | null {
-  const varCount = extractVariableIndices(template.body_text).length;
+  // Detect numbered ({{1}}, {{2}}) vs named ({{name}}, {{company}})
+  // placeholders. Meta's API requires `parameter_name` on each
+  // parameter when the template uses named variables.
+  const numberedVars = extractVariableIndices(template.body_text);
+  const namedVars = numberedVars.length === 0
+    ? extractAllPlaceholders(template.body_text)
+    : [];
+  const isNamed = namedVars.length > 0;
+  const varCount = numberedVars.length || namedVars.length;
+
   const body = params.body ?? [];
   if (varCount === 0 && body.length === 0) return null;
   if (body.length < varCount) {
@@ -140,7 +149,15 @@ function buildBodyComponent(
   const values = body.slice(0, varCount);
   return {
     type: 'body',
-    parameters: values.map((text) => ({ type: 'text', text: String(text) })),
+    parameters: values.map((text, i) => {
+      const param: MetaSendParameter = { type: 'text', text: String(text) };
+      // Meta requires `parameter_name` for named placeholders;
+      // omitting it causes "Parameter name is missing or empty".
+      if (isNamed) {
+        (param as { type: 'text'; text: string; parameter_name: string }).parameter_name = namedVars[i];
+      }
+      return param;
+    }),
   };
 }
 
@@ -173,16 +190,33 @@ function buildButtonComponent(
     case 'URL': {
       // Each URL button is its own component with sub_type=url and
       // the button's index in the template's buttons array.
-      if (!override || !override.trim()) {
-        throw new Error(
-          `URL button #${index + 1} uses {{1}} — requires a buttonParams[${index}] value.`,
-        );
+      let urlValue = override?.trim();
+      if (!urlValue && button.example) {
+        // button.example is the FULL example URL from Meta (e.g.,
+        // "https://doctorstudyabroad.com/page1"). But the send-time
+        // parameter must be just the dynamic suffix that replaces
+        // {{1}} in the URL template. Extract it by stripping the
+        // static prefix from button.url.
+        const prefix = (button.url ?? '').replace(/\{\{1\}\}.*$/, '');
+        const extracted = button.example.startsWith(prefix)
+          ? button.example.slice(prefix.length)
+          : button.example;
+        // Meta REQUIRES URL button components when {{1}} exists and
+        // rejects empty + whitespace-only text params. When the
+        // example suffix is empty (template URL ends in /{{1}} and
+        // example is just the base URL), fall back to a harmless
+        // query-string suffix that preserves the original destination.
+        urlValue = extracted || '?ref=wa';
+      }
+      if (!urlValue) {
+        // No example URL either — use the same safe default.
+        urlValue = '?ref=wa';
       }
       return {
         type: 'button',
         sub_type: 'url',
         index: String(index),
-        parameters: [{ type: 'text', text: override }],
+        parameters: [{ type: 'text', text: urlValue }],
       };
     }
     case 'COPY_CODE': {

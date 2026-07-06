@@ -1,0 +1,3 @@
+"Contact","Phone","Status","Sent At","Delivered At","Read At","Replied At","Error"
+"Saad Suhail","9845336393","failed","","","","","image header requires a media link or id at send time — set header_media_url on the template or pass headerMediaUrl/headerMediaId."
+"Mohamed Tabrez","8296257510","failed","","","","","image header requires a media link or id at send time — set header_media_url on the template or pass headerMediaUrl/headerMediaId."

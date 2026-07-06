@@ -428,6 +428,18 @@ export async function sendTemplateMessage(
     body.context = { message_id: contextMessageId }
   }
 
+  // Debug: log the full template payload to diagnose parameter mismatches.
+  console.log(
+    `[meta-api] Sending template "${templateName}" to ${to}:`,
+    JSON.stringify(templatePayload, null, 2),
+  )
+  if (template) {
+    console.log(
+      `[meta-api] Local template data — body_text: ${JSON.stringify(template.body_text)}, buttons:`,
+      JSON.stringify(template.buttons, null, 2),
+    )
+  }
+
   const response = await fetch(url, {
     method: 'POST',
     headers: {
@@ -437,7 +449,15 @@ export async function sendTemplateMessage(
     body: JSON.stringify(body),
   })
   if (!response.ok) {
-    await throwMetaError(response, `Meta API error: ${response.status}`)
+    // Log the full Meta error response for debugging — the
+    // error_data.details field tells us exactly which parameter failed.
+    const errorBody = await response.json().catch(() => null)
+    console.error(
+      `[meta-api] Meta rejected send to ${to}:`,
+      JSON.stringify(errorBody, null, 2),
+    )
+    const msg = errorBody?.error?.message ?? `Meta API error: ${response.status}`
+    throw new Error(msg)
   }
   const data = await response.json()
   return { messageId: data.messages[0].id }

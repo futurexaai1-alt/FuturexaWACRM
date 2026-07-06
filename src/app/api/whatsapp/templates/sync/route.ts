@@ -36,6 +36,7 @@ interface MetaTemplateComponent {
   example?: {
     header_text?: string[]
     header_handle?: string[]
+    header_url?: string[]
     body_text?: string[][]
   }
 }
@@ -232,6 +233,79 @@ export async function POST() {
           ? headerFormat.toLowerCase()
           : null
 
+      // Debug: log header component so we can see what Meta returns
+      // for media-header templates.
+      if (header && headerType && headerType !== 'text') {
+        console.log(
+          `[template-sync] ${t.name} (${t.language}) header:`,
+          JSON.stringify(header, null, 2),
+        )
+      }
+
+      // Resolve the media URL. Prefer explicit header_url (rare —
+      // Meta usually only returns header_handle). If header_handle
+      // looks like a URL (common for approved templates — Meta
+      // returns CDN links like https://scontent.whatsapp.net/...),
+      // use it as the media URL so broadcasts work out of the box.
+      const rawHandle = header?.example?.header_handle?.[0] ?? null
+      const rawUrl = header?.example?.header_url?.[0] ?? null
+      let resolvedMediaUrl: string | null = rawUrl
+
+      // If we already have this template synced locally, we can reuse its
+      // permanent Supabase URL so we don't re-upload the same sample image
+      // on every sync. We look this up before trying to mirror.
+      const { data: existingRow } = await supabase
+        .from('message_templates')
+        .select('header_media_url')
+        .eq('account_id', accountId)
+        .eq('name', t.name)
+        .eq('language', t.language)
+        .maybeSingle()
+      
+      const localUrl = existingRow?.header_media_url
+
+      if (!resolvedMediaUrl && rawHandle) {
+        try {
+          const parsed = new URL(rawHandle)
+          if (parsed.protocol === 'https:' || parsed.protocol === 'http:') {
+            resolvedMediaUrl = rawHandle
+
+            // Mirror temporary Meta CDN links to permanent Supabase storage
+            // so they don't expire before the user sends a broadcast.
+            if (rawHandle.includes('whatsapp.net')) {
+              // If we already mirrored it previously, just reuse it!
+              if (localUrl && !localUrl.includes('whatsapp.net')) {
+                resolvedMediaUrl = localUrl
+              } else {
+                const fileRes = await fetch(rawHandle)
+                if (fileRes.ok) {
+                  const buffer = await fileRes.arrayBuffer()
+                  const contentType = fileRes.headers.get('content-type') || 'application/octet-stream'
+                  // Fallback to bin if mime type splitting fails
+                  const ext = contentType.includes('/') ? contentType.split('/')[1] : 'bin'
+                  
+                  // Use the account-scoped path convention so it doesn't get orphaned
+                  const path = `account-${accountId}/templates/${t.name}-${Date.now()}.${ext}`
+                  
+                  const { error: uploadErr } = await supabase.storage
+                    .from('chat-media')
+                    .upload(path, buffer, { contentType })
+                    
+                  if (!uploadErr) {
+                    const { data } = supabase.storage.from('chat-media').getPublicUrl(path)
+                    resolvedMediaUrl = data.publicUrl
+                  } else {
+                    console.error(`[template-sync] Mirror upload failed for ${t.name}:`, uploadErr)
+                  }
+                }
+              }
+            }
+          }
+        } catch {
+          // Not a URL — leave null
+        }
+      }
+
       const row = {
         // Account tenancy + user audit, same split as the submit
         // route. account_id is NOT NULL on message_templates
@@ -243,7 +317,8 @@ export async function POST() {
         language: t.language,
         header_type: headerType,
         header_content: header?.text ?? null,
-        header_handle: header?.example?.header_handle?.[0] ?? null,
+        header_handle: rawHandle,
+        header_media_url: resolvedMediaUrl,
         body_text: body?.text ?? '',
         footer_text: footer?.text ?? null,
         buttons: parsedButtons.length ? parsedButtons : null,

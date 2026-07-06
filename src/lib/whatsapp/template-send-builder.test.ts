@@ -181,16 +181,23 @@ describe('buildSendComponents — buttons', () => {
     ]);
   });
 
-  it('throws when URL button has {{1}} but no buttonParam was provided', () => {
-    expect(() =>
-      buildSendComponents(
-        row({
-          buttons: [
-            { type: 'URL', text: 'Track', url: 'https://x.com/{{1}}' },
-          ],
-        }),
-      ),
-    ).toThrow(/URL button #1 uses \{\{1\}\}/);
+  it('uses safe default when URL button has {{1}} but no buttonParam was provided', () => {
+    const components = buildSendComponents(
+      row({
+        buttons: [
+          { type: 'URL', text: 'Track', url: 'https://x.com/{{1}}' },
+        ],
+      }),
+    );
+    // URL button with {{1}} but no override or example — uses safe default.
+    expect(components).toEqual([
+      {
+        type: 'button',
+        sub_type: 'url',
+        index: '0',
+        parameters: [{ type: 'text', text: '?ref=wa' }],
+      },
+    ]);
   });
 
   it('uses the correct index when QR buttons precede the URL button', () => {

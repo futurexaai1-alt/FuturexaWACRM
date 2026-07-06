@@ -72,6 +72,30 @@ export function extractVariableIndices(text: string): number[] {
 }
 
 /**
+ * Extract ALL unique placeholder keys from template text — both
+ * numbered (`{{1}}`) and named (`{{name}}`). Returns deduplicated
+ * keys in order of first appearance. Named variables are treated
+ * as positional for Meta's API (which only understands {{1}}, {{2}}, …).
+ *
+ * This is necessary because the WACRM template manager allows named
+ * placeholders for readability, mapping them to positional {{N}} on
+ * submission to Meta. The local body_text retains the named form.
+ */
+export function extractAllPlaceholders(text: string): string[] {
+  const matches = text.matchAll(/\{\{(\w+)\}\}/g);
+  const seen = new Set<string>();
+  const result: string[] = [];
+  for (const m of matches) {
+    const key = m[1];
+    if (!seen.has(key)) {
+      seen.add(key);
+      result.push(key);
+    }
+  }
+  return result;
+}
+
+/**
  * Meta requires contiguous, 1-indexed variables. `{{1}} {{3}}` is
  * invalid — it must be `{{1}} {{2}}`.
  */
