@@ -30,6 +30,14 @@ jobs:
       - name: Sync Capacitor iOS
         run: npx cap sync ios
 
+      - name: Resolve SPM dependencies
+        working-directory: ios/App
+        run: |
+          xcodebuild \
+            -project App.xcodeproj \
+            -scheme App \
+            -resolvePackageDependencies
+
       - name: Build iOS (debug, no code signing)
         working-directory: ios/App
         run: |
@@ -38,21 +46,21 @@ jobs:
             -scheme App \
             -configuration Debug \
             -sdk iphonesimulator \
-            -destination 'platform=iOS Simulator,name=iPhone 16,OS=latest' \
+            -destination 'generic/platform=iOS Simulator' \
             -derivedDataPath build \
             CODE_SIGNING_ALLOWED=NO \
             build
 
       - name: Package .app
         run: |
-          cd ios/App/build/Build/Products/Debug-iphonesimulator
+          APP_PATH=$(find ios/App/build -name "App.app" -type d | head -1)
           mkdir -p Payload
-          cp -r App.app Payload/
+          cp -r "$APP_PATH" Payload/
           zip -r futurexa-wacrm-debug.ipa Payload
 
       - name: Upload IPA
         uses: actions/upload-artifact@v4
         with:
           name: futurexa-wacrm-ios-debug
-          path: ios/App/build/Build/Products/Debug-iphonesimulator/futurexa-wacrm-debug.ipa
+          path: futurexa-wacrm-debug.ipa
           retention-days: 30
