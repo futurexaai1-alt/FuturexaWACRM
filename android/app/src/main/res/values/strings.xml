@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Futurexa WACRM</string>
+    <string name="title_activity_main">Futurexa WACRM</string>
+    <string name="package_name">ai.futurexa.wacrm</string>
+    <string name="custom_url_scheme">ai.futurexa.wacrm</string>
+</resources>

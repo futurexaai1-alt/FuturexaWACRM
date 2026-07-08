@@ -1,5 +1,10 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# misc / temp files
+deployment-*.txt
+deployerroroncoolify.md
+*.csv
+
 # dependencies
 /node_modules
 /.pnp
@@ -42,3 +47,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# capacitor — native build artifacts
+# The android/ and ios/ directories are committed so GitHub Actions
+# can build the APK/IPA. Only ignore generated build outputs.
+android/app/build/
+android/.gradle/
+android/build/
+android/capacitor-cordova-android-plugins/build/
+ios/App/build/
+ios/App/Pods/
