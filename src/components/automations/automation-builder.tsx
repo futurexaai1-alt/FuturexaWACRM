@@ -848,12 +848,16 @@ function StepRenderer({
   parentScope: ParentScope
   parentPath: StepPath
 } & Omit<StepListProps, "steps" | "parentPath">) {
-  const path: StepPath = [
-    ...parentPath,
+  // When inside a branch, ConditionBranches already added the branch
+  // segment to parentPath — update its index instead of appending a
+  // duplicate (which would send mapAtPath into a non-existent subtree
+  // and silently drop updates, making inputs uneditable).
+  const path: StepPath =
     parentScope.kind === "root"
-      ? { kind: "root", index }
-      : { kind: "branch", parentCid: parentScope.parentCid, branch: parentScope.branch, index },
-  ]
+      ? [...parentPath, { kind: "root" as const, index }]
+      : parentPath.map((seg, i) =>
+          i === parentPath.length - 1 ? { ...seg, index } : seg,
+        )
   const meta = STEP_META[step.step_type]
   const Icon = meta.icon
   const expanded = props.expandedId === step.cid
