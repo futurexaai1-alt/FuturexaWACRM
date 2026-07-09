@@ -33,8 +33,13 @@ export async function GET(request: Request) {
     .order('run_at', { ascending: true })
     .limit(50)
 
-  if (error) return NextResponse.json({ error: error.message }, { status: 500 })
+  if (error) {
+    console.error('[automations-cron] query failed:', error.message)
+    return NextResponse.json({ error: error.message }, { status: 500 })
+  }
   if (!due || due.length === 0) return NextResponse.json({ processed: 0 })
+
+  console.log(`[automations-cron] found ${due.length} due row(s)`)
 
   let processed = 0
   for (const row of due) {
@@ -47,21 +52,29 @@ export async function GET(request: Request) {
       .maybeSingle()
     if (!claim) continue
 
-    await resumePendingExecution({
-      id: row.id as string,
-      automation_id: row.automation_id as string,
-      // account_id is NOT NULL on automation_pending_executions
-      // post-017; the engine uses it for tenant-scoped lookups.
-      account_id: row.account_id as string,
-      user_id: row.user_id as string,
-      contact_id: (row.contact_id as string | null) ?? null,
-      log_id: (row.log_id as string | null) ?? null,
-      parent_step_id: (row.parent_step_id as string | null) ?? null,
-      branch: (row.branch as 'yes' | 'no' | null) ?? null,
-      next_step_position: row.next_step_position as number,
-      context: (row.context as AutomationContext) ?? {},
-    })
-    processed++
+    console.log(
+      `[automations-cron] resuming pending=${row.id} automation=${row.automation_id} contact=${row.contact_id} pos=${row.next_step_position}`,
+    )
+
+    try {
+      await resumePendingExecution({
+        id: row.id as string,
+        automation_id: row.automation_id as string,
+        // account_id is NOT NULL on automation_pending_executions
+        // post-017; the engine uses it for tenant-scoped lookups.
+        account_id: row.account_id as string,
+        user_id: row.user_id as string,
+        contact_id: (row.contact_id as string | null) ?? null,
+        log_id: (row.log_id as string | null) ?? null,
+        parent_step_id: (row.parent_step_id as string | null) ?? null,
+        branch: (row.branch as 'yes' | 'no' | null) ?? null,
+        next_step_position: row.next_step_position as number,
+        context: (row.context as AutomationContext) ?? {},
+      })
+      processed++
+    } catch (err) {
+      console.error(`[automations-cron] resume error for pending=${row.id}:`, err)
+    }
   }
 
   return NextResponse.json({ processed })

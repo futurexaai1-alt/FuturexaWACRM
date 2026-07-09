@@ -128,6 +128,9 @@ export async function resumePendingExecution(pending: {
   next_step_position: number
   context: AutomationContext
 }): Promise<void> {
+  console.log(
+    `[automations] resuming pending=${pending.id} automation=${pending.automation_id} contact=${pending.contact_id} pos=${pending.next_step_position} branch=${pending.branch} parent=${pending.parent_step_id}`,
+  )
   const db = supabaseAdmin()
   const { data: automation, error } = await db
     .from('automations')
@@ -245,6 +248,9 @@ async function executeStepsFrom(args: ExecuteArgs): Promise<void> {
     return
   }
   if (!steps || steps.length === 0) {
+    console.log(
+      `[automations] no steps found for automation=${args.automation.id} parent=${args.parentStepId} branch=${args.branch} startPos=${args.startPosition}`,
+    )
     if (args.parentStepId === null && args.logId) {
       await finalizeLog(args.logId, 'success', null)
     }
@@ -261,7 +267,11 @@ async function executeStepsFrom(args: ExecuteArgs): Promise<void> {
     if (step.step_type === 'wait') {
       const cfg = step.step_config as WaitStepConfig
       const ms = waitMs(cfg)
-      await db.from('automation_pending_executions').insert({
+      const runAt = new Date(Date.now() + ms).toISOString()
+      console.log(
+        `[automations] scheduling wait: automation=${args.automation.id} contact=${args.contactId} resumePos=${step.position + 1} run_at=${runAt} (${cfg.amount} ${cfg.unit})`,
+      )
+      const { error: pendErr } = await db.from('automation_pending_executions').insert({
         automation_id: args.automation.id,
         // Tenancy: account_id required NOT NULL post-017.
         account_id: args.automation.account_id,
@@ -272,9 +282,12 @@ async function executeStepsFrom(args: ExecuteArgs): Promise<void> {
         branch: args.branch,
         next_step_position: step.position + 1,
         context: args.context,
-        run_at: new Date(Date.now() + ms).toISOString(),
+        run_at: runAt,
         status: 'pending',
       })
+      if (pendErr) {
+        console.error('[automations] failed to insert pending execution:', pendErr.message)
+      }
       results.push({
         step_id: step.id,
         step_type: step.step_type,
@@ -290,6 +303,9 @@ async function executeStepsFrom(args: ExecuteArgs): Promise<void> {
       if (step.step_type === 'condition') {
         const cfg = step.step_config as ConditionStepConfig
         const taken = await evaluateCondition(cfg, args)
+        console.log(
+          `[automations] condition evaluated: subject=${cfg.subject} operand=${cfg.operand} result=${taken ? 'YES' : 'NO'} contact=${args.contactId}`,
+        )
         results.push({
           step_id: step.id,
           step_type: 'condition',

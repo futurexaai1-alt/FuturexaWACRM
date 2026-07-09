@@ -1207,20 +1207,25 @@ function StepEditor({
             </select>
           </FieldBlock>
           <FieldBlock label="Operand">
-            <Input
-              placeholder={
-                cfg.subject === "time_of_day"
-                  ? "HH:mm-HH:mm"
-                  : cfg.subject === "contact_field"
-                  ? "name / email / company"
-                  : cfg.subject === "tag_presence"
-                  ? "tag id"
-                  : ""
-              }
-              value={(cfg.operand as string) ?? ""}
-              onChange={(e) => set({ operand: e.target.value })}
-              className="bg-muted text-foreground"
-            />
+            {cfg.subject === "tag_presence" ? (
+              <TagSelect
+                value={(cfg.operand as string) ?? ""}
+                onChange={(v) => set({ operand: v })}
+              />
+            ) : (
+              <Input
+                placeholder={
+                  cfg.subject === "time_of_day"
+                    ? "HH:mm-HH:mm"
+                    : cfg.subject === "contact_field"
+                    ? "name / email / company"
+                    : ""
+                }
+                value={(cfg.operand as string) ?? ""}
+                onChange={(e) => set({ operand: e.target.value })}
+                className="bg-muted text-foreground"
+              />
+            )}
           </FieldBlock>
           {(cfg.subject === "contact_field" || cfg.subject === "message_content") && (
             <FieldBlock label="Value">

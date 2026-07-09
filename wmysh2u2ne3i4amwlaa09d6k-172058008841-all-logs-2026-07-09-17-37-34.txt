@@ -1,0 +1,142 @@
+
+> wacrm@0.2.2 start
+> next start
+
+▲ Next.js 16.2.6
+- Local:         http://localhost:3000
+- Network:       http://10.0.1.12:3000
+✓ Ready in 351ms
+[meta-api] Sending template "mbbs_shock_stat" to 919880296851: {
+  "name": "mbbs_shock_stat",
+  "language": {
+    "code": "en"
+  },
+  "components": [
+    {
+      "type": "header",
+      "parameters": [
+        {
+          "type": "image",
+          "image": {
+            "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_shock_stat-1783608450703.png"
+          }
+        }
+      ]
+    },
+    {
+      "type": "body",
+      "parameters": [
+        {
+          "type": "text",
+          "text": "Sulaiman",
+          "parameter_name": "name"
+        }
+      ]
+    }
+  ]
+}
+[meta-api] Local template data — body_text: "Hi {{name}}!\n\nHere is why 95% of NEET-qualified students will never get an Indian MBBS seat:\n\n🔴 22.8 lakh students registered for NEET 2026\n🟢 Only ~1.08 lakh MBBS seats exist\n⚠️ That's 1 seat per 21 students — and for GOVERNMENT seats, it's 1 per 40 students!\n\nIf you scored under 600, government college is statistically impossible.\n\nYour options?\n1️⃣ Pay ₹1–2 Crore for Management Quota in India\n2️⃣ Study MBBS abroad for ₹20–35 Lakhs total", buttons: [
+  {
+    "text": "See Comparison",
+    "type": "QUICK_REPLY"
+  },
+  {
+    "text": "Get Fee Structure",
+    "type": "QUICK_REPLY"
+  },
+  {
+    "text": "Talk to Counselor",
+    "type": "PHONE_NUMBER",
+    "phone_number": "+919902753030"
+  }
+]
+[meta-api] Sending template "mbbs_shock_stat" to 919845336393: {
+  "name": "mbbs_shock_stat",
+  "language": {
+    "code": "en"
+  },
+  "components": [
+    {
+      "type": "header",
+      "parameters": [
+        {
+          "type": "image",
+          "image": {
+            "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_shock_stat-1783608450703.png"
+          }
+        }
+      ]
+    },
+    {
+      "type": "body",
+      "parameters": [
+        {
+          "type": "text",
+          "text": "Saad",
+          "parameter_name": "name"
+        }
+      ]
+    }
+  ]
+}
+[meta-api] Local template data — body_text: "Hi {{name}}!\n\nHere is why 95% of NEET-qualified students will never get an Indian MBBS seat:\n\n🔴 22.8 lakh students registered for NEET 2026\n🟢 Only ~1.08 lakh MBBS seats exist\n⚠️ That's 1 seat per 21 students — and for GOVERNMENT seats, it's 1 per 40 students!\n\nIf you scored under 600, government college is statistically impossible.\n\nYour options?\n1️⃣ Pay ₹1–2 Crore for Management Quota in India\n2️⃣ Study MBBS abroad for ₹20–35 Lakhs total", buttons: [
+  {
+    "text": "See Comparison",
+    "type": "QUICK_REPLY"
+  },
+  {
+    "text": "Get Fee Structure",
+    "type": "QUICK_REPLY"
+  },
+  {
+    "text": "Talk to Counselor",
+    "type": "PHONE_NUMBER",
+    "phone_number": "+919902753030"
+  }
+]
+[meta-api] Sending template "mbbs_shock_stat" to 918296257510: {
+  "name": "mbbs_shock_stat",
+  "language": {
+    "code": "en"
+  },
+  "components": [
+    {
+      "type": "header",
+      "parameters": [
+        {
+          "type": "image",
+          "image": {
+            "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_shock_stat-1783608450703.png"
+          }
+        }
+      ]
+    },
+    {
+      "type": "body",
+      "parameters": [
+        {
+          "type": "text",
+          "text": "… …",
+          "parameter_name": "name"
+        }
+      ]
+    }
+  ]
+npm warn config production Use `--omit=dev` instead.
+}
+[meta-api] Local template data — body_text: "Hi {{name}}!\n\nHere is why 95% of NEET-qualified students will never get an Indian MBBS seat:\n\n🔴 22.8 lakh students registered for NEET 2026\n🟢 Only ~1.08 lakh MBBS seats exist\n⚠️ That's 1 seat per 21 students — and for GOVERNMENT seats, it's 1 per 40 students!\n\nIf you scored under 600, government college is statistically impossible.\n\nYour options?\n1️⃣ Pay ₹1–2 Crore for Management Quota in India\n2️⃣ Study MBBS abroad for ₹20–35 Lakhs total", buttons: [
+  {
+    "text": "See Comparison",
+    "type": "QUICK_REPLY"
+  },
+  {
+    "text": "Get Fee Structure",
+    "type": "QUICK_REPLY"
+  },
+  {
+    "text": "Talk to Counselor",
+    "type": "PHONE_NUMBER",
+    "phone_number": "+919902753030"
+  }
+]
+[webhook] reply context parent not found: wamid.HBgMOTE4Mjk2MjU3NTEwFQIAERgSMjk4NEJFNTcxQjREODUxNDM1AA==
