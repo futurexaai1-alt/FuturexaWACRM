@@ -57,6 +57,36 @@ function validateOne(step: StepLike, path: string, issues: ValidationIssue[]): v
       if (!nonEmpty(c.text)) {
         issues.push({ path: `${path}.text`, message: 'message text is required' })
       }
+      // Validate optional interactive reply buttons (Meta caps at 3,
+      // titles at 20 chars). Mirrors INTERACTIVE_LIMITS from meta-api.
+      if (Array.isArray(c.buttons) && c.buttons.length > 0) {
+        const buttons = c.buttons as Array<Record<string, unknown>>
+        if (buttons.length > 3) {
+          issues.push({
+            path: `${path}.buttons`,
+            message: 'maximum 3 reply buttons allowed',
+          })
+        }
+        buttons.forEach((btn, bi) => {
+          if (!nonEmpty(btn.id)) {
+            issues.push({
+              path: `${path}.buttons[${bi}].id`,
+              message: 'button id is required',
+            })
+          }
+          if (!nonEmpty(btn.title)) {
+            issues.push({
+              path: `${path}.buttons[${bi}].title`,
+              message: 'button title is required',
+            })
+          } else if (String(btn.title).length > 20) {
+            issues.push({
+              path: `${path}.buttons[${bi}].title`,
+              message: 'button title must be 20 characters or less',
+            })
+          }
+        })
+      }
       break
     case 'send_template':
       if (!nonEmpty(c.template_name)) {

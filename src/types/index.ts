@@ -417,6 +417,10 @@ export type AutomationTriggerConfig =
 
 export interface SendMessageStepConfig {
   text: string;
+  /** Optional interactive reply buttons (up to 3). When present, the
+   *  engine sends an interactive button message instead of plain text.
+   *  Only works within the 24-hour customer service window. */
+  buttons?: Array<{ id: string; title: string }>;
 }
 
 export interface SendTemplateStepConfig {

@@ -141,7 +141,7 @@ function cid(): string {
 function blankConfig(type: AutomationStepType): Record<string, unknown> {
   switch (type) {
     case "send_message":
-      return { text: "" }
+      return { text: "", buttons: [] }
     case "send_template":
       return { template_name: "", language: "en_US" }
     case "add_tag":
@@ -1053,14 +1053,20 @@ function StepEditor({
   switch (step.step_type) {
     case "send_message":
       return (
-        <FieldBlock label="Message text">
-          <Textarea
-            value={(cfg.text as string) ?? ""}
-            onChange={(e) => set({ text: e.target.value })}
-            placeholder="Hi! Thanks for reaching out…"
-            className="min-h-24 bg-muted text-foreground"
+        <>
+          <FieldBlock label="Message text">
+            <Textarea
+              value={(cfg.text as string) ?? ""}
+              onChange={(e) => set({ text: e.target.value })}
+              placeholder="Hi! Thanks for reaching out…"
+              className="min-h-24 bg-muted text-foreground"
+            />
+          </FieldBlock>
+          <ButtonsEditor
+            buttons={(cfg.buttons as Array<{ id: string; title: string }>) ?? []}
+            onChange={(buttons) => set({ buttons })}
           />
-        </FieldBlock>
+        </>
       )
     case "send_template":
       return (
@@ -1253,6 +1259,88 @@ function StepEditor({
   }
 }
 
+/** Editor for up to 3 interactive reply buttons on a send_message step.
+ *  Each button has a stable id (auto-generated) and a visible title
+ *  (≤ 20 chars, per Meta's limit). Only works within the 24h customer
+ *  service window — outside that window Meta requires templates. */
+function ButtonsEditor({
+  buttons,
+  onChange,
+}: {
+  buttons: Array<{ id: string; title: string }>
+  onChange: (b: Array<{ id: string; title: string }>) => void
+}) {
+  const canAdd = buttons.length < 3
+
+  function addButton() {
+    if (!canAdd) return
+    const id = `btn_${Date.now().toString(36)}`
+    onChange([...buttons, { id, title: "" }])
+  }
+
+  function removeButton(index: number) {
+    onChange(buttons.filter((_, i) => i !== index))
+  }
+
+  function updateButton(index: number, title: string) {
+    onChange(buttons.map((b, i) => (i === index ? { ...b, title } : b)))
+  }
+
+  return (
+    <div className="mb-2 last:mb-0">
+      <label className="mb-1 block text-xs font-medium text-muted-foreground">
+        Reply buttons <span className="font-normal text-muted-foreground/60">(optional, max 3)</span>
+      </label>
+
+      {buttons.length > 0 && (
+        <div className="space-y-2">
+          {buttons.map((btn, i) => (
+            <div key={btn.id} className="flex items-center gap-2">
+              <div className="relative flex-1">
+                <Input
+                  value={btn.title}
+                  maxLength={20}
+                  onChange={(e) => updateButton(i, e.target.value)}
+                  placeholder={`Button ${i + 1} label`}
+                  className="bg-muted pr-10 text-foreground"
+                />
+                <span className="absolute right-2 top-1/2 -translate-y-1/2 text-[10px] tabular-nums text-muted-foreground/50">
+                  {btn.title.length}/20
+                </span>
+              </div>
+              <button
+                type="button"
+                onClick={() => removeButton(i)}
+                className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-destructive/10 hover:text-destructive"
+                aria-label={`Remove button ${i + 1}`}
+              >
+                <Trash2 className="h-3.5 w-3.5" />
+              </button>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {canAdd && (
+        <button
+          type="button"
+          onClick={addButton}
+          className="mt-2 flex items-center gap-1.5 rounded-md border border-dashed border-border px-3 py-1.5 text-xs text-muted-foreground transition-colors hover:border-primary hover:bg-primary/5 hover:text-primary"
+        >
+          <Plus className="h-3 w-3" />
+          Add button
+        </button>
+      )}
+
+      {buttons.length > 0 && (
+        <p className="mt-1.5 text-[10px] text-muted-foreground/60">
+          Reply buttons only work within the 24-hour service window.
+        </p>
+      )}
+    </div>
+  )
+}
+
 function FieldBlock({
   label,
   children,
@@ -1270,8 +1358,12 @@ function FieldBlock({
 
 function previewFor(step: BuilderStep): string {
   switch (step.step_type) {
-    case "send_message":
-      return (step.step_config.text as string) || "no text yet"
+    case "send_message": {
+      const text = (step.step_config.text as string) || "no text yet"
+      const buttons = step.step_config.buttons as Array<{ id: string; title: string }> | undefined
+      const btnCount = buttons?.filter((b) => b.id && b.title).length ?? 0
+      return btnCount > 0 ? `${text} · ${btnCount} button${btnCount > 1 ? "s" : ""}` : text
+    }
     case "send_template":
       return (step.step_config.template_name as string) || "pick a template"
     case "wait":

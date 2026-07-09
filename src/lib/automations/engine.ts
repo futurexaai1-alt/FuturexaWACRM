@@ -15,7 +15,7 @@ import type {
   AssignConversationStepConfig,
 } from '@/types'
 import { supabaseAdmin } from './admin-client'
-import { engineSendText, engineSendTemplate } from './meta-send'
+import { engineSendText, engineSendTemplate, engineSendInteractiveButtons } from './meta-send'
 
 // ------------------------------------------------------------
 // Public API
@@ -347,6 +347,22 @@ async function runStep(step: AutomationStep, args: ExecuteArgs): Promise<string>
       const text = interpolate(cfg.text, args)
       if (!text.trim()) throw new Error('send_message has empty text')
       const conversationId = await resolveConversationId(args)
+
+      // If buttons are configured, send an interactive button message
+      // instead of plain text. Only works within the 24h service window.
+      const buttons = cfg.buttons?.filter((b) => b.id && b.title)
+      if (buttons && buttons.length > 0) {
+        const { whatsapp_message_id } = await engineSendInteractiveButtons({
+          accountId: args.automation.account_id,
+          userId: args.automation.user_id,
+          conversationId,
+          contactId: args.contactId,
+          text,
+          buttons,
+        })
+        return `sent interactive buttons via Meta (${whatsapp_message_id})`
+      }
+
       const { whatsapp_message_id } = await engineSendText({
         accountId: args.automation.account_id,
         userId: args.automation.user_id,

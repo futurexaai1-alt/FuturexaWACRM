@@ -39,6 +39,14 @@ interface WhatsAppMessage {
   location?: { latitude: number; longitude: number; name?: string; address?: string }
   reaction?: { message_id: string; emoji: string }
   /**
+   * Set when the customer taps a Quick Reply button on a Meta-approved
+   * template message. `button.payload` is the value set at template
+   * creation time; `button.text` is the visible label the customer saw.
+   * Note: this is DIFFERENT from `interactive` — Meta sends template
+   * Quick Reply taps as `type: 'button'`, not `type: 'interactive'`.
+   */
+  button?: { text: string; payload: string }
+  /**
    * Set when the customer taps a button or list row on an interactive
    * message we sent. `button_reply.id` / `list_reply.id` is whatever id
    * we put on the button/row when sending — the Flows engine uses this
@@ -72,6 +80,12 @@ interface WhatsAppWebhookEntry {
         status: string
         timestamp: string
         recipient_id: string
+        errors?: Array<{
+          code?: number
+          title?: string
+          message?: string
+          error_data?: { details: string }
+        }>
       }>
     }
     field: string
@@ -329,6 +343,12 @@ async function handleStatusUpdate(status: {
   status: string
   timestamp: string
   recipient_id: string
+  errors?: Array<{
+    code?: number
+    title?: string
+    message?: string
+    error_data?: { details: string }
+  }>
 }) {
   // 1) Mirror onto messages (legacy behavior) — Meta's status values
   //    already match the CHECK constraint on messages.status.
@@ -363,10 +383,21 @@ async function handleStatusUpdate(status: {
   // `failed` only from pre-delivered states.
   if (!isValidStatusTransition(recipient.status, status.status)) return
 
+  let errorMessage: string | undefined = undefined
+  if (status.status === 'failed' && status.errors && status.errors.length > 0) {
+    const err = status.errors[0]
+    errorMessage =
+      err.error_data?.details ||
+      err.message ||
+      err.title ||
+      'Unknown error from Meta'
+  }
+
   const update: Record<string, unknown> = { status: status.status }
   if (status.status === 'sent' && !('sent_at' in update)) update.sent_at = tsIso
   if (status.status === 'delivered') update.delivered_at = tsIso
   if (status.status === 'read') update.read_at = tsIso
+  if (errorMessage) update.error_message = errorMessage
 
   const { error: recUpdateErr } = await supabaseAdmin()
     .from('broadcast_recipients')
@@ -582,7 +613,9 @@ async function processMessage(
     ? message.type
     : message.type === 'sticker'
       ? 'image'   // stickers are images
-      : 'text'    // reaction, unknown → text fallback
+      : message.type === 'button'
+        ? 'interactive' // template Quick Reply taps → interactive
+        : 'text'    // reaction, unknown → text fallback
 
   // Determine whether this is the contact's very first inbound message
   // BEFORE we insert, so the count is accurate. Covers the case where
@@ -850,6 +883,26 @@ async function parseMessageContent(
         }
       }
       return { ...empty, contentText: '[Interactive reply]' }
+    }
+
+    case 'button': {
+      // The customer tapped a Quick Reply button on a Meta-approved
+      // template message. Meta delivers `message.type = 'button'` with
+      // `message.button = { text, payload }`. The `payload` is whatever
+      // string was set on the button at template creation time (defaults
+      // to the button text if the creator didn't set an explicit payload).
+      // We treat it the same as an interactive button_reply: the visible
+      // text goes to contentText, the payload to interactiveReplyId so
+      // Flows and automations can route on it.
+      const btn = message.button
+      if (btn?.payload) {
+        return {
+          ...empty,
+          contentText: btn.text || btn.payload,
+          interactiveReplyId: btn.payload,
+        }
+      }
+      return { ...empty, contentText: btn?.text || '[Button reply]' }
     }
 
     default:
