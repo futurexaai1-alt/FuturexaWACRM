@@ -1,0 +1,655 @@
+
+> wacrm@0.2.2 start
+> next start
+
+▲ Next.js 16.2.6
+- Local:         http://localhost:3000
+- Network:       http://10.0.1.11:3000
+✓ Ready in 330ms
+[cron-pinger] started — pinging every 60s
+[automations-cron] found 4 due row(s)
+[automations-cron] resuming pending=06576a55-dd25-4c46-872f-39275fe582b7 automation=c82f1617-4189-4b82-8c8c-69def14762ad contact=132fbb1c-a1e9-4af4-8f91-e99ced898784 pos=3
+[automations] resuming pending=06576a55-dd25-4c46-872f-39275fe582b7 automation=c82f1617-4189-4b82-8c8c-69def14762ad contact=132fbb1c-a1e9-4af4-8f91-e99ced898784 pos=3 branch=null parent=null
+[automations] condition evaluated: subject=tag_presence operand=replied-after-compare result=NO contact=132fbb1c-a1e9-4af4-8f91-e99ced898784
+[automations-cron] resuming pending=7668e271-c342-4823-a071-d189d982084a automation=c82f1617-4189-4b82-8c8c-69def14762ad contact=132fbb1c-a1e9-4af4-8f91-e99ced898784 pos=3
+[automations] resuming pending=7668e271-c342-4823-a071-d189d982084a automation=c82f1617-4189-4b82-8c8c-69def14762ad contact=132fbb1c-a1e9-4af4-8f91-e99ced898784 pos=3 branch=null parent=null
+[automations] condition evaluated: subject=tag_presence operand=replied-after-compare result=NO contact=132fbb1c-a1e9-4af4-8f91-e99ced898784
+[automations-cron] resuming pending=4812f165-8287-4e04-8a81-06bb37465441 automation=c82f1617-4189-4b82-8c8c-69def14762ad contact=132fbb1c-a1e9-4af4-8f91-e99ced898784 pos=3
+[automations] resuming pending=4812f165-8287-4e04-8a81-06bb37465441 automation=c82f1617-4189-4b82-8c8c-69def14762ad contact=132fbb1c-a1e9-4af4-8f91-e99ced898784 pos=3 branch=null parent=null
+[automations] condition evaluated: subject=tag_presence operand=replied-after-compare result=NO contact=132fbb1c-a1e9-4af4-8f91-e99ced898784
+[automations-cron] resuming pending=adb415a7-2cef-4e05-84ec-55470da69e95 automation=c82f1617-4189-4b82-8c8c-69def14762ad contact=f510cdb2-f947-45c5-ac17-aaab52196acb pos=3
+[automations] resuming pending=adb415a7-2cef-4e05-84ec-55470da69e95 automation=c82f1617-4189-4b82-8c8c-69def14762ad contact=f510cdb2-f947-45c5-ac17-aaab52196acb pos=3 branch=null parent=null
+[automations] condition evaluated: subject=tag_presence operand=replied-after-compare result=NO contact=f510cdb2-f947-45c5-ac17-aaab52196acb
+[cron-pinger] http://localhost:3000/api/automations/cron → {"processed":4}
+[meta-api] Sending template "mbbs_shock_stat" to 919845336393: {
+  "name": "mbbs_shock_stat",
+  "language": {
+    "code": "en"
+  },
+  "components": [
+    {
+      "type": "header",
+      "parameters": [
+        {
+          "type": "image",
+          "image": {
+            "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_shock_stat-1783608450703.png"
+          }
+        }
+      ]
+npm warn config production Use `--omit=dev` instead.
+    },
+    {
+      "type": "body",
+      "parameters": [
+        {
+          "type": "text",
+          "text": "Saad",
+          "parameter_name": "name"
+        }
+      ]
+    }
+  ]
+}
+[meta-api] Local template data — body_text: "Hi {{name}}!\n\nHere is why 95% of NEET-qualified students will never get an Indian MBBS seat:\n\n🔴 22.8 lakh students registered for NEET 2026\n🟢 Only ~1.08 lakh MBBS seats exist\n⚠️ That's 1 seat per 21 students — and for GOVERNMENT seats, it's 1 per 40 students!\n\nIf you scored under 600, government college is statistically impossible.\n\nYour options?\n1️⃣ Pay ₹1–2 Crore for Management Quota in India\n2️⃣ Study MBBS abroad for ₹20–35 Lakhs total", buttons: [
+  {
+    "text": "See Comparison",
+    "type": "QUICK_REPLY"
+  },
+  {
+    "text": "Get Fee Structure",
+    "type": "QUICK_REPLY"
+  },
+  {
+    "text": "Talk to Counselor",
+    "type": "PHONE_NUMBER",
+    "phone_number": "+919902753030"
+  }
+]
+[meta-api] Sending template "mbbs_shock_stat" to 918296257510: {
+  "name": "mbbs_shock_stat",
+  "language": {
+    "code": "en"
+  },
+  "components": [
+    {
+      "type": "header",
+      "parameters": [
+        {
+          "type": "image",
+          "image": {
+            "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_shock_stat-1783608450703.png"
+          }
+        }
+      ]
+    },
+    {
+      "type": "body",
+      "parameters": [
+        {
+          "type": "text",
+          "text": "Mohamed Tabrez",
+          "parameter_name": "name"
+        }
+      ]
+    }
+  ]
+}
+[meta-api] Local template data — body_text: "Hi {{name}}!\n\nHere is why 95% of NEET-qualified students will never get an Indian MBBS seat:\n\n🔴 22.8 lakh students registered for NEET 2026\n🟢 Only ~1.08 lakh MBBS seats exist\n⚠️ That's 1 seat per 21 students — and for GOVERNMENT seats, it's 1 per 40 students!\n\nIf you scored under 600, government college is statistically impossible.\n\nYour options?\n1️⃣ Pay ₹1–2 Crore for Management Quota in India\n2️⃣ Study MBBS abroad for ₹20–35 Lakhs total", buttons: [
+  {
+    "text": "See Comparison",
+    "type": "QUICK_REPLY"
+  },
+  {
+    "text": "Get Fee Structure",
+    "type": "QUICK_REPLY"
+  },
+  {
+    "text": "Talk to Counselor",
+    "type": "PHONE_NUMBER",
+    "phone_number": "+919902753030"
+  }
+]
+[automations] scheduling wait: automation=c82f1617-4189-4b82-8c8c-69def14762ad contact=132fbb1c-a1e9-4af4-8f91-e99ced898784 resumePos=3 run_at=2026-07-09T18:29:00.699Z (2 minutes)
+[automations-cron] found 1 due row(s)
+[automations-cron] resuming pending=9cfd703c-475a-451b-9c9c-220291f41a29 automation=c82f1617-4189-4b82-8c8c-69def14762ad contact=132fbb1c-a1e9-4af4-8f91-e99ced898784 pos=3
+[automations] resuming pending=9cfd703c-475a-451b-9c9c-220291f41a29 automation=c82f1617-4189-4b82-8c8c-69def14762ad contact=132fbb1c-a1e9-4af4-8f91-e99ced898784 pos=3 branch=null parent=null
+[automations] condition evaluated: subject=tag_presence operand=replied-after-compare result=NO contact=132fbb1c-a1e9-4af4-8f91-e99ced898784
+[automations] scheduling wait: automation=c82f1617-4189-4b82-8c8c-69def14762ad contact=757f79a3-52a5-4090-9349-27879b2b9f4b resumePos=3 run_at=2026-07-09T18:32:02.837Z (2 minutes)
+[cron-pinger] http://localhost:3000/api/automations/cron → {"processed":1}
+[automations-cron] found 1 due row(s)
+[automations-cron] resuming pending=86643369-98d6-4b88-b5c4-bc11b8cae531 automation=c82f1617-4189-4b82-8c8c-69def14762ad contact=757f79a3-52a5-4090-9349-27879b2b9f4b pos=3
+[automations] resuming pending=86643369-98d6-4b88-b5c4-bc11b8cae531 automation=c82f1617-4189-4b82-8c8c-69def14762ad contact=757f79a3-52a5-4090-9349-27879b2b9f4b pos=3 branch=null parent=null
+[automations] condition evaluated: subject=tag_presence operand=replied-after-compare result=NO contact=757f79a3-52a5-4090-9349-27879b2b9f4b
+[cron-pinger] http://localhost:3000/api/automations/cron → {"processed":1}
+[automations] scheduling wait: automation=c82f1617-4189-4b82-8c8c-69def14762ad contact=5cafc8f1-25ff-4ce1-96bb-f03b88fbebfa resumePos=3 run_at=2026-07-09T19:37:21.444Z (2 minutes)
+[automations-cron] found 1 due row(s)
+[automations-cron] resuming pending=11298eb2-f7e1-4aa6-8a28-5b1b276517b8 automation=c82f1617-4189-4b82-8c8c-69def14762ad contact=5cafc8f1-25ff-4ce1-96bb-f03b88fbebfa pos=3
+[automations] resuming pending=11298eb2-f7e1-4aa6-8a28-5b1b276517b8 automation=c82f1617-4189-4b82-8c8c-69def14762ad contact=5cafc8f1-25ff-4ce1-96bb-f03b88fbebfa pos=3 branch=null parent=null
+[automations] condition evaluated: subject=tag_presence operand=replied-after-compare result=NO contact=5cafc8f1-25ff-4ce1-96bb-f03b88fbebfa
+[webhook] reply context parent not found: wamid.HBgMOTE4Mjk2MjU3NTEwFQIAERgSRUMzQUI4M0NFNzI1M0I3Njg1AA==
+[webhook] reply context parent not found: wamid.HBgMOTE5ODgwMjk2ODUxFQIAERgSQzZDN0I1QkE1MUZFRUFDOTU4AA==
+[cron-pinger] http://localhost:3000/api/automations/cron → {"processed":1}
+[meta-api] Sending template "mbbs_shock_stat" to 918296257510: {
+  "name": "mbbs_shock_stat",
+  "language": {
+    "code": "en"
+  },
+  "components": [
+Error processing webhook: TypeError: Cannot read properties of undefined (reading 'name')
+    at ignore-listed frames
+Error processing webhook: TypeError: Cannot read properties of undefined (reading 'name')
+    at ignore-listed frames
+    {
+      "type": "header",
+      "parameters": [
+        {
+          "type": "image",
+          "image": {
+            "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_shock_stat-1783608450703.png"
+          }
+        }
+      ]
+    },
+    {
+      "type": "body",
+      "parameters": [
+        {
+          "type": "text",
+          "text": "Mohamed Tabrez",
+          "parameter_name": "name"
+        }
+      ]
+    }
+  ]
+}
+[meta-api] Local template data — body_text: "Hi {{name}}!\n\nHere is why 95% of NEET-qualified students will never get an Indian MBBS seat:\n\n🔴 22.8 lakh students registered for NEET 2026\n🟢 Only ~1.08 lakh MBBS seats exist\n⚠️ That's 1 seat per 21 students — and for GOVERNMENT seats, it's 1 per 40 students!\n\nIf you scored under 600, government college is statistically impossible.\n\nYour options?\n1️⃣ Pay ₹1–2 Crore for Management Quota in India\n2️⃣ Study MBBS abroad for ₹20–35 Lakhs total", buttons: [
+  {
+    "text": "See Comparison",
+    "type": "QUICK_REPLY"
+  },
+  {
+    "text": "Get Fee Structure",
+    "type": "QUICK_REPLY"
+  },
+  {
+    "text": "Talk to Counselor",
+    "type": "PHONE_NUMBER",
+    "phone_number": "+919902753030"
+  }
+]
+[meta-api] Sending template "mbbs_shock_stat" to 919019276776: {
+  "name": "mbbs_shock_stat",
+  "language": {
+    "code": "en"
+  },
+  "components": [
+    {
+      "type": "header",
+      "parameters": [
+        {
+          "type": "image",
+          "image": {
+            "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_shock_stat-1783608450703.png"
+          }
+        }
+      ]
+    },
+    {
+      "type": "body",
+      "parameters": [
+        {
+          "type": "text",
+          "text": "Mohamed Saad",
+          "parameter_name": "name"
+        }
+      ]
+    }
+  ]
+}
+[meta-api] Local template data — body_text: "Hi {{name}}!\n\nHere is why 95% of NEET-qualified students will never get an Indian MBBS seat:\n\n🔴 22.8 lakh students registered for NEET 2026\n🟢 Only ~1.08 lakh MBBS seats exist\n⚠️ That's 1 seat per 21 students — and for GOVERNMENT seats, it's 1 per 40 students!\n\nIf you scored under 600, government college is statistically impossible.\n\nYour options?\n1️⃣ Pay ₹1–2 Crore for Management Quota in India\n2️⃣ Study MBBS abroad for ₹20–35 Lakhs total", buttons: [
+  {
+    "text": "See Comparison",
+    "type": "QUICK_REPLY"
+  },
+  {
+    "text": "Get Fee Structure",
+    "type": "QUICK_REPLY"
+  },
+  {
+    "text": "Talk to Counselor",
+    "type": "PHONE_NUMBER",
+    "phone_number": "+919902753030"
+  }
+]
+[automations] scheduling wait: automation=c82f1617-4189-4b82-8c8c-69def14762ad contact=132fbb1c-a1e9-4af4-8f91-e99ced898784 resumePos=3 run_at=2026-07-10T13:10:07.765Z (2 minutes)
+[automations] scheduling wait: automation=c82f1617-4189-4b82-8c8c-69def14762ad contact=1eefce27-f036-4181-9feb-e40614dcb841 resumePos=3 run_at=2026-07-10T13:11:34.215Z (2 minutes)
+[automations-cron] found 1 due row(s)
+[automations-cron] resuming pending=3e8bc4f8-4b87-48fc-ba90-64d95ff10fe5 automation=c82f1617-4189-4b82-8c8c-69def14762ad contact=132fbb1c-a1e9-4af4-8f91-e99ced898784 pos=3
+[automations] resuming pending=3e8bc4f8-4b87-48fc-ba90-64d95ff10fe5 automation=c82f1617-4189-4b82-8c8c-69def14762ad contact=132fbb1c-a1e9-4af4-8f91-e99ced898784 pos=3 branch=null parent=null
+[automations] condition evaluated: subject=tag_presence operand=replied-after-compare result=NO contact=132fbb1c-a1e9-4af4-8f91-e99ced898784
+[cron-pinger] http://localhost:3000/api/automations/cron → {"processed":1}
+[automations-cron] found 1 due row(s)
+[automations-cron] resuming pending=28eff0cc-0041-49c7-8031-aae7f2ccc2a7 automation=c82f1617-4189-4b82-8c8c-69def14762ad contact=1eefce27-f036-4181-9feb-e40614dcb841 pos=3
+[automations] resuming pending=28eff0cc-0041-49c7-8031-aae7f2ccc2a7 automation=c82f1617-4189-4b82-8c8c-69def14762ad contact=1eefce27-f036-4181-9feb-e40614dcb841 pos=3 branch=null parent=null
+[automations] condition evaluated: subject=tag_presence operand=replied-after-compare result=NO contact=1eefce27-f036-4181-9feb-e40614dcb841
+[cron-pinger] http://localhost:3000/api/automations/cron → {"processed":1}
+[meta-api] Sending template "mbbs_shock_stat" to 918296257510: {
+  "name": "mbbs_shock_stat",
+  "language": {
+    "code": "en"
+  },
+  "components": [
+    {
+      "type": "header",
+      "parameters": [
+        {
+          "type": "image",
+          "image": {
+            "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_shock_stat-1783608450703.png"
+          }
+        }
+      ]
+    },
+    {
+      "type": "body",
+      "parameters": [
+        {
+          "type": "text",
+          "text": "… …",
+          "parameter_name": "name"
+        }
+      ]
+    }
+  ]
+}
+[meta-api] Local template data — body_text: "Hi {{name}}!\n\nHere is why 95% of NEET-qualified students will never get an Indian MBBS seat:\n\n🔴 22.8 lakh students registered for NEET 2026\n🟢 Only ~1.08 lakh MBBS seats exist\n⚠️ That's 1 seat per 21 students — and for GOVERNMENT seats, it's 1 per 40 students!\n\nIf you scored under 600, government college is statistically impossible.\n\nYour options?\n1️⃣ Pay ₹1–2 Crore for Management Quota in India\n2️⃣ Study MBBS abroad for ₹20–35 Lakhs total", buttons: [
+  {
+    "text": "See Comparison",
+    "type": "QUICK_REPLY"
+  },
+  {
+    "text": "Get Fee Structure",
+    "type": "QUICK_REPLY"
+  },
+  {
+    "text": "Talk to Counselor",
+    "type": "PHONE_NUMBER",
+    "phone_number": "+919902753030"
+  }
+]
+[meta-api] Sending template "mbbs_shock_stat" to 919019276776: {
+  "name": "mbbs_shock_stat",
+  "language": {
+    "code": "en"
+  },
+  "components": [
+    {
+      "type": "header",
+      "parameters": [
+        {
+          "type": "image",
+          "image": {
+            "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_shock_stat-1783608450703.png"
+[webhook] reply context parent not found: wamid.HBgMOTE4Mjk2MjU3NTEwFQIAERgSMDc5OEFDOTQzNUQ2NjQwQzAwAA==
+[webhook] reply context parent not found: wamid.HBgMOTE5MDE5Mjc2Nzc2FQIAERgSRTA1MUZBMDYwM0ZDMDRCMTFDAA==
+          }
+        }
+      ]
+    },
+    {
+      "type": "body",
+      "parameters": [
+        {
+          "type": "text",
+          "text": "Sopro International",
+          "parameter_name": "name"
+        }
+      ]
+    }
+  ]
+}
+[meta-api] Local template data — body_text: "Hi {{name}}!\n\nHere is why 95% of NEET-qualified students will never get an Indian MBBS seat:\n\n🔴 22.8 lakh students registered for NEET 2026\n🟢 Only ~1.08 lakh MBBS seats exist\n⚠️ That's 1 seat per 21 students — and for GOVERNMENT seats, it's 1 per 40 students!\n\nIf you scored under 600, government college is statistically impossible.\n\nYour options?\n1️⃣ Pay ₹1–2 Crore for Management Quota in India\n2️⃣ Study MBBS abroad for ₹20–35 Lakhs total", buttons: [
+  {
+    "text": "See Comparison",
+    "type": "QUICK_REPLY"
+  },
+  {
+    "text": "Get Fee Structure",
+    "type": "QUICK_REPLY"
+  },
+  {
+    "text": "Talk to Counselor",
+    "type": "PHONE_NUMBER",
+    "phone_number": "+919902753030"
+  }
+]
+[automations] scheduling wait: automation=c82f1617-4189-4b82-8c8c-69def14762ad contact=132fbb1c-a1e9-4af4-8f91-e99ced898784 resumePos=3 run_at=2026-07-10T13:32:38.285Z (2 minutes)
+[automations] scheduling wait: automation=c82f1617-4189-4b82-8c8c-69def14762ad contact=1eefce27-f036-4181-9feb-e40614dcb841 resumePos=3 run_at=2026-07-10T13:32:52.698Z (2 minutes)
+[automations-cron] found 2 due row(s)
+[automations-cron] resuming pending=71989f12-9d4a-4ef1-8d9e-a81f96725b2e automation=c82f1617-4189-4b82-8c8c-69def14762ad contact=132fbb1c-a1e9-4af4-8f91-e99ced898784 pos=3
+[automations] resuming pending=71989f12-9d4a-4ef1-8d9e-a81f96725b2e automation=c82f1617-4189-4b82-8c8c-69def14762ad contact=132fbb1c-a1e9-4af4-8f91-e99ced898784 pos=3 branch=null parent=null
+[automations] condition evaluated: subject=tag_presence operand=replied-after-compare result=NO contact=132fbb1c-a1e9-4af4-8f91-e99ced898784
+[automations-cron] resuming pending=3afab555-01bb-4452-879e-0b59bff18dc2 automation=c82f1617-4189-4b82-8c8c-69def14762ad contact=1eefce27-f036-4181-9feb-e40614dcb841 pos=3
+[automations] resuming pending=3afab555-01bb-4452-879e-0b59bff18dc2 automation=c82f1617-4189-4b82-8c8c-69def14762ad contact=1eefce27-f036-4181-9feb-e40614dcb841 pos=3 branch=null parent=null
+[automations] condition evaluated: subject=tag_presence operand=replied-after-compare result=NO contact=1eefce27-f036-4181-9feb-e40614dcb841
+[cron-pinger] http://localhost:3000/api/automations/cron → {"processed":2}
+[meta-api] Sending template "mbbs_shock_stat" to 918296257510: {
+  "name": "mbbs_shock_stat",
+  "language": {
+    "code": "en"
+  },
+  "components": [
+    {
+      "type": "header",
+      "parameters": [
+        {
+          "type": "image",
+          "image": {
+            "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_shock_stat-1783608450703.png"
+          }
+        }
+      ]
+    },
+    {
+      "type": "body",
+      "parameters": [
+        {
+          "type": "text",
+          "text": "… …",
+          "parameter_name": "name"
+        }
+      ]
+    }
+  ]
+}
+[meta-api] Local template data — body_text: "Hi {{name}}!\n\nHere is why 95% of NEET-qualified students will never get an Indian MBBS seat:\n\n🔴 22.8 lakh students registered for NEET 2026\n🟢 Only ~1.08 lakh MBBS seats exist\n⚠️ That's 1 seat per 21 students — and for GOVERNMENT seats, it's 1 per 40 students!\n\nIf you scored under 600, government college is statistically impossible.\n\nYour options?\n1️⃣ Pay ₹1–2 Crore for Management Quota in India\n2️⃣ Study MBBS abroad for ₹20–35 Lakhs total", buttons: [
+  {
+    "text": "See Comparison",
+    "type": "QUICK_REPLY"
+  },
+  {
+    "text": "Get Fee Structure",
+    "type": "QUICK_REPLY"
+  },
+  {
+    "text": "Talk to Counselor",
+    "type": "PHONE_NUMBER",
+    "phone_number": "+919902753030"
+  }
+]
+[meta-api] Sending template "mbbs_shock_stat" to 919019276776: {
+  "name": "mbbs_shock_stat",
+  "language": {
+    "code": "en"
+  },
+  "components": [
+    {
+      "type": "header",
+      "parameters": [
+        {
+          "type": "image",
+          "image": {
+            "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_shock_stat-1783608450703.png"
+          }
+        }
+      ]
+    },
+    {
+      "type": "body",
+      "parameters": [
+        {
+          "type": "text",
+          "text": "Sopro International",
+          "parameter_name": "name"
+        }
+      ]
+    }
+  ]
+}
+[meta-api] Local template data — body_text: "Hi {{name}}!\n\nHere is why 95% of NEET-qualified students will never get an Indian MBBS seat:\n\n🔴 22.8 lakh students registered for NEET 2026\n🟢 Only ~1.08 lakh MBBS seats exist\n⚠️ That's 1 seat per 21 students — and for GOVERNMENT seats, it's 1 per 40 students!\n\nIf you scored under 600, government college is statistically impossible.\n\nYour options?\n1️⃣ Pay ₹1–2 Crore for Management Quota in India\n2️⃣ Study MBBS abroad for ₹20–35 Lakhs total", buttons: [
+  {
+    "text": "See Comparison",
+    "type": "QUICK_REPLY"
+  },
+  {
+    "text": "Get Fee Structure",
+    "type": "QUICK_REPLY"
+  },
+  {
+    "text": "Talk to Counselor",
+    "type": "PHONE_NUMBER",
+    "phone_number": "+919902753030"
+  }
+]
+[automations] scheduling wait: automation=c82f1617-4189-4b82-8c8c-69def14762ad contact=132fbb1c-a1e9-4af4-8f91-e99ced898784 resumePos=3 run_at=2026-07-10T13:42:07.419Z (2 minutes)
+[meta-api] Sending template "mbbs_shock_stat" to 918296257510: {
+  "name": "mbbs_shock_stat",
+  "language": {
+    "code": "en"
+  },
+  "components": [
+    {
+      "type": "header",
+      "parameters": [
+        {
+          "type": "image",
+          "image": {
+            "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_shock_stat-1783608450703.png"
+          }
+        }
+      ]
+    },
+    {
+      "type": "body",
+      "parameters": [
+        {
+          "type": "text",
+          "text": "… …",
+          "parameter_name": "name"
+        }
+      ]
+    }
+  ]
+}
+[meta-api] Local template data — body_text: "Hi {{name}}!\n\nHere is why 95% of NEET-qualified students will never get an Indian MBBS seat:\n\n🔴 22.8 lakh students registered for NEET 2026\n🟢 Only ~1.08 lakh MBBS seats exist\n⚠️ That's 1 seat per 21 students — and for GOVERNMENT seats, it's 1 per 40 students!\n\nIf you scored under 600, government college is statistically impossible.\n\nYour options?\n1️⃣ Pay ₹1–2 Crore for Management Quota in India\n2️⃣ Study MBBS abroad for ₹20–35 Lakhs total", buttons: [
+  {
+    "text": "See Comparison",
+    "type": "QUICK_REPLY"
+  },
+  {
+    "text": "Get Fee Structure",
+    "type": "QUICK_REPLY"
+  },
+  {
+    "text": "Talk to Counselor",
+    "type": "PHONE_NUMBER",
+    "phone_number": "+919902753030"
+  }
+]
+[automations] scheduling wait: automation=c82f1617-4189-4b82-8c8c-69def14762ad contact=132fbb1c-a1e9-4af4-8f91-e99ced898784 resumePos=3 run_at=2026-07-10T13:43:40.191Z (2 minutes)
+[automations-cron] found 1 due row(s)
+[automations-cron] resuming pending=82366536-714c-4e05-98fc-3a5509ed7ea9 automation=c82f1617-4189-4b82-8c8c-69def14762ad contact=132fbb1c-a1e9-4af4-8f91-e99ced898784 pos=3
+[automations] resuming pending=82366536-714c-4e05-98fc-3a5509ed7ea9 automation=c82f1617-4189-4b82-8c8c-69def14762ad contact=132fbb1c-a1e9-4af4-8f91-e99ced898784 pos=3 branch=null parent=null
+[automations] condition evaluated: subject=tag_presence operand=replied-after-compare result=NO contact=132fbb1c-a1e9-4af4-8f91-e99ced898784
+[cron-pinger] http://localhost:3000/api/automations/cron → {"processed":1}
+[automations-cron] found 1 due row(s)
+[automations-cron] resuming pending=fe062c69-53b7-47eb-9d48-3950c0c3d79c automation=c82f1617-4189-4b82-8c8c-69def14762ad contact=132fbb1c-a1e9-4af4-8f91-e99ced898784 pos=3
+[automations] resuming pending=fe062c69-53b7-47eb-9d48-3950c0c3d79c automation=c82f1617-4189-4b82-8c8c-69def14762ad contact=132fbb1c-a1e9-4af4-8f91-e99ced898784 pos=3 branch=null parent=null
+[automations] condition evaluated: subject=tag_presence operand=replied-after-compare result=NO contact=132fbb1c-a1e9-4af4-8f91-e99ced898784
+[cron-pinger] http://localhost:3000/api/automations/cron → {"processed":1}
+[meta-api] Sending template "mbbs_shock_stat" to 919902753030: {
+  "name": "mbbs_shock_stat",
+  "language": {
+    "code": "en"
+  },
+  "components": [
+    {
+      "type": "header",
+      "parameters": [
+        {
+          "type": "image",
+          "image": {
+            "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_shock_stat-1783608450703.png"
+          }
+        }
+      ]
+    },
+    {
+      "type": "body",
+      "parameters": [
+        {
+          "type": "text",
+          "text": "Tabrez",
+          "parameter_name": "name"
+        }
+      ]
+    }
+  ]
+}
+[meta-api] Local template data — body_text: "Hi {{name}}!\n\nHere is why 95% of NEET-qualified students will never get an Indian MBBS seat:\n\n🔴 22.8 lakh students registered for NEET 2026\n🟢 Only ~1.08 lakh MBBS seats exist\n⚠️ That's 1 seat per 21 students — and for GOVERNMENT seats, it's 1 per 40 students!\n\nIf you scored under 600, government college is statistically impossible.\n\nYour options?\n1️⃣ Pay ₹1–2 Crore for Management Quota in India\n2️⃣ Study MBBS abroad for ₹20–35 Lakhs total", buttons: [
+  {
+    "text": "See Comparison",
+    "type": "QUICK_REPLY"
+  },
+  {
+    "text": "Get Fee Structure",
+    "type": "QUICK_REPLY"
+  },
+  {
+    "text": "Talk to Counselor",
+    "type": "PHONE_NUMBER",
+    "phone_number": "+919902753030"
+  }
+]
+[meta-api] Sending template "mbbs_shock_stat" to 919902753030: {
+  "name": "mbbs_shock_stat",
+  "language": {
+    "code": "en"
+  },
+  "components": [
+    {
+      "type": "header",
+      "parameters": [
+        {
+          "type": "image",
+          "image": {
+            "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_shock_stat-1783608450703.png"
+          }
+        }
+      ]
+    },
+    {
+      "type": "body",
+      "parameters": [
+        {
+          "type": "text",
+          "text": "Tabrez",
+          "parameter_name": "name"
+        }
+      ]
+[webhook] reply context parent not found: wamid.HBgMOTE4Mjk2MjU3NTEwFQIAERgSNURFNEFDRTI5MDdFNTg0MTRDAA==
+[webhook] reply context parent not found: wamid.HBgMOTE5MDE5Mjc2Nzc2FQIAERgSMzlGNkVGN0IxNkNCNDMwMTA4AA==
+[webhook] reply context parent not found: wamid.HBgMOTE4Mjk2MjU3NTEwFQIAERgSNjgwNTRCNzFGQzE0QjQ1NUYxAA==
+[webhook] reply context parent not found: wamid.HBgMOTE4Mjk2MjU3NTEwFQIAERgSQUE3OEEzOTdFRDgxQkU1NkNCAA==
+[meta-api] Meta rejected send to 919902753030: {
+  "error": {
+    "message": "(#100) Invalid parameter",
+    "code": 100,
+    "type": "OAuthException",
+    "error_data": {
+      "messaging_product": "whatsapp",
+      "details": "Invalid parameter"
+    },
+    "fbtrace_id": "AsUB_jItI09G1itsYHeP3H_"
+  }
+}
+Failed to send broadcast to +919902753030: (#100) Invalid parameter
+    }
+  ]
+}
+[meta-api] Local template data — body_text: "Hi {{name}}!\n\nHere is why 95% of NEET-qualified students will never get an Indian MBBS seat:\n\n🔴 22.8 lakh students registered for NEET 2026\n🟢 Only ~1.08 lakh MBBS seats exist\n⚠️ That's 1 seat per 21 students — and for GOVERNMENT seats, it's 1 per 40 students!\n\nIf you scored under 600, government college is statistically impossible.\n\nYour options?\n1️⃣ Pay ₹1–2 Crore for Management Quota in India\n2️⃣ Study MBBS abroad for ₹20–35 Lakhs total", buttons: [
+  {
+    "text": "See Comparison",
+    "type": "QUICK_REPLY"
+  },
+  {
+    "text": "Get Fee Structure",
+    "type": "QUICK_REPLY"
+  },
+  {
+    "text": "Talk to Counselor",
+    "type": "PHONE_NUMBER",
+    "phone_number": "+919902753030"
+  }
+]
+[meta-api] Sending template "mbbs_shock_stat" to 919902753030: {
+  "name": "mbbs_shock_stat",
+  "language": {
+    "code": "en"
+  },
+  "components": [
+    {
+      "type": "header",
+      "parameters": [
+        {
+          "type": "image",
+          "image": {
+            "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_shock_stat-1783608450703.png"
+          }
+        }
+      ]
+    },
+    {
+      "type": "body",
+      "parameters": [
+        {
+          "type": "text",
+          "text": "Tabrez",
+          "parameter_name": "name"
+        }
+      ]
+    }
+  ]
+}
+[meta-api] Local template data — body_text: "Hi {{name}}!\n\nHere is why 95% of NEET-qualified students will never get an Indian MBBS seat:\n\n🔴 22.8 lakh students registered for NEET 2026\n🟢 Only ~1.08 lakh MBBS seats exist\n⚠️ That's 1 seat per 21 students — and for GOVERNMENT seats, it's 1 per 40 students!\n\nIf you scored under 600, government college is statistically impossible.\n\nYour options?\n1️⃣ Pay ₹1–2 Crore for Management Quota in India\n2️⃣ Study MBBS abroad for ₹20–35 Lakhs total", buttons: [
+  {
+    "text": "See Comparison",
+    "type": "QUICK_REPLY"
+  },
+  {
+    "text": "Get Fee Structure",
+    "type": "QUICK_REPLY"
+  },
+  {
+    "text": "Talk to Counselor",
+    "type": "PHONE_NUMBER",
+    "phone_number": "+919902753030"
+  }
+]
+[meta-api] Meta rejected send to 919902753030: {
+  "error": {
+    "message": "(#100) Invalid parameter",
+    "code": 100,
+    "type": "OAuthException",
+    "error_data": {
+      "messaging_product": "whatsapp",
+      "details": "Invalid parameter"
+    },
+    "fbtrace_id": "Atv4d5jIqKcYf6-5sxTxxgM"
+  }
+}
+Failed to send broadcast to +919902753030: (#100) Invalid parameter
+[meta-api] Meta rejected send to 919902753030: {
+  "error": {
+    "message": "(#100) Invalid parameter",
+    "code": 100,
+    "type": "OAuthException",
+    "error_data": {
+      "messaging_product": "whatsapp",
+      "details": "Invalid parameter"
+    },
+    "fbtrace_id": "AcTQ4Bf3k-dCjSRkwD7--22"
+  }
+}
+Failed to send broadcast to +919902753030: (#100) Invalid parameter

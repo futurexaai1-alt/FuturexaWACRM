@@ -942,13 +942,12 @@ async function findOrCreateContact(
   )
 
   if (existingContact) {
-    // Update name if it changed
-    if (name && name !== existingContact.name) {
-      await supabaseAdmin()
-        .from('contacts')
-        .update({ name, updated_at: new Date().toISOString() })
-        .eq('id', existingContact.id)
-    }
+    // Do NOT overwrite the CRM name with the WhatsApp profile name.
+    // WhatsApp profile names are user-controlled and often abbreviated
+    // or nonsensical (e.g. "MS", "·· ··"), so letting them replace a
+    // manually-set CRM name silently corrupts the contact list.
+    // The profile name is only used as a fallback when *creating* a
+    // brand-new contact below.
     return { contact: existingContact, wasCreated: false }
   }
 
