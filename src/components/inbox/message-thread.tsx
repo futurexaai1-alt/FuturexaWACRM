@@ -46,7 +46,6 @@ import {
 } from "./message-composer";
 import { deleteAccountMedia } from "@/lib/storage/upload-media";
 import {
-  MessageTemplate,
   TemplateSendValues,
 } from "./template-picker";
 import { extractVariableIndices, extractAllPlaceholders } from "@/lib/whatsapp/template-validators";
