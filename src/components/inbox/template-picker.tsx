@@ -15,13 +15,8 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
-import {
-  ArrowLeft,
-  ChevronRight,
-  LayoutTemplate,
-  Loader2,
-} from "lucide-react";
-import { extractVariableIndices } from "@/lib/whatsapp/template-validators";
+import { ArrowLeft, ChevronRight, LayoutTemplate, Loader2 } from "lucide-react";
+import { extractVariableIndices, extractAllPlaceholders } from "@/lib/whatsapp/template-validators";
 
 export interface TemplateSendValues {
   body: string[];
@@ -33,12 +28,20 @@ interface TemplatePickerProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   onSelect: (template: MessageTemplate, values: TemplateSendValues) => void;
+  contactName?: string;
 }
 
 function renderBodyPreview(body: string, params: string[]): string {
-  return body.replace(/\{\{(\d+)\}\}/g, (_, raw) => {
-    const idx = Number(raw) - 1;
-    const value = params[idx];
+  const namedVars = extractVariableIndices(body).length === 0 ? extractAllPlaceholders(body) : [];
+  
+  return body.replace(/\{\{(\w+)\}\}/g, (_, raw) => {
+    let idx: number;
+    if (namedVars.length > 0) {
+      idx = namedVars.indexOf(raw);
+    } else {
+      idx = Number(raw) - 1;
+    }
+    const value = idx >= 0 ? params[idx] : undefined;
     return value && value.trim().length > 0 ? value : `{{${raw}}}`;
   });
 }
@@ -55,11 +58,14 @@ interface UrlButtonSlot {
  * send-message path doesn't 400 on missing parameters.
  */
 function collectVariableSlots(template: MessageTemplate): {
-  bodyVars: number[];
+  bodyVars: string[];
   headerVarCount: number;
   urlButtonSlots: UrlButtonSlot[];
 } {
-  const bodyVars = extractVariableIndices(template.body_text);
+  let bodyVars = extractVariableIndices(template.body_text).map(String);
+  if (bodyVars.length === 0) {
+    bodyVars = extractAllPlaceholders(template.body_text);
+  }
   const headerVarCount =
     template.header_type === "text" && template.header_content
       ? extractVariableIndices(template.header_content).length
@@ -77,6 +83,7 @@ export function TemplatePicker({
   open,
   onOpenChange,
   onSelect,
+  contactName,
 }: TemplatePickerProps) {
   const [templates, setTemplates] = useState<MessageTemplate[]>([]);
   const [loading, setLoading] = useState(true);
@@ -150,7 +157,17 @@ export function TemplatePicker({
       return;
     }
     setSelected(template);
-    setParams(new Array(slots.bodyVars.length).fill(""));
+    
+    // Auto-fill variables that look like names
+    const initialParams = slots.bodyVars.map((v) => {
+      const lower = v.toLowerCase();
+      if ((lower.includes("name") || lower === "1") && contactName) {
+        return contactName;
+      }
+      return "";
+    });
+    setParams(initialParams);
+    
     setHeaderText("");
     setButtonParams({});
   }

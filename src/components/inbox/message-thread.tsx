@@ -45,6 +45,11 @@ import {
   type SendMediaPayload,
 } from "./message-composer";
 import { deleteAccountMedia } from "@/lib/storage/upload-media";
+import {
+  MessageTemplate,
+  TemplateSendValues,
+} from "./template-picker";
+import { extractVariableIndices, extractAllPlaceholders } from "@/lib/whatsapp/template-validators";
 import { TemplatePicker } from "./template-picker";
 import { buildReplyPreview } from "./reply-quote";
 import { toast } from "sonner";
@@ -56,9 +61,17 @@ interface ReplyDraft {
 }
 
 function renderTemplateBody(body: string, params: string[]): string {
-  return body.replace(/\{\{(\d+)\}\}/g, (_, raw) => {
-    const idx = Number(raw) - 1;
-    return params[idx] ?? `{{${raw}}}`;
+  const namedVars = extractVariableIndices(body).length === 0 ? extractAllPlaceholders(body) : [];
+  
+  return body.replace(/\{\{(\w+)\}\}/g, (_, raw) => {
+    let idx: number;
+    if (namedVars.length > 0) {
+      idx = namedVars.indexOf(raw);
+    } else {
+      idx = Number(raw) - 1;
+    }
+    const value = idx >= 0 ? params[idx] : undefined;
+    return value ?? `{{${raw}}}`;
   });
 }
 
@@ -1085,6 +1098,7 @@ export function MessageThread({
         open={templateModalOpen}
         onOpenChange={setTemplateModalOpen}
         onSelect={handleSendTemplate}
+        contactName={displayName}
       />
     </div>
   );
