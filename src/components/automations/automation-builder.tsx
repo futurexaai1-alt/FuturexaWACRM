@@ -478,8 +478,17 @@ export function AutomationBuilder({ initial }: { initial: BuilderInitial }) {
 
   const handlePointerDown = (e: React.PointerEvent) => {
     const target = e.target as HTMLElement
-    // Ignore if clicking on interactive elements
-    if (target.closest(".bg-card") || target.closest("button") || target.closest("input") || target.closest("select") || target.closest("textarea")) {
+    // Ignore if clicking on interactive elements or dropdown menus
+    if (
+      target.closest(".bg-card") ||
+      target.closest("button") ||
+      target.closest("input") ||
+      target.closest("select") ||
+      target.closest("textarea") ||
+      target.closest('[role="menuitem"]') ||
+      target.closest('[role="menu"]') ||
+      target.closest('[role="dialog"]')
+    ) {
       return
     }
     e.currentTarget.setPointerCapture(e.pointerId)
