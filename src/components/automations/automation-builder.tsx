@@ -1402,14 +1402,17 @@ function insertAt(
     return copy
   }
   
+  const targetCid = parent.parentCid
+  const targetBranch = parent.branch
+
   function walk(list: BuilderStep[]): BuilderStep[] {
     let changed = false
     const newList = list.map((s) => {
-      if (s.cid === parent.parentCid && s.branches) {
+      if (s.cid === targetCid && s.branches) {
         changed = true
-        const branchList = [...s.branches[parent.branch]]
+        const branchList = [...s.branches[targetBranch]]
         branchList.splice(index, 0, node)
-        return { ...s, branches: { ...s.branches, [parent.branch]: branchList } }
+        return { ...s, branches: { ...s.branches, [targetBranch]: branchList } }
       }
       if (s.branches) {
         const yes = walk(s.branches.yes)
