@@ -5,6 +5,7 @@ import {
   useContext,
   useEffect,
   useState,
+  useRef,
   type ReactNode,
 } from "react"
 import { useRouter } from "next/navigation"
@@ -469,6 +470,39 @@ export function AutomationBuilder({ initial }: { initial: BuilderInitial }) {
   const [saving, setSaving] = useState(false)
   const [expandedId, setExpandedId] = useState<string | null>(null)
 
+  // Drag-to-pan state for the canvas
+  const canvasRef = useRef<HTMLDivElement>(null)
+  const [isDragging, setIsDragging] = useState(false)
+  const [startPos, setStartPos] = useState({ x: 0, y: 0 })
+  const [scrollPos, setScrollPos] = useState({ x: 0, y: 0 })
+
+  const handlePointerDown = (e: React.PointerEvent) => {
+    const target = e.target as HTMLElement
+    // Ignore if clicking on interactive elements
+    if (target.closest(".bg-card") || target.closest("button") || target.closest("input") || target.closest("select") || target.closest("textarea")) {
+      return
+    }
+    e.currentTarget.setPointerCapture(e.pointerId)
+    setIsDragging(true)
+    setStartPos({ x: e.clientX, y: e.clientY })
+    if (canvasRef.current) {
+      setScrollPos({ x: canvasRef.current.scrollLeft, y: canvasRef.current.scrollTop })
+    }
+  }
+
+  const handlePointerMove = (e: React.PointerEvent) => {
+    if (!isDragging || !canvasRef.current) return
+    const dx = e.clientX - startPos.x
+    const dy = e.clientY - startPos.y
+    canvasRef.current.scrollLeft = scrollPos.x - dx
+    canvasRef.current.scrollTop = scrollPos.y - dy
+  }
+
+  const handlePointerUp = (e: React.PointerEvent) => {
+    e.currentTarget.releasePointerCapture(e.pointerId)
+    setIsDragging(false)
+  }
+
   function patchTop<K extends keyof BuilderInitial>(key: K, value: BuilderInitial[K]) {
     setState((s) => ({ ...s, [key]: value }))
   }
@@ -586,9 +620,19 @@ export function AutomationBuilder({ initial }: { initial: BuilderInitial }) {
       </header>
 
       {/* Canvas */}
-      <div className="relative flex-1 overflow-y-auto">
+      <div 
+        ref={canvasRef}
+        className={cn(
+          "relative flex-1 overflow-auto",
+          isDragging ? "cursor-grabbing" : "cursor-grab"
+        )}
+        onPointerDown={handlePointerDown}
+        onPointerMove={handlePointerMove}
+        onPointerUp={handlePointerUp}
+        onPointerLeave={handlePointerUp}
+      >
         <div className="absolute inset-0 bg-[radial-gradient(circle,var(--border)_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none" />
-        <div className="relative mx-auto flex max-w-2xl flex-col items-center gap-0 px-4 py-10">
+        <div className="relative mx-auto flex w-max min-w-full flex-col items-center gap-0 px-4 py-10">
           <ResourcesProvider>
             <TriggerCard
               type={state.trigger_type}
@@ -862,18 +906,13 @@ function StepRenderer({
   const Icon = meta.icon
   const expanded = props.expandedId === step.cid
   const isCondition = step.step_type === "condition"
-  // Card widths on mobile fill the full canvas column (max-w-2xl px-4
-  // still keeps them reasonable). On sm+ the original fixed widths
-  // come back so the flow visual stays recognisable.
-  const width = isCondition
-    ? "w-full max-w-[400px] sm:w-[400px]"
-    : "w-full max-w-[320px] sm:w-80"
 
   return (
     <>
-      <div className={cn("z-10 flex flex-col", width)}>
+      <div className="z-10 flex flex-col items-center">
         <div
           className={cn(
+            "w-full max-w-[320px] sm:w-80",
             "rounded-lg border border-border border-l-4 bg-card shadow-lg",
             meta.border,
           )}
@@ -977,14 +1016,14 @@ function ConditionBranches({
     { kind: "branch", parentCid: step.cid, branch: "no", index: 0 },
   ]
   return (
-    // Stack Yes/No vertically on mobile — two columns at 375px would
-    // cram each branch to ~170px which is too narrow for the nested
-    // cards. Two-column grid returns on sm+.
-    <div className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2">
-      <BranchColumn label="Yes" color="text-primary">
+    <div className="relative mt-0 flex w-full flex-col pt-4 sm:flex-row sm:items-start sm:gap-0">
+      {/* Vertical stem from parent */}
+      <div className="absolute left-1/2 top-0 -ml-[1px] hidden h-4 w-[2px] bg-border sm:block" />
+
+      <BranchColumn label="Yes" color="text-primary" isLeft>
         <StepList {...props} steps={yes} parentPath={yesPath} />
       </BranchColumn>
-      <BranchColumn label="No" color="text-rose-400">
+      <BranchColumn label="No" color="text-rose-400" isLeft={false}>
         <StepList {...props} steps={no} parentPath={noPath} />
       </BranchColumn>
     </div>
@@ -994,15 +1033,27 @@ function ConditionBranches({
 function BranchColumn({
   label,
   color,
+  isLeft,
   children,
 }: {
   label: string
   color: string
+  isLeft: boolean
   children: React.ReactNode
 }) {
   return (
-    <div className="flex flex-col items-center">
-      <div className={cn("mb-2 text-[11px] font-semibold uppercase", color)}>{label}</div>
+    <div className="relative flex flex-1 flex-col items-center px-3 pt-4">
+      {/* Horizontal line from center to edge */}
+      <div 
+        className={cn(
+          "absolute top-0 hidden h-[2px] bg-border sm:block",
+          isLeft ? "left-1/2 right-0" : "left-0 right-1/2"
+        )} 
+      />
+      {/* Vertical drop down to the label */}
+      <div className="absolute top-0 left-1/2 -ml-[1px] hidden h-4 w-[2px] bg-border sm:block" />
+
+      <div className={cn("mb-2 px-2 text-[11px] font-semibold uppercase relative z-10 bg-background", color)}>{label}</div>
       {children}
     </div>
   )

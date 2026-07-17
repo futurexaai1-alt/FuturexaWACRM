@@ -56,7 +56,7 @@ import {
   type OnNodeDrag,
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
-import { Plus, Trash2 } from "lucide-react";
+import { Plus, Trash2, Wand2 } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -337,6 +337,28 @@ function FlowCanvasInner() {
     [],
   );
 
+  const handleAutoLayout = useCallback(() => {
+    const canvasEdges = deriveCanvasEdges(builderNodes);
+    const positions = autoLayout(
+      builderNodes.map((n) => ({
+        id: n.node_key,
+        width: NODE_WIDTH,
+        height: NODE_HEIGHT,
+      })),
+      canvasEdges.map((e) => ({ source: e.source, target: e.target })),
+      { direction: "TB" },
+    );
+
+    updateNodePositions(
+      Object.fromEntries([...positions].map(([key, pos]) => [key, pos])),
+    );
+
+    // Give React Flow a tick to apply the new positions before fitting the view
+    setTimeout(() => {
+      reactFlow.fitView({ padding: 0.2, maxZoom: 1, duration: 400 });
+    }, 50);
+  }, [builderNodes, updateNodePositions, reactFlow]);
+
   // Drag-to-position: React-Flow tracks the visual drag internally and
   // fires this once on release. We write the final coordinate back to
   // the editor context (which flips `dirty`); save then ships the new
@@ -504,7 +526,15 @@ function FlowCanvasInner() {
             maskColor="color-mix(in oklch, var(--background) 70%, transparent)"
             className="!border !border-border !bg-card"
           />
-          <Panel position="bottom-right" className="!bottom-4 !right-4">
+          <Panel position="bottom-right" className="!bottom-4 !right-4 flex flex-col items-end gap-2">
+            <button
+              onClick={handleAutoLayout}
+              className="inline-flex items-center gap-1.5 rounded-md border border-border bg-card px-3 py-1.5 text-xs font-medium text-foreground shadow-lg transition-colors hover:bg-muted"
+              title="Auto-align nodes"
+            >
+              <Wand2 className="h-3.5 w-3.5" />
+              Auto Layout
+            </button>
             <CanvasAddNodeButton />
           </Panel>
         </ReactFlow>
