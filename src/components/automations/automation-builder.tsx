@@ -1401,12 +1401,30 @@ function insertAt(
     copy.splice(index, 0, node)
     return copy
   }
-  return steps.map((s) => {
-    if (s.cid !== parent.parentCid || !s.branches) return s
-    const list = [...s.branches[parent.branch]]
-    list.splice(index, 0, node)
-    return { ...s, branches: { ...s.branches, [parent.branch]: list } }
-  })
+  
+  function walk(list: BuilderStep[]): BuilderStep[] {
+    let changed = false
+    const newList = list.map((s) => {
+      if (s.cid === parent.parentCid && s.branches) {
+        changed = true
+        const branchList = [...s.branches[parent.branch]]
+        branchList.splice(index, 0, node)
+        return { ...s, branches: { ...s.branches, [parent.branch]: branchList } }
+      }
+      if (s.branches) {
+        const yes = walk(s.branches.yes)
+        const no = walk(s.branches.no)
+        if (yes !== s.branches.yes || no !== s.branches.no) {
+          changed = true
+          return { ...s, branches: { yes, no } }
+        }
+      }
+      return s
+    })
+    return changed ? newList : list
+  }
+  
+  return walk(steps)
 }
 
 function mapAtPath(
