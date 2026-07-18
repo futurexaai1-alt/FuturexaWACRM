@@ -27,7 +27,7 @@ interface Step4Props {
   onNameChange: (name: string) => void;
   template: MessageTemplate;
   audience: AudienceConfig;
-  onSend: () => void;
+  onSend: (options: { scheduledAt?: string }) => void;
   onSaveDraft?: () => void;
   onBack: () => void;
   isProcessing: boolean;
@@ -48,6 +48,18 @@ export function Step4ScheduleSend({
   const [showConfirm, setShowConfirm] = useState(false);
   const [estimatedReach, setEstimatedReach] = useState<number>(0);
   const [loadingReach, setLoadingReach] = useState(true);
+  const [sendType, setSendType] = useState<'now' | 'later'>('now');
+  const [scheduledAt, setScheduledAt] = useState('');
+
+  // Default schedule time to 15 minutes from now
+  useEffect(() => {
+    const d = new Date();
+    d.setMinutes(d.getMinutes() + 15);
+    // Format to YYYY-MM-DDThh:mm
+    const tzOffset = d.getTimezoneOffset() * 60000;
+    const localISOTime = new Date(d.getTime() - tzOffset).toISOString().slice(0, 16);
+    setScheduledAt(localISOTime);
+  }, []);
 
   useEffect(() => {
     async function calculateReach() {
@@ -142,6 +154,50 @@ export function Step4ScheduleSend({
         </div>
       </div>
 
+      {/* Timing Selection */}
+      <div className="rounded-xl border border-border bg-card/50 p-4 space-y-4">
+        <p className="text-sm font-medium text-foreground">Send Timing</p>
+        <div className="space-y-3">
+          <label className="flex items-center gap-3">
+            <input
+              type="radio"
+              name="sendType"
+              value="now"
+              checked={sendType === 'now'}
+              onChange={() => setSendType('now')}
+              className="h-4 w-4 text-primary focus:ring-primary"
+            />
+            <span className="text-sm text-foreground">Send immediately</span>
+          </label>
+          <label className="flex items-center gap-3">
+            <input
+              type="radio"
+              name="sendType"
+              value="later"
+              checked={sendType === 'later'}
+              onChange={() => setSendType('later')}
+              className="h-4 w-4 text-primary focus:ring-primary"
+            />
+            <span className="text-sm text-foreground">Schedule for later</span>
+          </label>
+
+          {sendType === 'later' && (
+            <div className="ml-7 pt-1">
+              <Input
+                type="datetime-local"
+                value={scheduledAt}
+                onChange={(e) => setScheduledAt(e.target.value)}
+                min={new Date().toISOString().slice(0, 16)}
+                className="w-full sm:w-auto border-border bg-muted text-foreground"
+              />
+              <p className="mt-1.5 text-xs text-muted-foreground">
+                Broadcasts are processed within 1 minute of the scheduled time.
+              </p>
+            </div>
+          )}
+        </div>
+      </div>
+
       {/* Processing overlay */}
       {isProcessing && (
         <div className="rounded-xl border border-primary/20 bg-primary/5 p-4">
@@ -205,6 +261,11 @@ export function Step4ScheduleSend({
                 <span className="font-medium text-popover-foreground">{estimatedReach.toLocaleString()}</span>{' '}
                 contacts using the{' '}
                 <span className="font-medium text-popover-foreground">{template.name}</span> template.
+                {sendType === 'later' ? (
+                  <> It will be scheduled to send on <span className="font-medium text-popover-foreground">{new Date(scheduledAt).toLocaleString()}</span>.</>
+                ) : (
+                  <> It will be queued for immediate sending.</>
+                )}
                 This action cannot be undone.
               </DialogDescription>
             </DialogHeader>
@@ -219,7 +280,9 @@ export function Step4ScheduleSend({
               <Button
                 onClick={() => {
                   setShowConfirm(false);
-                  onSend();
+                  onSend({
+                    scheduledAt: sendType === 'later' ? new Date(scheduledAt).toISOString() : undefined
+                  });
                 }}
                 className="bg-primary text-primary-foreground hover:bg-primary/90"
               >

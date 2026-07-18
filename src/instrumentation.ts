@@ -36,6 +36,7 @@ export async function register() {
     `${base}/api/automations/cron`,
     `${base}/api/flows/cron`,
     `${base}/api/whatsapp/broadcast/retry`,
+    `${base}/api/whatsapp/broadcast/cron`,
   ]
 
   async function tick() {
