@@ -48,6 +48,7 @@ import {
   SlidersHorizontal,
   Filter,
   X,
+  MessageCircle,
 } from 'lucide-react';
 import { ContactForm } from '@/components/contacts/contact-form';
 import { ContactDetailView } from '@/components/contacts/contact-detail-view';
@@ -56,6 +57,7 @@ import { CustomFieldsManager } from '@/components/contacts/custom-fields-manager
 import { useCan } from '@/hooks/use-can';
 import { GatedButton } from '@/components/ui/gated-button';
 import { Checkbox } from '@/components/ui/checkbox';
+import { useStartConversation } from '@/hooks/use-start-conversation';
 
 const PAGE_SIZE = 25;
 
@@ -70,6 +72,7 @@ export default function ContactsPage() {
 
   const [contacts, setContacts] = useState<ContactWithTags[]>([]);
   const [loading, setLoading] = useState(true);
+  const { startConversation, isStarting } = useStartConversation();
   const [search, setSearch] = useState('');
   const [page, setPage] = useState(0);
   const [totalCount, setTotalCount] = useState(0);
@@ -659,6 +662,22 @@ export default function ContactsPage() {
                         align="end"
                         className="bg-popover border-border"
                       >
+                        <DropdownMenuItem
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            startConversation(contact);
+                          }}
+                          disabled={isStarting}
+                          className="text-popover-foreground focus:bg-muted focus:text-foreground"
+                        >
+                          {isStarting ? (
+                            <Loader2 className="size-4 animate-spin" />
+                          ) : (
+                            <MessageCircle className="size-4" />
+                          )}
+                          Message
+                        </DropdownMenuItem>
+                        <DropdownMenuSeparator className="bg-border" />
                         <DropdownMenuItem
                           onClick={(e) => {
                             e.stopPropagation();

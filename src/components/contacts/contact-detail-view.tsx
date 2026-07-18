@@ -3,6 +3,8 @@
 import { useState, useEffect, useCallback } from 'react';
 import { createClient } from '@/lib/supabase/client';
 import { useAuth } from '@/hooks/use-auth';
+import { useStartConversation } from '@/hooks/use-start-conversation';
+import { GatedButton } from '@/components/ui/gated-button';
 import { formatCurrency } from '@/lib/currency';
 import { toast } from 'sonner';
 import type { Contact, Tag, ContactTag, ContactNote, CustomField, ContactCustomValue, Deal } from '@/types';
@@ -33,6 +35,7 @@ import {
   Save,
   X,
   DollarSign,
+  MessageCircle,
 } from 'lucide-react';
 
 interface ContactDetailViewProps {
@@ -50,6 +53,7 @@ export function ContactDetailView({
 }: ContactDetailViewProps) {
   const supabase = createClient();
   const { accountId, defaultCurrency } = useAuth();
+  const { startConversation, isStarting } = useStartConversation();
 
   const [contact, setContact] = useState<Contact | null>(null);
   const [loading, setLoading] = useState(false);
@@ -381,6 +385,21 @@ export function ContactDetailView({
                     )}
                   </div>
                 </div>
+              </div>
+              <div className="mt-4 flex">
+                <Button 
+                  size="sm" 
+                  onClick={() => startConversation(contact)} 
+                  disabled={isStarting}
+                  className="w-full sm:w-auto"
+                >
+                  {isStarting ? (
+                    <Loader2 className="size-4 mr-2 animate-spin" />
+                  ) : (
+                    <MessageCircle className="size-4 mr-2" />
+                  )}
+                  Message
+                </Button>
               </div>
             </SheetHeader>
 
