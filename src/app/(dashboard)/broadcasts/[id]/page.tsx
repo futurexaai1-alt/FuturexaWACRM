@@ -157,6 +157,7 @@ export default function BroadcastDetailPage() {
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [deleting, setDeleting] = useState(false);
   const [retrying, setRetrying] = useState(false);
+  const [retryingId, setRetryingId] = useState<string | null>(null);
 
   useEffect(() => {
     const supabase = createClient();
@@ -287,13 +288,18 @@ export default function BroadcastDetailPage() {
     router.push('/broadcasts');
   }
 
-  async function handleRetry() {
-    setRetrying(true);
+  async function handleRetry(recipientId?: string) {
+    if (recipientId) setRetryingId(recipientId);
+    else setRetrying(true);
+    
     try {
       const res = await fetch('/api/whatsapp/broadcast/retry-manual', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ broadcast_id: broadcastId }),
+        body: JSON.stringify({ 
+          broadcast_id: broadcastId,
+          recipient_ids: recipientId ? [recipientId] : undefined 
+        }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Retry failed');
@@ -301,7 +307,8 @@ export default function BroadcastDetailPage() {
     } catch (err) {
       toast.error(err instanceof Error ? err.message : 'Retry failed');
     } finally {
-      setRetrying(false);
+      if (recipientId) setRetryingId(null);
+      else setRetrying(false);
     }
   }
 
@@ -378,7 +385,7 @@ export default function BroadcastDetailPage() {
               variant="outline"
               size="sm"
               disabled={retrying}
-              onClick={handleRetry}
+              onClick={() => handleRetry()}
               className="border-amber-500/30 bg-transparent text-amber-500 hover:bg-amber-500/10 disabled:opacity-50"
             >
               {retrying ? (
@@ -577,6 +584,9 @@ export default function BroadcastDetailPage() {
               <TableBody>
                 {filteredRecipients.map((recipient) => {
                   const rStatus = getRecipientStatus(recipient.status);
+                  const isEcosystem = recipient.is_ecosystem_error || recipient.error_message?.toLowerCase().includes('healthy ecosystem');
+                  const canRetry = isEcosystem && (recipient.status === 'failed' || recipient.status === 'retry_pending');
+                  
                   return (
                     <TableRow key={recipient.id} className="border-border">
                       <TableCell className="font-medium text-foreground">
@@ -622,6 +632,19 @@ export default function BroadcastDetailPage() {
                           <span className="truncate block text-red-400" title={recipient.error_message ?? undefined}>
                             {recipient.error_message ?? '-'}
                           </span>
+                        )}
+                        
+                        {canRetry && (
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            onClick={() => handleRetry(recipient.id)}
+                            disabled={retryingId === recipient.id || retrying}
+                            className="mt-1 h-6 px-2 text-xs text-amber-500 hover:text-amber-600 hover:bg-amber-500/10 -ml-2"
+                          >
+                            {retryingId === recipient.id ? <Loader2 className="h-3 w-3 animate-spin mr-1" /> : <RefreshCw className="h-3 w-3 mr-1" />}
+                            Retry Now
+                          </Button>
                         )}
                       </TableCell>
                     </TableRow>

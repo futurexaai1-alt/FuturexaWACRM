@@ -63,10 +63,9 @@ export async function GET(request: Request) {
         
       // Load config
       const { data: configRow } = await admin
-        .from('whatsapp_configs')
+        .from('whatsapp_config')
         .select('*')
         .eq('account_id', broadcast.account_id)
-        .eq('status', 'connected')
         .maybeSingle()
         
       broadcasts.set(broadcast.id, {

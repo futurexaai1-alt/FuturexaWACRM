@@ -61,10 +61,9 @@ export async function POST(request: Request) {
     
     // Load config
     const { data: configRow } = await supabase
-      .from('whatsapp_configs')
+      .from('whatsapp_config')
       .select('*')
       .eq('account_id', accountId)
-      .eq('status', 'connected')
       .maybeSingle()
       
     if (!configRow) {
