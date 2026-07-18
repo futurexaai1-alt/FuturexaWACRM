@@ -10,6 +10,7 @@ import {
 } from '@/lib/contacts/dedupe';
 import {
   parseContactCsv,
+  parseTagCell,
   type ParsedContactRow,
 } from '@/lib/contacts/parse-contact-csv';
 import {
@@ -131,6 +132,7 @@ export function ImportModal({
   const [parsedRows, setParsedRows] = useState<ParsedContactRow[]>([]);
   const [hasTagsColumn, setHasTagsColumn] = useState(false);
   const [hasCompanyColumn, setHasCompanyColumn] = useState(false);
+  const [defaultTagsStr, setDefaultTagsStr] = useState('');
   const [tagColorByKey, setTagColorByKey] = useState<Map<string, string>>(
     new Map()
   );
@@ -147,6 +149,7 @@ export function ImportModal({
     setParsedRows([]);
     setHasTagsColumn(false);
     setHasCompanyColumn(false);
+    setDefaultTagsStr('');
     setTagColorByKey(new Map());
     setResult(null);
     if (fileInputRef.current) fileInputRef.current.value = '';
@@ -246,16 +249,23 @@ export function ImportModal({
         return true;
       });
 
+      const defaultTags = parseTagCell(defaultTagsStr);
+      
+      const toInsertWithTags = toInsert.map((row) => ({
+        ...row,
+        tagNames: Array.from(new Set([...row.tagNames, ...defaultTags]))
+      }));
+
       // 3) Resolve tag names → ids (admin+ may auto-create missing tags).
       //    Skip the round-trip when the import carries no tag names.
-      const allTagNames = toInsert.flatMap((row) => row.tagNames);
-      let tagIdByKey = new Map<string, string>();
+      const hasAnyTags = toInsertWithTags.some((r) => r.tagNames.length > 0);
+      let resolvedTags = new Map<string, string>(); // lowercase name → id
       let skippedNames: string[] = [];
-      if (allTagNames.length > 0) {
-        ({ tagIdByKey, skippedNames } = await resolveImportTagIds(supabase, {
+      if (hasAnyTags) {
+        ({ tagIdByKey: resolvedTags, skippedNames } = await resolveImportTagIds(supabase, {
           accountId,
           userId: user.id,
-          tagNames: allTagNames,
+          tagNames: Array.from(new Set(toInsertWithTags.flatMap(r => r.tagNames))),
           canCreateTags: canEditSettings,
         }));
       }
@@ -267,8 +277,8 @@ export function ImportModal({
       //    that normalizes equal) counts as skipped, not failed.
       const chunkSize = 50;
 
-      for (let i = 0; i < toInsert.length; i += chunkSize) {
-        const chunk = toInsert.slice(i, i + chunkSize);
+      for (let i = 0; i < toInsertWithTags.length; i += chunkSize) {
+        const chunk = toInsertWithTags.slice(i, i + chunkSize);
         const rows = chunk.map((row) => ({
           user_id: user.id,
           account_id: accountId,
@@ -333,7 +343,7 @@ export function ImportModal({
         tagsAssigned = await assignImportedContactTags(
           supabase,
           tagAssignments,
-          tagIdByKey
+          resolvedTags
         );
       } catch {
         toast.warning('Contacts imported, but some tag assignments failed.');
@@ -482,6 +492,22 @@ export function ImportModal({
             onChange={handleFileChange}
             className="hidden"
           />
+
+          <div className="mt-4 space-y-1.5">
+            <label className="text-sm font-medium text-foreground">
+              Apply tags to imported contacts
+            </label>
+            <input
+              type="text"
+              value={defaultTagsStr}
+              onChange={(e) => setDefaultTagsStr(e.target.value)}
+              placeholder="e.g. Batch 2, September Promo"
+              className="w-full rounded-lg border border-border bg-muted px-3 py-2 text-sm text-foreground outline-none placeholder:text-muted-foreground focus:border-primary focus:ring-1 focus:ring-primary"
+            />
+            <p className="text-[11px] text-muted-foreground">
+              Comma-separated. These tags will be applied to all contacts in this CSV.
+            </p>
+          </div>
         </div>
 
         <div className="min-h-0 flex-1 overflow-y-auto px-6 py-4">

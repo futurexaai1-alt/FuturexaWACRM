@@ -13,7 +13,9 @@ import {
   ArrowRight,
   ArrowLeft,
   X,
+  FileText,
 } from 'lucide-react';
+import { parseContactCsv } from '@/lib/contacts/parse-contact-csv';
 
 type AudienceType = 'all' | 'tags' | 'custom_field' | 'csv';
 type CustomFieldOperator = 'is' | 'is_not' | 'contains';
@@ -384,6 +386,54 @@ export function Step2SelectAudience({
                 placeholder="Value"
                 className="h-9 rounded-lg border border-border bg-muted px-2.5 text-sm text-foreground outline-none placeholder:text-muted-foreground focus:border-primary focus:ring-1 focus:ring-primary"
               />
+            </div>
+          )}
+        </div>
+      )}
+
+      {audience.type === 'csv' && (
+        <div className="space-y-3 rounded-xl border border-border bg-card/50 p-4">
+          <p className="text-sm font-medium text-foreground">Upload CSV</p>
+          <div className="flex flex-col items-center justify-center gap-3 rounded-lg border border-dashed border-border p-6 text-center">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
+              <Upload className="h-5 w-5" />
+            </div>
+            <div>
+              <p className="text-sm font-medium text-foreground">
+                Click to upload a CSV file
+              </p>
+              <p className="mt-1 text-xs text-muted-foreground">
+                Must contain a 'phone' column
+              </p>
+            </div>
+            <input
+              type="file"
+              accept=".csv,text/csv"
+              onChange={async (e) => {
+                const file = e.target.files?.[0];
+                if (!file) return;
+                const text = await file.text();
+                const { rows } = parseContactCsv(text);
+                if (rows.length > 0) {
+                  onUpdate({
+                    ...audience,
+                    csvContacts: rows.map((r) => ({
+                      phone: r.phone,
+                      name: r.name,
+                    })),
+                  });
+                }
+              }}
+              className="mt-2 block w-full max-w-xs text-sm text-foreground file:mr-4 file:rounded-full file:border-0 file:bg-primary/10 file:px-4 file:py-2 file:text-sm file:font-semibold file:text-primary hover:file:bg-primary/20"
+            />
+          </div>
+          {audience.csvContacts && audience.csvContacts.length > 0 && (
+            <div className="mt-3 flex items-center gap-2 rounded-lg bg-primary/5 p-3 text-sm text-primary">
+              <FileText className="h-4 w-4" />
+              <span>
+                {audience.csvContacts.length} contact
+                {audience.csvContacts.length === 1 ? '' : 's'} parsed from CSV
+              </span>
             </div>
           )}
         </div>
