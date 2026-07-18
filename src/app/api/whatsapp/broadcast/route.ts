@@ -244,6 +244,10 @@ export async function POST(request: Request) {
         })
         failedCount++
       }
+
+      // Small delay to prevent hitting Meta's Messages-Per-Second (MPS) throughput rate limits.
+      // Increased to 250ms to account for heavier media templates (images/videos).
+      await new Promise((resolve) => setTimeout(resolve, 250))
     }
 
     return NextResponse.json({
