@@ -464,6 +464,92 @@ export async function sendTemplateMessage(
 }
 
 // ============================================================
+// Media Upload (Reusable media ids for sending)
+// ============================================================
+
+export interface UploadMediaToMetaArgs {
+  phoneNumberId: string
+  accessToken: string
+  mimeType: string
+  bytes: Uint8Array
+  fileName?: string
+}
+
+/**
+ * Uploads media to Meta's WhatsApp Cloud API for sending (returns a reusable `media_id`).
+ * This is different from Resumable Uploads which return a `handle` for template creation.
+ */
+export async function uploadMediaToMeta(
+  args: UploadMediaToMetaArgs
+): Promise<{ id: string }> {
+  const { phoneNumberId, accessToken, mimeType, bytes, fileName } = args
+  const url = `${META_API_BASE}/${phoneNumberId}/media`
+
+  const formData = new FormData()
+  formData.append('messaging_product', 'whatsapp')
+  
+  // Create a Blob from the bytes so FormData attaches it as a File
+  const blob = new Blob([bytes], { type: mimeType })
+  formData.append('file', blob, fileName || 'media')
+
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+    body: formData,
+  })
+
+  if (!response.ok) {
+    await throwMetaError(response, `Media upload failed: ${response.status}`)
+  }
+
+  const data = (await response.json()) as { id?: string }
+  if (!data.id) {
+    throw new Error('Media upload did not return an id.')
+  }
+  return { id: data.id }
+}
+
+// ============================================================
+  accessToken: string
+  mimeType: string
+  bytes: Uint8Array
+  fileName?: string
+}
+
+export async function uploadMediaToMeta(
+  args: UploadMediaToMetaArgs
+): Promise<{ id: string }> {
+  const { phoneNumberId, accessToken, mimeType, bytes, fileName } = args
+  const url = `${META_API_BASE}/${phoneNumberId}/media`
+
+  const formData = new FormData()
+  formData.append('messaging_product', 'whatsapp')
+  
+  const blob = new Blob([bytes], { type: mimeType })
+  formData.append('file', blob, fileName || 'media')
+
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+    body: formData,
+  })
+
+  if (!response.ok) {
+    await throwMetaError(response, `Media upload failed: ${response.status}`)
+  }
+
+  const data = (await response.json()) as { id?: string }
+  if (!data.id) {
+    throw new Error('Media upload did not return an id.')
+  }
+  return { id: data.id }
+}
+
+// ============================================================
 // Resumable Upload (media handles for template headers)
 // ============================================================
 //

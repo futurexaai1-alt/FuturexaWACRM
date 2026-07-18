@@ -1,0 +1,2462 @@
+
+2026-07-18T15:37:29.462021982Z npm warn config production Use `--omit=dev` instead.
+2026-07-18T15:37:29.554314294Z 
+2026-07-18T15:37:29.554409871Z > wacrm@0.2.2 start
+2026-07-18T15:37:29.554415752Z > next start
+2026-07-18T15:37:29.554418557Z 
+2026-07-18T15:37:30.037138004Z ▲ Next.js 16.2.6
+2026-07-18T15:37:30.038139644Z - Local:         http://localhost:3000
+2026-07-18T15:37:30.038154130Z - Network:       http://10.0.1.12:3000
+2026-07-18T15:37:30.038947544Z ✓ Ready in 296ms
+2026-07-18T15:37:35.317574180Z [cron-pinger] started — pinging every 60s
+2026-07-18T15:41:01.721621058Z [webhook] reply context parent not found: wamid.HBgMOTE5ODgwMjk2ODUxFQIAERgSNzExQUIzMTdDRjVERjUzNUM2AA==
+2026-07-18T15:44:05.449576970Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 919035895297: {
+2026-07-18T15:44:05.449769087Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:05.449781589Z   "language": {
+2026-07-18T15:44:05.449787901Z     "code": "en"
+2026-07-18T15:44:05.449792670Z   },
+2026-07-18T15:44:05.449797089Z   "components": [
+2026-07-18T15:44:05.449801637Z     {
+2026-07-18T15:44:05.449806466Z       "type": "header",
+2026-07-18T15:44:05.449811385Z       "parameters": [
+2026-07-18T15:44:05.449816094Z         {
+2026-07-18T15:44:05.449821013Z           "type": "image",
+2026-07-18T15:44:05.449825652Z           "image": {
+2026-07-18T15:44:05.449830130Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:05.449836892Z           }
+2026-07-18T15:44:05.449841631Z         }
+2026-07-18T15:44:05.449846350Z       ]
+2026-07-18T15:44:05.449850979Z     },
+2026-07-18T15:44:05.449855748Z     {
+2026-07-18T15:44:05.449860607Z       "type": "body",
+2026-07-18T15:44:05.449865496Z       "parameters": [
+2026-07-18T15:44:05.449870114Z         {
+2026-07-18T15:44:05.449874813Z           "type": "text",
+2026-07-18T15:44:05.449879662Z           "text": "LIKITH KUMAR R",
+2026-07-18T15:44:05.449896954Z           "parameter_name": "name1"
+2026-07-18T15:44:05.449901112Z         },
+2026-07-18T15:44:05.449904989Z         {
+2026-07-18T15:44:05.449908916Z           "type": "text",
+2026-07-18T15:44:05.449913054Z           "text": "LIKITH KUMAR R",
+2026-07-18T15:44:05.449917162Z           "parameter_name": "name2"
+2026-07-18T15:44:05.449921189Z         },
+2026-07-18T15:44:05.449925127Z         {
+2026-07-18T15:44:05.449972615Z           "type": "text",
+2026-07-18T15:44:05.449976432Z           "text": "LIKITH KUMAR R",
+2026-07-18T15:44:05.449982022Z           "parameter_name": "name3"
+2026-07-18T15:44:05.449987943Z         }
+2026-07-18T15:44:05.449991200Z       ]
+2026-07-18T15:44:05.449994335Z     }
+2026-07-18T15:44:05.449997652Z   ]
+2026-07-18T15:44:05.450000777Z }
+2026-07-18T15:44:05.450004233Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:05.450011617Z   {
+2026-07-18T15:44:05.450014622Z     "text": "Yes, tell me more",
+2026-07-18T15:44:05.450017828Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:05.450020864Z   },
+2026-07-18T15:44:05.450024020Z   {
+2026-07-18T15:44:05.450026966Z     "text": "Not right now",
+2026-07-18T15:44:05.450029931Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:05.450032887Z   }
+2026-07-18T15:44:05.450035762Z ]
+2026-07-18T15:44:06.264501575Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 919108358381: {
+2026-07-18T15:44:06.264560875Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:06.264565684Z   "language": {
+2026-07-18T15:44:06.264568949Z     "code": "en"
+2026-07-18T15:44:06.264572566Z   },
+2026-07-18T15:44:06.264575662Z   "components": [
+2026-07-18T15:44:06.264578618Z     {
+2026-07-18T15:44:06.264581603Z       "type": "header",
+2026-07-18T15:44:06.264584729Z       "parameters": [
+2026-07-18T15:44:06.264587855Z         {
+2026-07-18T15:44:06.264590740Z           "type": "image",
+2026-07-18T15:44:06.264593956Z           "image": {
+2026-07-18T15:44:06.264597132Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:06.264602232Z           }
+2026-07-18T15:44:06.264605298Z         }
+2026-07-18T15:44:06.264608413Z       ]
+2026-07-18T15:44:06.264611599Z     },
+2026-07-18T15:44:06.264614765Z     {
+2026-07-18T15:44:06.264617831Z       "type": "body",
+2026-07-18T15:44:06.264620947Z       "parameters": [
+2026-07-18T15:44:06.264662644Z         {
+2026-07-18T15:44:06.264666411Z           "type": "text",
+2026-07-18T15:44:06.264669707Z           "text": "PRANITHA B L",
+2026-07-18T15:44:06.264672813Z           "parameter_name": "name1"
+2026-07-18T15:44:06.264675899Z         },
+2026-07-18T15:44:06.264706616Z         {
+2026-07-18T15:44:06.264709842Z           "type": "text",
+2026-07-18T15:44:06.264712727Z           "text": "PRANITHA B L",
+2026-07-18T15:44:06.264715783Z           "parameter_name": "name2"
+2026-07-18T15:44:06.264718778Z         },
+2026-07-18T15:44:06.264721684Z         {
+2026-07-18T15:44:06.264724499Z           "type": "text",
+2026-07-18T15:44:06.264727485Z           "text": "PRANITHA B L",
+2026-07-18T15:44:06.264730611Z           "parameter_name": "name3"
+2026-07-18T15:44:06.264733605Z         }
+2026-07-18T15:44:06.264736461Z       ]
+2026-07-18T15:44:06.264739356Z     }
+2026-07-18T15:44:06.264742231Z   ]
+2026-07-18T15:44:06.264745117Z }
+2026-07-18T15:44:06.264805008Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:06.264843170Z   {
+2026-07-18T15:44:06.264846385Z     "text": "Yes, tell me more",
+2026-07-18T15:44:06.264849541Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:06.264852506Z   },
+2026-07-18T15:44:06.264855201Z   {
+2026-07-18T15:44:06.264858427Z     "text": "Not right now",
+2026-07-18T15:44:06.264861653Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:06.264864819Z   }
+2026-07-18T15:44:06.264867755Z ]
+2026-07-18T15:44:06.877654312Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 919900627096: {
+2026-07-18T15:44:06.877732147Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:06.877739331Z   "language": {
+2026-07-18T15:44:06.877744581Z     "code": "en"
+2026-07-18T15:44:06.878497018Z   },
+2026-07-18T15:44:06.878512657Z   "components": [
+2026-07-18T15:44:06.878518187Z     {
+2026-07-18T15:44:06.878523156Z       "type": "header",
+2026-07-18T15:44:06.878528335Z       "parameters": [
+2026-07-18T15:44:06.878533505Z         {
+2026-07-18T15:44:06.878538535Z           "type": "image",
+2026-07-18T15:44:06.878568360Z           "image": {
+2026-07-18T15:44:06.878572198Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:06.878576425Z           }
+2026-07-18T15:44:06.878579721Z         }
+2026-07-18T15:44:06.878583007Z       ]
+2026-07-18T15:44:06.878586323Z     },
+2026-07-18T15:44:06.878589499Z     {
+2026-07-18T15:44:06.878592715Z       "type": "body",
+2026-07-18T15:44:06.878596071Z       "parameters": [
+2026-07-18T15:44:06.878599418Z         {
+2026-07-18T15:44:06.878602604Z           "type": "text",
+2026-07-18T15:44:06.878605870Z           "text": "YASHAS S",
+2026-07-18T15:44:06.878609346Z           "parameter_name": "name1"
+2026-07-18T15:44:06.878612743Z         },
+2026-07-18T15:44:06.878615919Z         {
+2026-07-18T15:44:06.878619085Z           "type": "text",
+2026-07-18T15:44:06.878622271Z           "text": "YASHAS S",
+2026-07-18T15:44:06.878625557Z           "parameter_name": "name2"
+2026-07-18T15:44:06.878628953Z         },
+2026-07-18T15:44:06.878632088Z         {
+2026-07-18T15:44:06.878635154Z           "type": "text",
+2026-07-18T15:44:06.878638390Z           "text": "YASHAS S",
+2026-07-18T15:44:06.878641766Z           "parameter_name": "name3"
+2026-07-18T15:44:06.878645032Z         }
+2026-07-18T15:44:06.878648258Z       ]
+2026-07-18T15:44:06.878651374Z     }
+2026-07-18T15:44:06.878654470Z   ]
+2026-07-18T15:44:06.878657626Z }
+2026-07-18T15:44:06.878660912Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:06.878666973Z   {
+2026-07-18T15:44:06.878670149Z     "text": "Yes, tell me more",
+2026-07-18T15:44:06.878673596Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:06.878676872Z   },
+2026-07-18T15:44:06.878695656Z   {
+2026-07-18T15:44:06.878698752Z     "text": "Not right now",
+2026-07-18T15:44:06.878701968Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:06.878705074Z   }
+2026-07-18T15:44:06.878708069Z ]
+2026-07-18T15:44:07.529039374Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 919902965101: {
+2026-07-18T15:44:07.529116907Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:07.529121466Z   "language": {
+2026-07-18T15:44:07.529125083Z     "code": "en"
+2026-07-18T15:44:07.529128830Z   },
+2026-07-18T15:44:07.529132186Z   "components": [
+2026-07-18T15:44:07.529135552Z     {
+2026-07-18T15:44:07.529138628Z       "type": "header",
+2026-07-18T15:44:07.529141894Z       "parameters": [
+2026-07-18T15:44:07.529144980Z         {
+2026-07-18T15:44:07.529148036Z           "type": "image",
+2026-07-18T15:44:07.529153055Z           "image": {
+2026-07-18T15:44:07.529159127Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:07.529164085Z           }
+2026-07-18T15:44:07.529167221Z         }
+2026-07-18T15:44:07.529170086Z       ]
+2026-07-18T15:44:07.529173032Z     },
+2026-07-18T15:44:07.529175947Z     {
+2026-07-18T15:44:07.529178993Z       "type": "body",
+2026-07-18T15:44:07.529182079Z       "parameters": [
+2026-07-18T15:44:07.529185255Z         {
+2026-07-18T15:44:07.529188330Z           "type": "text",
+2026-07-18T15:44:07.529191566Z           "text": "SHRAVANI A S",
+2026-07-18T15:44:07.529194762Z           "parameter_name": "name1"
+2026-07-18T15:44:07.529197718Z         },
+2026-07-18T15:44:07.529200523Z         {
+2026-07-18T15:44:07.529203168Z           "type": "text",
+2026-07-18T15:44:07.529206224Z           "text": "SHRAVANI A S",
+2026-07-18T15:44:07.529209199Z           "parameter_name": "name2"
+2026-07-18T15:44:07.529212115Z         },
+2026-07-18T15:44:07.529215401Z         {
+2026-07-18T15:44:07.529218125Z           "type": "text",
+2026-07-18T15:44:07.529220920Z           "text": "SHRAVANI A S",
+2026-07-18T15:44:07.529224177Z           "parameter_name": "name3"
+2026-07-18T15:44:07.529239626Z         }
+2026-07-18T15:44:07.529242751Z       ]
+2026-07-18T15:44:07.529245517Z     }
+2026-07-18T15:44:07.529248302Z   ]
+2026-07-18T15:44:07.529251047Z }
+2026-07-18T15:44:07.529268009Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:07.529290560Z   {
+2026-07-18T15:44:07.529293736Z     "text": "Yes, tell me more",
+2026-07-18T15:44:07.529296872Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:07.529299978Z   },
+2026-07-18T15:44:07.529302923Z   {
+2026-07-18T15:44:07.529305909Z     "text": "Not right now",
+2026-07-18T15:44:07.529309235Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:07.529312281Z   }
+2026-07-18T15:44:07.529315477Z ]
+2026-07-18T15:44:08.166152810Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 919900732414: {
+2026-07-18T15:44:08.166212942Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:08.166217550Z   "language": {
+2026-07-18T15:44:08.166220456Z     "code": "en"
+2026-07-18T15:44:08.166223401Z   },
+2026-07-18T15:44:08.166226247Z   "components": [
+2026-07-18T15:44:08.166229042Z     {
+2026-07-18T15:44:08.166231687Z       "type": "header",
+2026-07-18T15:44:08.166235202Z       "parameters": [
+2026-07-18T15:44:08.166258256Z         {
+2026-07-18T15:44:08.166262133Z           "type": "image",
+2026-07-18T15:44:08.166265229Z           "image": {
+2026-07-18T15:44:08.166268324Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:08.166272162Z           }
+2026-07-18T15:44:08.166275167Z         }
+2026-07-18T15:44:08.166278073Z       ]
+2026-07-18T15:44:08.166281098Z     },
+2026-07-18T15:44:08.166284274Z     {
+2026-07-18T15:44:08.166292339Z       "type": "body",
+2026-07-18T15:44:08.166296045Z       "parameters": [
+2026-07-18T15:44:08.166299262Z         {
+2026-07-18T15:44:08.166302247Z           "type": "text",
+2026-07-18T15:44:08.166305293Z           "text": "MOHAN H P",
+2026-07-18T15:44:08.166308659Z           "parameter_name": "name1"
+2026-07-18T15:44:08.166311995Z         },
+2026-07-18T15:44:08.166315091Z         {
+2026-07-18T15:44:08.166318037Z           "type": "text",
+2026-07-18T15:44:08.166321253Z           "text": "MOHAN H P",
+2026-07-18T15:44:08.166324459Z           "parameter_name": "name2"
+2026-07-18T15:44:08.166327615Z         },
+2026-07-18T15:44:08.166330710Z         {
+2026-07-18T15:44:08.166333766Z           "type": "text",
+2026-07-18T15:44:08.166336902Z           "text": "MOHAN H P",
+2026-07-18T15:44:08.166405980Z           "parameter_name": "name3"
+2026-07-18T15:44:08.166418393Z         }
+2026-07-18T15:44:08.166421769Z       ]
+2026-07-18T15:44:08.166424695Z     }
+2026-07-18T15:44:08.166427750Z   ]
+2026-07-18T15:44:08.166430896Z }
+2026-07-18T15:44:08.166434132Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:08.166444772Z   {
+2026-07-18T15:44:08.166448109Z     "text": "Yes, tell me more",
+2026-07-18T15:44:08.166451455Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:08.166454730Z   },
+2026-07-18T15:44:08.166457796Z   {
+2026-07-18T15:44:08.166460872Z     "text": "Not right now",
+2026-07-18T15:44:08.166464017Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:08.166467143Z   }
+2026-07-18T15:44:08.166470269Z ]
+2026-07-18T15:44:08.791959025Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 919886828438: {
+2026-07-18T15:44:08.792012404Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:08.792016973Z   "language": {
+2026-07-18T15:44:08.792020560Z     "code": "en"
+2026-07-18T15:44:08.792024016Z   },
+2026-07-18T15:44:08.792027142Z   "components": [
+2026-07-18T15:44:08.792030418Z     {
+2026-07-18T15:44:08.792033614Z       "type": "header",
+2026-07-18T15:44:08.792037090Z       "parameters": [
+2026-07-18T15:44:08.792040466Z         {
+2026-07-18T15:44:08.792043812Z           "type": "image",
+2026-07-18T15:44:08.792047078Z           "image": {
+2026-07-18T15:44:08.792050365Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:08.792054392Z           }
+2026-07-18T15:44:08.792057458Z         }
+2026-07-18T15:44:08.792060624Z       ]
+2026-07-18T15:44:08.792063830Z     },
+2026-07-18T15:44:08.792066896Z     {
+2026-07-18T15:44:08.792070011Z       "type": "body",
+2026-07-18T15:44:08.792073157Z       "parameters": [
+2026-07-18T15:44:08.792076303Z         {
+2026-07-18T15:44:08.792079419Z           "type": "text",
+2026-07-18T15:44:08.792082525Z           "text": "RISHIKA R",
+2026-07-18T15:44:08.792114364Z           "parameter_name": "name1"
+2026-07-18T15:44:08.792117920Z         },
+2026-07-18T15:44:08.792121006Z         {
+2026-07-18T15:44:08.792123992Z           "type": "text",
+2026-07-18T15:44:08.792127198Z           "text": "RISHIKA R",
+2026-07-18T15:44:08.792130514Z           "parameter_name": "name2"
+2026-07-18T15:44:08.792133790Z         },
+2026-07-18T15:44:08.792137477Z         {
+2026-07-18T15:44:08.792140613Z           "type": "text",
+2026-07-18T15:44:08.792143959Z           "text": "RISHIKA R",
+2026-07-18T15:44:08.792147264Z           "parameter_name": "name3"
+2026-07-18T15:44:08.792150500Z         }
+2026-07-18T15:44:08.792153636Z       ]
+2026-07-18T15:44:08.792156492Z     }
+2026-07-18T15:44:08.792159437Z   ]
+2026-07-18T15:44:08.792162212Z }
+2026-07-18T15:44:08.792165308Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:08.792172021Z   {
+2026-07-18T15:44:08.792175096Z     "text": "Yes, tell me more",
+2026-07-18T15:44:08.792202056Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:08.792205623Z   },
+2026-07-18T15:44:08.792208658Z   {
+2026-07-18T15:44:08.792211574Z     "text": "Not right now",
+2026-07-18T15:44:08.792214700Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:08.792217876Z   }
+2026-07-18T15:44:08.792221052Z ]
+2026-07-18T15:44:09.438075322Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 919743636755: {
+2026-07-18T15:44:09.438131837Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:09.438136616Z   "language": {
+2026-07-18T15:44:09.438139572Z     "code": "en"
+2026-07-18T15:44:09.438142667Z   },
+2026-07-18T15:44:09.438145473Z   "components": [
+2026-07-18T15:44:09.438148357Z     {
+2026-07-18T15:44:09.438151373Z       "type": "header",
+2026-07-18T15:44:09.438154539Z       "parameters": [
+2026-07-18T15:44:09.438157664Z         {
+2026-07-18T15:44:09.438160640Z           "type": "image",
+2026-07-18T15:44:09.438164798Z           "image": {
+2026-07-18T15:44:09.438168234Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:09.438206966Z           }
+2026-07-18T15:44:09.438210422Z         }
+2026-07-18T15:44:09.438213458Z       ]
+2026-07-18T15:44:09.438216654Z     },
+2026-07-18T15:44:09.438219770Z     {
+2026-07-18T15:44:09.438222866Z       "type": "body",
+2026-07-18T15:44:09.438226062Z       "parameters": [
+2026-07-18T15:44:09.438229158Z         {
+2026-07-18T15:44:09.438232303Z           "type": "text",
+2026-07-18T15:44:09.438235439Z           "text": "MADURI A",
+2026-07-18T15:44:09.438238866Z           "parameter_name": "name1"
+2026-07-18T15:44:09.438242152Z         },
+2026-07-18T15:44:09.438245358Z         {
+2026-07-18T15:44:09.438248474Z           "type": "text",
+2026-07-18T15:44:09.438251650Z           "text": "MADURI A",
+2026-07-18T15:44:09.438259313Z           "parameter_name": "name2"
+2026-07-18T15:44:09.438263341Z         },
+2026-07-18T15:44:09.438266477Z         {
+2026-07-18T15:44:09.438269642Z           "type": "text",
+2026-07-18T15:44:09.438273019Z           "text": "MADURI A",
+2026-07-18T15:44:09.438276355Z           "parameter_name": "name3"
+2026-07-18T15:44:09.438279661Z         }
+2026-07-18T15:44:09.438282767Z       ]
+2026-07-18T15:44:09.438285953Z     }
+2026-07-18T15:44:09.438289239Z   ]
+2026-07-18T15:44:09.438322761Z }
+2026-07-18T15:44:09.438907448Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:09.438929528Z   {
+2026-07-18T15:44:09.438933115Z     "text": "Yes, tell me more",
+2026-07-18T15:44:09.438936531Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:09.438939657Z   },
+2026-07-18T15:44:09.438942813Z   {
+2026-07-18T15:44:09.438945768Z     "text": "Not right now",
+2026-07-18T15:44:09.438953403Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:09.438957430Z   }
+2026-07-18T15:44:09.438960516Z ]
+2026-07-18T15:44:10.082619209Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 919900988759: {
+2026-07-18T15:44:10.082669642Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:10.082673359Z   "language": {
+2026-07-18T15:44:10.083190890Z     "code": "en"
+2026-07-18T15:44:10.083200107Z   },
+2026-07-18T15:44:10.083203534Z   "components": [
+2026-07-18T15:44:10.083206810Z     {
+2026-07-18T15:44:10.083209926Z       "type": "header",
+2026-07-18T15:44:10.083213252Z       "parameters": [
+2026-07-18T15:44:10.083216668Z         {
+2026-07-18T15:44:10.083219764Z           "type": "image",
+2026-07-18T15:44:10.083223050Z           "image": {
+2026-07-18T15:44:10.083226106Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:10.083229672Z           }
+2026-07-18T15:44:10.083232647Z         }
+2026-07-18T15:44:10.083235623Z       ]
+2026-07-18T15:44:10.083238799Z     },
+2026-07-18T15:44:10.083241835Z     {
+2026-07-18T15:44:10.083244930Z       "type": "body",
+2026-07-18T15:44:10.083248176Z       "parameters": [
+2026-07-18T15:44:10.083251402Z         {
+2026-07-18T15:44:10.083254508Z           "type": "text",
+2026-07-18T15:44:10.083257704Z           "text": "MOHIT SEN",
+2026-07-18T15:44:10.083260820Z           "parameter_name": "name1"
+2026-07-18T15:44:10.083263856Z         },
+2026-07-18T15:44:10.083266671Z         {
+2026-07-18T15:44:10.083269406Z           "type": "text",
+2026-07-18T15:44:10.083272322Z           "text": "MOHIT SEN",
+2026-07-18T15:44:10.083275397Z           "parameter_name": "name2"
+2026-07-18T15:44:10.083278874Z         },
+2026-07-18T15:44:10.083281659Z         {
+2026-07-18T15:44:10.083284664Z           "type": "text",
+2026-07-18T15:44:10.083287820Z           "text": "MOHIT SEN",
+2026-07-18T15:44:10.083290986Z           "parameter_name": "name3"
+2026-07-18T15:44:10.083293571Z         }
+2026-07-18T15:44:10.083295995Z       ]
+2026-07-18T15:44:10.083298440Z     }
+2026-07-18T15:44:10.083300874Z   ]
+2026-07-18T15:44:10.083303289Z }
+2026-07-18T15:44:10.083313398Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:10.083319048Z   {
+2026-07-18T15:44:10.083330099Z     "text": "Yes, tell me more",
+2026-07-18T15:44:10.083333035Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:10.083335700Z   },
+2026-07-18T15:44:10.083338214Z   {
+2026-07-18T15:44:10.083340648Z     "text": "Not right now",
+2026-07-18T15:44:10.083343273Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:10.083345828Z   }
+2026-07-18T15:44:10.083348252Z ]
+2026-07-18T15:44:10.698113153Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 917387046352: {
+2026-07-18T15:44:10.698174517Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:10.698181209Z   "language": {
+2026-07-18T15:44:10.698184776Z     "code": "en"
+2026-07-18T15:44:10.698188002Z   },
+2026-07-18T15:44:10.698191018Z   "components": [
+2026-07-18T15:44:10.698194164Z     {
+2026-07-18T15:44:10.698197460Z       "type": "header",
+2026-07-18T15:44:10.698201347Z       "parameters": [
+2026-07-18T15:44:10.698204373Z         {
+2026-07-18T15:44:10.698207308Z           "type": "image",
+2026-07-18T15:44:10.698211035Z           "image": {
+2026-07-18T15:44:10.698218359Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:10.698224860Z           }
+2026-07-18T15:44:10.698229659Z         }
+2026-07-18T15:44:10.698232715Z       ]
+2026-07-18T15:44:10.698235450Z     },
+2026-07-18T15:44:10.698238235Z     {
+2026-07-18T15:44:10.698241011Z       "type": "body",
+2026-07-18T15:44:10.698244006Z       "parameters": [
+2026-07-18T15:44:10.698246821Z         {
+2026-07-18T15:44:10.698249657Z           "type": "text",
+2026-07-18T15:44:10.698252572Z           "text": "ABHISHEK DEVENDRA JANE",
+2026-07-18T15:44:10.698255468Z           "parameter_name": "name1"
+2026-07-18T15:44:10.698258283Z         },
+2026-07-18T15:44:10.698260958Z         {
+2026-07-18T15:44:10.698263763Z           "type": "text",
+2026-07-18T15:44:10.698266739Z           "text": "ABHISHEK DEVENDRA JANE",
+2026-07-18T15:44:10.698269835Z           "parameter_name": "name2"
+2026-07-18T15:44:10.698272910Z         },
+2026-07-18T15:44:10.698275785Z         {
+2026-07-18T15:44:10.698278770Z           "type": "text",
+2026-07-18T15:44:10.698281746Z           "text": "ABHISHEK DEVENDRA JANE",
+2026-07-18T15:44:10.698284691Z           "parameter_name": "name3"
+2026-07-18T15:44:10.698287827Z         }
+2026-07-18T15:44:10.698328222Z       ]
+2026-07-18T15:44:10.698331889Z     }
+2026-07-18T15:44:10.698334574Z   ]
+2026-07-18T15:44:10.698337449Z }
+2026-07-18T15:44:10.698340525Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:10.698399134Z   {
+2026-07-18T15:44:10.698402140Z     "text": "Yes, tell me more",
+2026-07-18T15:44:10.698405376Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:10.698408532Z   },
+2026-07-18T15:44:10.698411497Z   {
+2026-07-18T15:44:10.698414573Z     "text": "Not right now",
+2026-07-18T15:44:10.698417839Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:10.698423269Z   }
+2026-07-18T15:44:10.698428890Z ]
+2026-07-18T15:44:11.667131387Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 917760517905: {
+2026-07-18T15:44:11.667193302Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:11.667197489Z   "language": {
+2026-07-18T15:44:11.667200575Z     "code": "en"
+2026-07-18T15:44:11.667203530Z   },
+2026-07-18T15:44:11.667206506Z   "components": [
+2026-07-18T15:44:11.667209572Z     {
+2026-07-18T15:44:11.667212697Z       "type": "header",
+2026-07-18T15:44:11.667215863Z       "parameters": [
+2026-07-18T15:44:11.667218829Z         {
+2026-07-18T15:44:11.667221734Z           "type": "image",
+2026-07-18T15:44:11.667224880Z           "image": {
+2026-07-18T15:44:11.667228768Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:11.667232625Z           }
+2026-07-18T15:44:11.667235731Z         }
+2026-07-18T15:44:11.667238706Z       ]
+2026-07-18T15:44:11.667241511Z     },
+2026-07-18T15:44:11.667244377Z     {
+2026-07-18T15:44:11.667247272Z       "type": "body",
+2026-07-18T15:44:11.667250198Z       "parameters": [
+2026-07-18T15:44:11.667253473Z         {
+2026-07-18T15:44:11.667256278Z           "type": "text",
+2026-07-18T15:44:11.667259174Z           "text": "SUJAY M",
+2026-07-18T15:44:11.667262199Z           "parameter_name": "name1"
+2026-07-18T15:44:11.667265225Z         },
+2026-07-18T15:44:11.667296814Z         {
+2026-07-18T15:44:11.667299940Z           "type": "text",
+2026-07-18T15:44:11.667302845Z           "text": "SUJAY M",
+2026-07-18T15:44:11.667305790Z           "parameter_name": "name2"
+2026-07-18T15:44:11.667308986Z         },
+2026-07-18T15:44:11.667312032Z         {
+2026-07-18T15:44:11.667314847Z           "type": "text",
+2026-07-18T15:44:11.667318003Z           "text": "SUJAY M",
+2026-07-18T15:44:11.667321139Z           "parameter_name": "name3"
+2026-07-18T15:44:11.667324164Z         }
+2026-07-18T15:44:11.667327150Z       ]
+2026-07-18T15:44:11.667330096Z     }
+2026-07-18T15:44:11.667332901Z   ]
+2026-07-18T15:44:11.667335716Z }
+2026-07-18T15:44:11.667344553Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:11.667351806Z   {
+2026-07-18T15:44:11.667354982Z     "text": "Yes, tell me more",
+2026-07-18T15:44:11.667358298Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:11.667361574Z   },
+2026-07-18T15:44:11.667364469Z   {
+2026-07-18T15:44:11.667423659Z     "text": "Not right now",
+2026-07-18T15:44:11.667427276Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:11.667430933Z   }
+2026-07-18T15:44:11.667433938Z ]
+2026-07-18T15:44:16.765177318Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 919611236543: {
+2026-07-18T15:44:16.765256825Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:16.765263467Z   "language": {
+2026-07-18T15:44:16.765268577Z     "code": "en"
+2026-07-18T15:44:16.765274288Z   },
+2026-07-18T15:44:16.765278786Z   "components": [
+2026-07-18T15:44:16.765283926Z     {
+2026-07-18T15:44:16.765289306Z       "type": "header",
+2026-07-18T15:44:16.765294636Z       "parameters": [
+2026-07-18T15:44:16.765299735Z         {
+2026-07-18T15:44:16.765304404Z           "type": "image",
+2026-07-18T15:44:16.765309533Z           "image": {
+2026-07-18T15:44:16.765314292Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:16.765319602Z           }
+2026-07-18T15:44:16.765351972Z         }
+2026-07-18T15:44:16.765355740Z       ]
+2026-07-18T15:44:16.765402356Z     },
+2026-07-18T15:44:16.765411223Z     {
+2026-07-18T15:44:16.765414488Z       "type": "body",
+2026-07-18T15:44:16.765417854Z       "parameters": [
+2026-07-18T15:44:16.765420950Z         {
+2026-07-18T15:44:16.765424216Z           "type": "text",
+2026-07-18T15:44:16.765427332Z           "text": "MUSKAN BANU",
+2026-07-18T15:44:16.765430498Z           "parameter_name": "name1"
+2026-07-18T15:44:16.765433694Z         },
+2026-07-18T15:44:16.765436920Z         {
+2026-07-18T15:44:16.765440046Z           "type": "text",
+2026-07-18T15:44:16.765443412Z           "text": "MUSKAN BANU",
+2026-07-18T15:44:16.765446758Z           "parameter_name": "name2"
+2026-07-18T15:44:16.765449774Z         },
+2026-07-18T15:44:16.765452489Z         {
+2026-07-18T15:44:16.765455104Z           "type": "text",
+2026-07-18T15:44:16.765457829Z           "text": "MUSKAN BANU",
+2026-07-18T15:44:16.765460534Z           "parameter_name": "name3"
+2026-07-18T15:44:16.765463259Z         }
+2026-07-18T15:44:16.765465874Z       ]
+2026-07-18T15:44:16.765468509Z     }
+2026-07-18T15:44:16.765472836Z   ]
+2026-07-18T15:44:16.765475471Z }
+2026-07-18T15:44:16.765478286Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:16.765484007Z   {
+2026-07-18T15:44:16.765486622Z     "text": "Yes, tell me more",
+2026-07-18T15:44:16.765489487Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:16.765492263Z   },
+2026-07-18T15:44:16.765494857Z   {
+2026-07-18T15:44:16.765497452Z     "text": "Not right now",
+2026-07-18T15:44:16.765500258Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:16.765502993Z   }
+2026-07-18T15:44:16.765505668Z ]
+2026-07-18T15:44:17.488063587Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 918892211404: {
+2026-07-18T15:44:17.488140621Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:17.488148996Z   "language": {
+2026-07-18T15:44:17.488152853Z     "code": "en"
+2026-07-18T15:44:17.488156379Z   },
+2026-07-18T15:44:17.488187858Z   "components": [
+2026-07-18T15:44:17.488191615Z     {
+2026-07-18T15:44:17.488194852Z       "type": "header",
+2026-07-18T15:44:17.488198447Z       "parameters": [
+2026-07-18T15:44:17.488201493Z         {
+2026-07-18T15:44:17.488204408Z           "type": "image",
+2026-07-18T15:44:17.488207675Z           "image": {
+2026-07-18T15:44:17.488211001Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:17.488214588Z           }
+2026-07-18T15:44:17.488219316Z         }
+2026-07-18T15:44:17.488222492Z       ]
+2026-07-18T15:44:17.488225578Z     },
+2026-07-18T15:44:17.488228614Z     {
+2026-07-18T15:44:17.488231379Z       "type": "body",
+2026-07-18T15:44:17.488234495Z       "parameters": [
+2026-07-18T15:44:17.488237541Z         {
+2026-07-18T15:44:17.488240576Z           "type": "text",
+2026-07-18T15:44:17.488243722Z           "text": "MANISH N",
+2026-07-18T15:44:17.488246998Z           "parameter_name": "name1"
+2026-07-18T15:44:17.488250445Z         },
+2026-07-18T15:44:17.488253570Z         {
+2026-07-18T15:44:17.488256655Z           "type": "text",
+2026-07-18T15:44:17.488259912Z           "text": "MANISH N",
+2026-07-18T15:44:17.488263208Z           "parameter_name": "name2"
+2026-07-18T15:44:17.488266344Z         },
+2026-07-18T15:44:17.488269700Z         {
+2026-07-18T15:44:17.488272936Z           "type": "text",
+2026-07-18T15:44:17.488276072Z           "text": "MANISH N",
+2026-07-18T15:44:17.488280200Z           "parameter_name": "name3"
+2026-07-18T15:44:17.488283205Z         }
+2026-07-18T15:44:17.488287383Z       ]
+2026-07-18T15:44:17.488290088Z     }
+2026-07-18T15:44:17.488292944Z   ]
+2026-07-18T15:44:17.488295809Z }
+2026-07-18T15:44:17.488298825Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:17.488306188Z   {
+2026-07-18T15:44:17.488309213Z     "text": "Yes, tell me more",
+2026-07-18T15:44:17.488312459Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:17.488334290Z   },
+2026-07-18T15:44:17.488337867Z   {
+2026-07-18T15:44:17.488340993Z     "text": "Not right now",
+2026-07-18T15:44:17.488344289Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:17.488347635Z   }
+2026-07-18T15:44:17.488350791Z ]
+2026-07-18T15:44:18.386527176Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 918123942231: {
+2026-07-18T15:44:18.386593429Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:18.386597908Z   "language": {
+2026-07-18T15:44:18.386601294Z     "code": "en"
+2026-07-18T15:44:18.386604740Z   },
+2026-07-18T15:44:18.386608157Z   "components": [
+2026-07-18T15:44:18.386611403Z     {
+2026-07-18T15:44:18.386614519Z       "type": "header",
+2026-07-18T15:44:18.386617915Z       "parameters": [
+2026-07-18T15:44:18.386621140Z         {
+2026-07-18T15:44:18.386624717Z           "type": "image",
+2026-07-18T15:44:18.386628023Z           "image": {
+2026-07-18T15:44:18.386631430Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:18.386658100Z           }
+2026-07-18T15:44:18.386661726Z         }
+2026-07-18T15:44:18.386665023Z       ]
+2026-07-18T15:44:18.386668068Z     },
+2026-07-18T15:44:18.386671334Z     {
+2026-07-18T15:44:18.386674650Z       "type": "body",
+2026-07-18T15:44:18.386678006Z       "parameters": [
+2026-07-18T15:44:18.386681532Z         {
+2026-07-18T15:44:18.386704425Z           "type": "text",
+2026-07-18T15:44:18.386708774Z           "text": "GANAVI H",
+2026-07-18T15:44:18.386713042Z           "parameter_name": "name1"
+2026-07-18T15:44:18.386716318Z         },
+2026-07-18T15:44:18.386719684Z         {
+2026-07-18T15:44:18.386722910Z           "type": "text",
+2026-07-18T15:44:18.386726337Z           "text": "GANAVI H",
+2026-07-18T15:44:18.386729662Z           "parameter_name": "name2"
+2026-07-18T15:44:18.386732908Z         },
+2026-07-18T15:44:18.386735954Z         {
+2026-07-18T15:44:18.386739140Z           "type": "text",
+2026-07-18T15:44:18.386742606Z           "text": "GANAVI H",
+2026-07-18T15:44:18.386746022Z           "parameter_name": "name3"
+2026-07-18T15:44:18.386749198Z         }
+2026-07-18T15:44:18.386752274Z       ]
+2026-07-18T15:44:18.386755340Z     }
+2026-07-18T15:44:18.386937298Z   ]
+2026-07-18T15:44:18.386993883Z }
+2026-07-18T15:44:18.386998632Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:18.387005755Z   {
+2026-07-18T15:44:18.387008750Z     "text": "Yes, tell me more",
+2026-07-18T15:44:18.387011846Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:18.387025101Z   },
+2026-07-18T15:44:18.387028147Z   {
+2026-07-18T15:44:18.387031302Z     "text": "Not right now",
+2026-07-18T15:44:18.387034729Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:18.387038055Z   }
+2026-07-18T15:44:18.387041111Z ]
+2026-07-18T15:44:19.141399489Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 919986800295: {
+2026-07-18T15:44:19.141456605Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:19.141460582Z   "language": {
+2026-07-18T15:44:19.141463778Z     "code": "en"
+2026-07-18T15:44:19.141466714Z   },
+2026-07-18T15:44:19.141469639Z   "components": [
+2026-07-18T15:44:19.141472545Z     {
+2026-07-18T15:44:19.141475571Z       "type": "header",
+2026-07-18T15:44:19.141478595Z       "parameters": [
+2026-07-18T15:44:19.141481781Z         {
+2026-07-18T15:44:19.141484657Z           "type": "image",
+2026-07-18T15:44:19.141487662Z           "image": {
+2026-07-18T15:44:19.141490718Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:19.141496248Z           }
+2026-07-18T15:44:19.141499344Z         }
+2026-07-18T15:44:19.141502330Z       ]
+2026-07-18T15:44:19.141505325Z     },
+2026-07-18T15:44:19.141508201Z     {
+2026-07-18T15:44:19.141510996Z       "type": "body",
+2026-07-18T15:44:19.141514132Z       "parameters": [
+2026-07-18T15:44:19.141517117Z         {
+2026-07-18T15:44:19.141520033Z           "type": "text",
+2026-07-18T15:44:19.141526705Z           "text": "SHALU",
+2026-07-18T15:44:19.141531003Z           "parameter_name": "name1"
+2026-07-18T15:44:19.141534349Z         },
+2026-07-18T15:44:19.141537925Z         {
+2026-07-18T15:44:19.141540671Z           "type": "text",
+2026-07-18T15:44:19.141569064Z           "text": "SHALU",
+2026-07-18T15:44:19.141572691Z           "parameter_name": "name2"
+2026-07-18T15:44:19.141575877Z         },
+2026-07-18T15:44:19.141578882Z         {
+2026-07-18T15:44:19.141584944Z           "type": "text",
+2026-07-18T15:44:19.141589912Z           "text": "SHALU",
+2026-07-18T15:44:19.141592837Z           "parameter_name": "name3"
+2026-07-18T15:44:19.141595693Z         }
+2026-07-18T15:44:19.141598448Z       ]
+2026-07-18T15:44:19.141601293Z     }
+2026-07-18T15:44:19.141603978Z   ]
+2026-07-18T15:44:19.141606764Z }
+2026-07-18T15:44:19.141609980Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:19.141616622Z   {
+2026-07-18T15:44:19.141619668Z     "text": "Yes, tell me more",
+2026-07-18T15:44:19.141623154Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:19.141626400Z   },
+2026-07-18T15:44:19.141629356Z   {
+2026-07-18T15:44:19.141632502Z     "text": "Not right now",
+2026-07-18T15:44:19.141635728Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:19.141638553Z   }
+2026-07-18T15:44:19.141641308Z ]
+2026-07-18T15:44:19.825796918Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 916360480359: {
+2026-07-18T15:44:19.825857079Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:19.825861246Z   "language": {
+2026-07-18T15:44:19.825864252Z     "code": "en"
+2026-07-18T15:44:19.825867378Z   },
+2026-07-18T15:44:19.825870173Z   "components": [
+2026-07-18T15:44:19.825873099Z     {
+2026-07-18T15:44:19.825875964Z       "type": "header",
+2026-07-18T15:44:19.825878879Z       "parameters": [
+2026-07-18T15:44:19.825881835Z         {
+2026-07-18T15:44:19.825884690Z           "type": "image",
+2026-07-18T15:44:19.825887796Z           "image": {
+2026-07-18T15:44:19.825891062Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:19.825896152Z           }
+2026-07-18T15:44:19.825899238Z         }
+2026-07-18T15:44:19.825902183Z       ]
+2026-07-18T15:44:19.825904978Z     },
+2026-07-18T15:44:19.825939803Z     {
+2026-07-18T15:44:19.825942718Z       "type": "body",
+2026-07-18T15:44:19.825946014Z       "parameters": [
+2026-07-18T15:44:19.825948900Z         {
+2026-07-18T15:44:19.825951735Z           "type": "text",
+2026-07-18T15:44:19.825954771Z           "text": "SANJANA G",
+2026-07-18T15:44:19.825957656Z           "parameter_name": "name1"
+2026-07-18T15:44:19.825960732Z         },
+2026-07-18T15:44:19.825963487Z         {
+2026-07-18T15:44:19.825966873Z           "type": "text",
+2026-07-18T15:44:19.825969829Z           "text": "SANJANA G",
+2026-07-18T15:44:19.825972814Z           "parameter_name": "name2"
+2026-07-18T15:44:19.825975669Z         },
+2026-07-18T15:44:19.825978374Z         {
+2026-07-18T15:44:19.825981099Z           "type": "text",
+2026-07-18T15:44:19.825983924Z           "text": "SANJANA G",
+2026-07-18T15:44:19.825986790Z           "parameter_name": "name3"
+2026-07-18T15:44:19.825989665Z         }
+2026-07-18T15:44:19.825992380Z       ]
+2026-07-18T15:44:19.825995105Z     }
+2026-07-18T15:44:19.825997850Z   ]
+2026-07-18T15:44:19.826000576Z }
+2026-07-18T15:44:19.826003651Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:19.826009763Z   {
+2026-07-18T15:44:19.826012528Z     "text": "Yes, tell me more",
+2026-07-18T15:44:19.826015524Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:19.826018409Z   },
+2026-07-18T15:44:19.826021114Z   {
+2026-07-18T15:44:19.826023819Z     "text": "Not right now",
+2026-07-18T15:44:19.826026694Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:19.826029569Z   }
+2026-07-18T15:44:19.826032284Z ]
+2026-07-18T15:44:20.494123980Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 919900692071: {
+2026-07-18T15:44:20.494178341Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:20.494182058Z   "language": {
+2026-07-18T15:44:20.494185124Z     "code": "en"
+2026-07-18T15:44:20.494188059Z   },
+2026-07-18T15:44:20.494190755Z   "components": [
+2026-07-18T15:44:20.494193500Z     {
+2026-07-18T15:44:20.494196205Z       "type": "header",
+2026-07-18T15:44:20.494252790Z       "parameters": [
+2026-07-18T15:44:20.494259902Z         {
+2026-07-18T15:44:20.494263940Z           "type": "image",
+2026-07-18T15:44:20.494267246Z           "image": {
+2026-07-18T15:44:20.494270572Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:20.494273969Z           }
+2026-07-18T15:44:20.494276694Z         }
+2026-07-18T15:44:20.494279729Z       ]
+2026-07-18T15:44:20.494282495Z     },
+2026-07-18T15:44:20.494285410Z     {
+2026-07-18T15:44:20.494288045Z       "type": "body",
+2026-07-18T15:44:20.494290890Z       "parameters": [
+2026-07-18T15:44:20.494293706Z         {
+2026-07-18T15:44:20.494296310Z           "type": "text",
+2026-07-18T15:44:20.494299026Z           "text": "SHASHANK M",
+2026-07-18T15:44:20.494301891Z           "parameter_name": "name1"
+2026-07-18T15:44:20.494304686Z         },
+2026-07-18T15:44:20.494307281Z         {
+2026-07-18T15:44:20.494310005Z           "type": "text",
+2026-07-18T15:44:20.494312700Z           "text": "SHASHANK M",
+2026-07-18T15:44:20.494316838Z           "parameter_name": "name2"
+2026-07-18T15:44:20.494319643Z         },
+2026-07-18T15:44:20.494322338Z         {
+2026-07-18T15:44:20.494324943Z           "type": "text",
+2026-07-18T15:44:20.494327608Z           "text": "SHASHANK M",
+2026-07-18T15:44:20.494330313Z           "parameter_name": "name3"
+2026-07-18T15:44:20.494333078Z         }
+2026-07-18T15:44:20.494335804Z       ]
+2026-07-18T15:44:20.494338469Z     }
+2026-07-18T15:44:20.494341134Z   ]
+2026-07-18T15:44:20.494343939Z }
+2026-07-18T15:44:20.494346774Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:20.494353296Z   {
+2026-07-18T15:44:20.494355981Z     "text": "Yes, tell me more",
+2026-07-18T15:44:20.494359117Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:20.494362323Z   },
+2026-07-18T15:44:20.494365238Z   {
+2026-07-18T15:44:20.494404051Z     "text": "Not right now",
+2026-07-18T15:44:20.494419048Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:20.494422204Z   }
+2026-07-18T15:44:20.494425480Z ]
+2026-07-18T15:44:21.185010781Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 919448938055: {
+2026-07-18T15:44:21.185087633Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:21.185094085Z   "language": {
+2026-07-18T15:44:21.185097802Z     "code": "en"
+2026-07-18T15:44:21.185101980Z   },
+2026-07-18T15:44:21.185108733Z   "components": [
+2026-07-18T15:44:21.185111969Z     {
+2026-07-18T15:44:21.185114764Z       "type": "header",
+2026-07-18T15:44:21.185117740Z       "parameters": [
+2026-07-18T15:44:21.185120866Z         {
+2026-07-18T15:44:21.185123661Z           "type": "image",
+2026-07-18T15:44:21.185153085Z           "image": {
+2026-07-18T15:44:21.185156461Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:21.185159798Z           }
+2026-07-18T15:44:21.185162763Z         }
+2026-07-18T15:44:21.185165468Z       ]
+2026-07-18T15:44:21.185168294Z     },
+2026-07-18T15:44:21.185171349Z     {
+2026-07-18T15:44:21.185174385Z       "type": "body",
+2026-07-18T15:44:21.185177591Z       "parameters": [
+2026-07-18T15:44:21.185180346Z         {
+2026-07-18T15:44:21.185183171Z           "type": "text",
+2026-07-18T15:44:21.185186146Z           "text": "ARJUN",
+2026-07-18T15:44:21.185189142Z           "parameter_name": "name1"
+2026-07-18T15:44:21.185192097Z         },
+2026-07-18T15:44:21.185194832Z         {
+2026-07-18T15:44:21.185197467Z           "type": "text",
+2026-07-18T15:44:21.185200162Z           "text": "ARJUN",
+2026-07-18T15:44:21.185202968Z           "parameter_name": "name2"
+2026-07-18T15:44:21.185205753Z         },
+2026-07-18T15:44:21.185208338Z         {
+2026-07-18T15:44:21.185211263Z           "type": "text",
+2026-07-18T15:44:21.185214159Z           "text": "ARJUN",
+2026-07-18T15:44:21.185216904Z           "parameter_name": "name3"
+2026-07-18T15:44:21.185219679Z         }
+2026-07-18T15:44:21.185222314Z       ]
+2026-07-18T15:44:21.185225099Z     }
+2026-07-18T15:44:21.185227824Z   ]
+2026-07-18T15:44:21.185230469Z }
+2026-07-18T15:44:21.185233224Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:21.185275603Z   {
+2026-07-18T15:44:21.185279059Z     "text": "Yes, tell me more",
+2026-07-18T15:44:21.185282315Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:21.185285511Z   },
+2026-07-18T15:44:21.185288327Z   {
+2026-07-18T15:44:21.185291091Z     "text": "Not right now",
+2026-07-18T15:44:21.185294077Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:21.185297042Z   }
+2026-07-18T15:44:21.185299948Z ]
+2026-07-18T15:44:21.882541741Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 916361103021: {
+2026-07-18T15:44:21.882611981Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:21.882617300Z   "language": {
+2026-07-18T15:44:21.882620546Z     "code": "en"
+2026-07-18T15:44:21.882623672Z   },
+2026-07-18T15:44:21.882626738Z   "components": [
+2026-07-18T15:44:21.882629884Z     {
+2026-07-18T15:44:21.882633150Z       "type": "header",
+2026-07-18T15:44:21.882636356Z       "parameters": [
+2026-07-18T15:44:21.882639592Z         {
+2026-07-18T15:44:21.882642618Z           "type": "image",
+2026-07-18T15:44:21.882645854Z           "image": {
+2026-07-18T15:44:21.882648990Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:21.882653659Z           }
+2026-07-18T15:44:21.882656865Z         }
+2026-07-18T15:44:21.882659890Z       ]
+2026-07-18T15:44:21.882662906Z     },
+2026-07-18T15:44:21.882666002Z     {
+2026-07-18T15:44:21.882669417Z       "type": "body",
+2026-07-18T15:44:21.882672984Z       "parameters": [
+2026-07-18T15:44:21.882676220Z         {
+2026-07-18T15:44:21.882679316Z           "type": "text",
+2026-07-18T15:44:21.882682742Z           "text": "AKSHITHA KANWAR",
+2026-07-18T15:44:21.882701848Z           "parameter_name": "name1"
+2026-07-18T15:44:21.882705314Z         },
+2026-07-18T15:44:21.882708500Z         {
+2026-07-18T15:44:21.882711536Z           "type": "text",
+2026-07-18T15:44:21.882714732Z           "text": "AKSHITHA KANWAR",
+2026-07-18T15:44:21.882718118Z           "parameter_name": "name2"
+2026-07-18T15:44:21.882721244Z         },
+2026-07-18T15:44:21.882765406Z         {
+2026-07-18T15:44:21.882771988Z           "type": "text",
+2026-07-18T15:44:21.882775595Z           "text": "AKSHITHA KANWAR",
+2026-07-18T15:44:21.882778790Z           "parameter_name": "name3"
+2026-07-18T15:44:21.882781936Z         }
+2026-07-18T15:44:21.882784942Z       ]
+2026-07-18T15:44:21.882788899Z     }
+2026-07-18T15:44:21.882791925Z   ]
+2026-07-18T15:44:21.882795982Z }
+2026-07-18T15:44:21.882799329Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:21.882805440Z   {
+2026-07-18T15:44:21.882808646Z     "text": "Yes, tell me more",
+2026-07-18T15:44:21.882811742Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:21.882814728Z   },
+2026-07-18T15:44:21.882824175Z   {
+2026-07-18T15:44:21.882827201Z     "text": "Not right now",
+2026-07-18T15:44:21.882830167Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:21.882832901Z   }
+2026-07-18T15:44:21.882835616Z ]
+2026-07-18T15:44:22.570826378Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 919611745695: {
+2026-07-18T15:44:22.570905916Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:22.570912157Z   "language": {
+2026-07-18T15:44:22.570934689Z     "code": "en"
+2026-07-18T15:44:22.570940590Z   },
+2026-07-18T15:44:22.570945900Z   "components": [
+2026-07-18T15:44:22.570950709Z     {
+2026-07-18T15:44:22.570955438Z       "type": "header",
+2026-07-18T15:44:22.570960387Z       "parameters": [
+2026-07-18T15:44:22.570965106Z         {
+2026-07-18T15:44:22.570969604Z           "type": "image",
+2026-07-18T15:44:22.570974132Z           "image": {
+2026-07-18T15:44:22.570979051Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:22.570984421Z           }
+2026-07-18T15:44:22.571000802Z         }
+2026-07-18T15:44:22.571005851Z       ]
+2026-07-18T15:44:22.571010279Z     },
+2026-07-18T15:44:22.571014678Z     {
+2026-07-18T15:44:22.571019176Z       "type": "body",
+2026-07-18T15:44:22.571179273Z       "parameters": [
+2026-07-18T15:44:22.571187429Z         {
+2026-07-18T15:44:22.571190605Z           "type": "text",
+2026-07-18T15:44:22.571210651Z           "text": "MANYASHREE M R",
+2026-07-18T15:44:22.571213827Z           "parameter_name": "name1"
+2026-07-18T15:44:22.571216943Z         },
+2026-07-18T15:44:22.571219808Z         {
+2026-07-18T15:44:22.571227533Z           "type": "text",
+2026-07-18T15:44:22.571230989Z           "text": "MANYASHREE M R",
+2026-07-18T15:44:22.571234185Z           "parameter_name": "name2"
+2026-07-18T15:44:22.571237291Z         },
+2026-07-18T15:44:22.571240287Z         {
+2026-07-18T15:44:22.571243102Z           "type": "text",
+2026-07-18T15:44:22.571246328Z           "text": "MANYASHREE M R",
+2026-07-18T15:44:22.571249333Z           "parameter_name": "name3"
+2026-07-18T15:44:22.571252248Z         }
+2026-07-18T15:44:22.571255053Z       ]
+2026-07-18T15:44:22.571258610Z     }
+2026-07-18T15:44:22.571262728Z   ]
+2026-07-18T15:44:22.571265663Z }
+2026-07-18T15:44:22.572315924Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:22.572338025Z   {
+2026-07-18T15:44:22.572342013Z     "text": "Yes, tell me more",
+2026-07-18T15:44:22.572345789Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:22.572349125Z   },
+2026-07-18T15:44:22.572352311Z   {
+2026-07-18T15:44:22.572355207Z     "text": "Not right now",
+2026-07-18T15:44:22.572358262Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:22.572361308Z   }
+2026-07-18T15:44:22.572364444Z ]
+2026-07-18T15:44:23.244526038Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 919686639060: {
+2026-07-18T15:44:23.244790759Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:23.244799145Z   "language": {
+2026-07-18T15:44:23.244803102Z     "code": "en"
+2026-07-18T15:44:23.244806409Z   },
+2026-07-18T15:44:23.244809765Z   "components": [
+2026-07-18T15:44:23.244813161Z     {
+2026-07-18T15:44:23.244816737Z       "type": "header",
+2026-07-18T15:44:23.244820013Z       "parameters": [
+2026-07-18T15:44:23.244823319Z         {
+2026-07-18T15:44:23.244861551Z           "type": "image",
+2026-07-18T15:44:23.244868364Z           "image": {
+2026-07-18T15:44:23.244871869Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:23.244875516Z           }
+2026-07-18T15:44:23.244878692Z         }
+2026-07-18T15:44:23.244881848Z       ]
+2026-07-18T15:44:23.244884643Z     },
+2026-07-18T15:44:23.244887539Z     {
+2026-07-18T15:44:23.244890464Z       "type": "body",
+2026-07-18T15:44:23.244917806Z       "parameters": [
+2026-07-18T15:44:23.244923326Z         {
+2026-07-18T15:44:23.244929126Z           "type": "text",
+2026-07-18T15:44:23.244932853Z           "text": "DURGA TANUSHREE B",
+2026-07-18T15:44:23.244936299Z           "parameter_name": "name1"
+2026-07-18T15:44:23.244939535Z         },
+2026-07-18T15:44:23.244942811Z         {
+2026-07-18T15:44:23.244945847Z           "type": "text",
+2026-07-18T15:44:23.244949254Z           "text": "DURGA TANUSHREE B",
+2026-07-18T15:44:23.244952550Z           "parameter_name": "name2"
+2026-07-18T15:44:23.244956086Z         },
+2026-07-18T15:44:23.244959142Z         {
+2026-07-18T15:44:23.244962358Z           "type": "text",
+2026-07-18T15:44:23.244965444Z           "text": "DURGA TANUSHREE B",
+2026-07-18T15:44:23.244968820Z           "parameter_name": "name3"
+2026-07-18T15:44:23.244971776Z         }
+2026-07-18T15:44:23.244974761Z       ]
+2026-07-18T15:44:23.244977527Z     }
+2026-07-18T15:44:23.244980571Z   ]
+2026-07-18T15:44:23.244983336Z }
+2026-07-18T15:44:23.244986542Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:23.244992413Z   {
+2026-07-18T15:44:23.244995419Z     "text": "Yes, tell me more",
+2026-07-18T15:44:23.244998545Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:23.245001430Z   },
+2026-07-18T15:44:23.245004646Z   {
+2026-07-18T15:44:23.245007692Z     "text": "Not right now",
+2026-07-18T15:44:23.245010858Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:23.245014244Z   }
+2026-07-18T15:44:23.245042376Z ]
+2026-07-18T15:44:28.136301032Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 919738445480: {
+2026-07-18T15:44:28.136408682Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:28.136414393Z   "language": {
+2026-07-18T15:44:28.136419092Z     "code": "en"
+2026-07-18T15:44:28.136423830Z   },
+2026-07-18T15:44:28.136428449Z   "components": [
+2026-07-18T15:44:28.136433428Z     {
+2026-07-18T15:44:28.136437797Z       "type": "header",
+2026-07-18T15:44:28.136442546Z       "parameters": [
+2026-07-18T15:44:28.136448697Z         {
+2026-07-18T15:44:28.136453065Z           "type": "image",
+2026-07-18T15:44:28.136457584Z           "image": {
+2026-07-18T15:44:28.136462042Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:28.136466890Z           }
+2026-07-18T15:44:28.136471268Z         }
+2026-07-18T15:44:28.136475577Z       ]
+2026-07-18T15:44:28.136479895Z     },
+2026-07-18T15:44:28.136484223Z     {
+2026-07-18T15:44:28.136488521Z       "type": "body",
+2026-07-18T15:44:28.136493029Z       "parameters": [
+2026-07-18T15:44:28.136497558Z         {
+2026-07-18T15:44:28.136501966Z           "type": "text",
+2026-07-18T15:44:28.136508779Z           "text": "JEEVANTH GOWDA K L",
+2026-07-18T15:44:28.136517575Z           "parameter_name": "name1"
+2026-07-18T15:44:28.136522604Z         },
+2026-07-18T15:44:28.136527493Z         {
+2026-07-18T15:44:28.136532061Z           "type": "text",
+2026-07-18T15:44:28.136536740Z           "text": "JEEVANTH GOWDA K L",
+2026-07-18T15:44:28.136541820Z           "parameter_name": "name2"
+2026-07-18T15:44:28.136546308Z         },
+2026-07-18T15:44:28.136550907Z         {
+2026-07-18T15:44:28.136555576Z           "type": "text",
+2026-07-18T15:44:28.136560455Z           "text": "JEEVANTH GOWDA K L",
+2026-07-18T15:44:28.136566526Z           "parameter_name": "name3"
+2026-07-18T15:44:28.136571385Z         }
+2026-07-18T15:44:28.136576283Z       ]
+2026-07-18T15:44:28.136580842Z     }
+2026-07-18T15:44:28.136585421Z   ]
+2026-07-18T15:44:28.136589799Z }
+2026-07-18T15:44:28.136594277Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:28.136634111Z   {
+2026-07-18T15:44:28.136637086Z     "text": "Yes, tell me more",
+2026-07-18T15:44:28.136640102Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:28.136643058Z   },
+2026-07-18T15:44:28.136645963Z   {
+2026-07-18T15:44:28.136648858Z     "text": "Not right now",
+2026-07-18T15:44:28.136651754Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:28.136654599Z   }
+2026-07-18T15:44:28.136657294Z ]
+2026-07-18T15:44:28.849197787Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 916360873947: {
+2026-07-18T15:44:28.849256547Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:28.849261586Z   "language": {
+2026-07-18T15:44:28.849264722Z     "code": "en"
+2026-07-18T15:44:28.849267738Z   },
+2026-07-18T15:44:28.849270763Z   "components": [
+2026-07-18T15:44:28.849273879Z     {
+2026-07-18T15:44:28.849276825Z       "type": "header",
+2026-07-18T15:44:28.849280111Z       "parameters": [
+2026-07-18T15:44:28.849283647Z         {
+2026-07-18T15:44:28.849287154Z           "type": "image",
+2026-07-18T15:44:28.849290180Z           "image": {
+2026-07-18T15:44:28.849293264Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:28.849296821Z           }
+2026-07-18T15:44:28.849299817Z         }
+2026-07-18T15:44:28.849302592Z       ]
+2026-07-18T15:44:28.849305628Z     },
+2026-07-18T15:44:28.849308804Z     {
+2026-07-18T15:44:28.849311960Z       "type": "body",
+2026-07-18T15:44:28.849315085Z       "parameters": [
+2026-07-18T15:44:28.849317991Z         {
+2026-07-18T15:44:28.849320806Z           "type": "text",
+2026-07-18T15:44:28.849323882Z           "text": "FAIZUL RAHMAN S",
+2026-07-18T15:44:28.849327108Z           "parameter_name": "name1"
+2026-07-18T15:44:28.849330224Z         },
+2026-07-18T15:44:28.849333370Z         {
+2026-07-18T15:44:28.849336315Z           "type": "text",
+2026-07-18T15:44:28.849339291Z           "text": "FAIZUL RAHMAN S",
+2026-07-18T15:44:28.849342216Z           "parameter_name": "name2"
+2026-07-18T15:44:28.849345583Z         },
+2026-07-18T15:44:28.849348758Z         {
+2026-07-18T15:44:28.849429388Z           "type": "text",
+2026-07-18T15:44:28.849439537Z           "text": "FAIZUL RAHMAN S",
+2026-07-18T15:44:28.849442613Z           "parameter_name": "name3"
+2026-07-18T15:44:28.849445779Z         }
+2026-07-18T15:44:28.849448674Z       ]
+2026-07-18T15:44:28.849452030Z     }
+2026-07-18T15:44:28.849455166Z   ]
+2026-07-18T15:44:28.849458000Z }
+2026-07-18T15:44:28.849461547Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:28.849469632Z   {
+2026-07-18T15:44:28.849473089Z     "text": "Yes, tell me more",
+2026-07-18T15:44:28.849476665Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:28.849480042Z   },
+2026-07-18T15:44:28.849483649Z   {
+2026-07-18T15:44:28.849486885Z     "text": "Not right now",
+2026-07-18T15:44:28.849490441Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:28.849493948Z   }
+2026-07-18T15:44:28.849497104Z ]
+2026-07-18T15:44:29.508796679Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 919448686510: {
+2026-07-18T15:44:29.508858073Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:29.508862241Z   "language": {
+2026-07-18T15:44:29.508865497Z     "code": "en"
+2026-07-18T15:44:29.508868463Z   },
+2026-07-18T15:44:29.508871378Z   "components": [
+2026-07-18T15:44:29.508874474Z     {
+2026-07-18T15:44:29.508877439Z       "type": "header",
+2026-07-18T15:44:29.508881416Z       "parameters": [
+2026-07-18T15:44:29.508884432Z         {
+2026-07-18T15:44:29.508887187Z           "type": "image",
+2026-07-18T15:44:29.508890133Z           "image": {
+2026-07-18T15:44:29.508893309Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:29.508897005Z           }
+2026-07-18T15:44:29.508899791Z         }
+2026-07-18T15:44:29.508903207Z       ]
+2026-07-18T15:44:29.508905962Z     },
+2026-07-18T15:44:29.508908918Z     {
+2026-07-18T15:44:29.508912404Z       "type": "body",
+2026-07-18T15:44:29.508915731Z       "parameters": [
+2026-07-18T15:44:29.508918766Z         {
+2026-07-18T15:44:29.508961806Z           "type": "text",
+2026-07-18T15:44:29.508968699Z           "text": "KAVYA P K",
+2026-07-18T15:44:29.508972216Z           "parameter_name": "name1"
+2026-07-18T15:44:29.508975682Z         },
+2026-07-18T15:44:29.508978628Z         {
+2026-07-18T15:44:29.508981503Z           "type": "text",
+2026-07-18T15:44:29.508984769Z           "text": "KAVYA P K",
+2026-07-18T15:44:29.508987984Z           "parameter_name": "name2"
+2026-07-18T15:44:29.508991481Z         },
+2026-07-18T15:44:29.508994426Z         {
+2026-07-18T15:44:29.508997282Z           "type": "text",
+2026-07-18T15:44:29.509000478Z           "text": "KAVYA P K",
+2026-07-18T15:44:29.509003714Z           "parameter_name": "name3"
+2026-07-18T15:44:29.509006839Z         }
+2026-07-18T15:44:29.509009905Z       ]
+2026-07-18T15:44:29.509012941Z     }
+2026-07-18T15:44:29.509016167Z   ]
+2026-07-18T15:44:29.509019263Z }
+2026-07-18T15:44:29.509823646Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:29.510487028Z   {
+2026-07-18T15:44:29.510499712Z     "text": "Yes, tell me more",
+2026-07-18T15:44:29.510503599Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:29.510506906Z   },
+2026-07-18T15:44:29.510509871Z   {
+2026-07-18T15:44:29.510512937Z     "text": "Not right now",
+2026-07-18T15:44:29.510516424Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:29.510519489Z   }
+2026-07-18T15:44:29.510522444Z ]
+2026-07-18T15:44:30.197118365Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 918095152060: {
+2026-07-18T15:44:30.197170332Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:30.197174469Z   "language": {
+2026-07-18T15:44:30.197177354Z     "code": "en"
+2026-07-18T15:44:30.197180360Z   },
+2026-07-18T15:44:30.197183105Z   "components": [
+2026-07-18T15:44:30.197185910Z     {
+2026-07-18T15:44:30.197188726Z       "type": "header",
+2026-07-18T15:44:30.197191631Z       "parameters": [
+2026-07-18T15:44:30.197194416Z         {
+2026-07-18T15:44:30.197197131Z           "type": "image",
+2026-07-18T15:44:30.197199947Z           "image": {
+2026-07-18T15:44:30.197237636Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:30.197243728Z           }
+2026-07-18T15:44:30.197246944Z         }
+2026-07-18T15:44:30.197250090Z       ]
+2026-07-18T15:44:30.197253226Z     },
+2026-07-18T15:44:30.197256261Z     {
+2026-07-18T15:44:30.197259267Z       "type": "body",
+2026-07-18T15:44:30.197262573Z       "parameters": [
+2026-07-18T15:44:30.197265819Z         {
+2026-07-18T15:44:30.197271830Z           "type": "text",
+2026-07-18T15:44:30.197277441Z           "text": "KALAVATHI S K",
+2026-07-18T15:44:30.197281068Z           "parameter_name": "name1"
+2026-07-18T15:44:30.197284263Z         },
+2026-07-18T15:44:30.197287489Z         {
+2026-07-18T15:44:30.197290555Z           "type": "text",
+2026-07-18T15:44:30.197293781Z           "text": "KALAVATHI S K",
+2026-07-18T15:44:30.197296796Z           "parameter_name": "name2"
+2026-07-18T15:44:30.197299992Z         },
+2026-07-18T15:44:30.197303088Z         {
+2026-07-18T15:44:30.197306254Z           "type": "text",
+2026-07-18T15:44:30.197309610Z           "text": "KALAVATHI S K",
+2026-07-18T15:44:30.197312726Z           "parameter_name": "name3"
+2026-07-18T15:44:30.197316042Z         }
+2026-07-18T15:44:30.197319028Z       ]
+2026-07-18T15:44:30.197321974Z     }
+2026-07-18T15:44:30.197324969Z   ]
+2026-07-18T15:44:30.197327784Z }
+2026-07-18T15:44:30.197331441Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:30.197337642Z   {
+2026-07-18T15:44:30.197340577Z     "text": "Yes, tell me more",
+2026-07-18T15:44:30.197343904Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:30.197347400Z   },
+2026-07-18T15:44:30.197350356Z   {
+2026-07-18T15:44:30.197353442Z     "text": "Not right now",
+2026-07-18T15:44:30.197356768Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:30.197359333Z   }
+2026-07-18T15:44:30.197361777Z ]
+2026-07-18T15:44:30.869313489Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 919598304824: {
+2026-07-18T15:44:30.869438170Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:30.869449832Z   "language": {
+2026-07-18T15:44:30.869457797Z     "code": "en"
+2026-07-18T15:44:30.869461334Z   },
+2026-07-18T15:44:30.869464079Z   "components": [
+2026-07-18T15:44:30.869466774Z     {
+2026-07-18T15:44:30.869469549Z       "type": "header",
+2026-07-18T15:44:30.869472445Z       "parameters": [
+2026-07-18T15:44:30.869475140Z         {
+2026-07-18T15:44:30.869478015Z           "type": "image",
+2026-07-18T15:44:30.869480820Z           "image": {
+2026-07-18T15:44:30.869483636Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:30.869486952Z           }
+2026-07-18T15:44:30.869489777Z         }
+2026-07-18T15:44:30.869492671Z       ]
+2026-07-18T15:44:30.869495727Z     },
+2026-07-18T15:44:30.869498703Z     {
+2026-07-18T15:44:30.869501638Z       "type": "body",
+2026-07-18T15:44:30.869504854Z       "parameters": [
+2026-07-18T15:44:30.869508030Z         {
+2026-07-18T15:44:30.869511096Z           "type": "text",
+2026-07-18T15:44:30.869518460Z           "text": "S JAGANATHAN",
+2026-07-18T15:44:30.869522758Z           "parameter_name": "name1"
+2026-07-18T15:44:30.869526194Z         },
+2026-07-18T15:44:30.869529491Z         {
+2026-07-18T15:44:30.869532687Z           "type": "text",
+2026-07-18T15:44:30.869535883Z           "text": "S JAGANATHAN",
+2026-07-18T15:44:30.869539179Z           "parameter_name": "name2"
+2026-07-18T15:44:30.869542525Z         },
+2026-07-18T15:44:30.869545680Z         {
+2026-07-18T15:44:30.869548846Z           "type": "text",
+2026-07-18T15:44:30.869554797Z           "text": "S JAGANATHAN",
+2026-07-18T15:44:30.869560077Z           "parameter_name": "name3"
+2026-07-18T15:44:30.869588300Z         }
+2026-07-18T15:44:30.869592117Z       ]
+2026-07-18T15:44:30.869594932Z     }
+2026-07-18T15:44:30.869599160Z   ]
+2026-07-18T15:44:30.869602035Z }
+2026-07-18T15:44:30.869605070Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:30.869623415Z   {
+2026-07-18T15:44:30.869629717Z     "text": "Yes, tell me more",
+2026-07-18T15:44:30.869633403Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:30.869636700Z   },
+2026-07-18T15:44:30.869640026Z   {
+2026-07-18T15:44:30.869643112Z     "text": "Not right now",
+2026-07-18T15:44:30.869646348Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:30.869649594Z   }
+2026-07-18T15:44:30.869656486Z ]
+2026-07-18T15:44:31.546223641Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 919880416711: {
+2026-07-18T15:44:31.546289412Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:31.546293790Z   "language": {
+2026-07-18T15:44:31.546296926Z     "code": "en"
+2026-07-18T15:44:31.546300012Z   },
+2026-07-18T15:44:31.546302787Z   "components": [
+2026-07-18T15:44:31.546305733Z     {
+2026-07-18T15:44:31.546308478Z       "type": "header",
+2026-07-18T15:44:31.546311373Z       "parameters": [
+2026-07-18T15:44:31.546314219Z         {
+2026-07-18T15:44:31.546317365Z           "type": "image",
+2026-07-18T15:44:31.546320751Z           "image": {
+2026-07-18T15:44:31.546324107Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:31.546328065Z           }
+2026-07-18T15:44:31.546331261Z         }
+2026-07-18T15:44:31.546334517Z       ]
+2026-07-18T15:44:31.546337502Z     },
+2026-07-18T15:44:31.546340728Z     {
+2026-07-18T15:44:31.546343873Z       "type": "body",
+2026-07-18T15:44:31.546347199Z       "parameters": [
+2026-07-18T15:44:31.546350646Z         {
+2026-07-18T15:44:31.546353822Z           "type": "text",
+2026-07-18T15:44:31.546357098Z           "text": "SUMAIRA A",
+2026-07-18T15:44:31.546360464Z           "parameter_name": "name1"
+2026-07-18T15:44:31.546363811Z         },
+2026-07-18T15:44:31.546392024Z         {
+2026-07-18T15:44:31.546398364Z           "type": "text",
+2026-07-18T15:44:31.546401711Z           "text": "SUMAIRA A",
+2026-07-18T15:44:31.546404847Z           "parameter_name": "name2"
+2026-07-18T15:44:31.546408053Z         },
+2026-07-18T15:44:31.546411148Z         {
+2026-07-18T15:44:31.546414104Z           "type": "text",
+2026-07-18T15:44:31.546417380Z           "text": "SUMAIRA A",
+2026-07-18T15:44:31.546450152Z           "parameter_name": "name3"
+2026-07-18T15:44:31.546453557Z         }
+2026-07-18T15:44:31.546456502Z       ]
+2026-07-18T15:44:31.546459588Z     }
+2026-07-18T15:44:31.546462414Z   ]
+2026-07-18T15:44:31.546465379Z }
+2026-07-18T15:44:31.546623893Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:31.546639763Z   {
+2026-07-18T15:44:31.546646165Z     "text": "Yes, tell me more",
+2026-07-18T15:44:31.546649642Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:31.546652467Z   },
+2026-07-18T15:44:31.546655182Z   {
+2026-07-18T15:44:31.546657827Z     "text": "Not right now",
+2026-07-18T15:44:31.546660622Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:31.546663428Z   }
+2026-07-18T15:44:31.546666032Z ]
+2026-07-18T15:44:32.244563690Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 919380989966: {
+2026-07-18T15:44:32.244609636Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:32.244613833Z   "language": {
+2026-07-18T15:44:32.244616849Z     "code": "en"
+2026-07-18T15:44:32.244619584Z   },
+2026-07-18T15:44:32.244622450Z   "components": [
+2026-07-18T15:44:32.244625806Z     {
+2026-07-18T15:44:32.244629082Z       "type": "header",
+2026-07-18T15:44:32.244633070Z       "parameters": [
+2026-07-18T15:44:32.244635715Z         {
+2026-07-18T15:44:32.244638209Z           "type": "image",
+2026-07-18T15:44:32.244640794Z           "image": {
+2026-07-18T15:44:32.244643438Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:32.244646333Z           }
+2026-07-18T15:44:32.244648808Z         }
+2026-07-18T15:44:32.244651233Z       ]
+2026-07-18T15:44:32.244653697Z     },
+2026-07-18T15:44:32.244656232Z     {
+2026-07-18T15:44:32.244658667Z       "type": "body",
+2026-07-18T15:44:32.244661211Z       "parameters": [
+2026-07-18T15:44:32.244663786Z         {
+2026-07-18T15:44:32.244666271Z           "type": "text",
+2026-07-18T15:44:32.244668886Z           "text": "PRIYA DARSHINI T S",
+2026-07-18T15:44:32.244702999Z           "parameter_name": "name1"
+2026-07-18T15:44:32.244705884Z         },
+2026-07-18T15:44:32.244708419Z         {
+2026-07-18T15:44:32.244746039Z           "type": "text",
+2026-07-18T15:44:32.244748704Z           "text": "PRIYA DARSHINI T S",
+2026-07-18T15:44:32.244751299Z           "parameter_name": "name2"
+2026-07-18T15:44:32.244753863Z         },
+2026-07-18T15:44:32.244756318Z         {
+2026-07-18T15:44:32.244758903Z           "type": "text",
+2026-07-18T15:44:32.244761447Z           "text": "PRIYA DARSHINI T S",
+2026-07-18T15:44:32.244764062Z           "parameter_name": "name3"
+2026-07-18T15:44:32.244766777Z         }
+2026-07-18T15:44:32.244769362Z       ]
+2026-07-18T15:44:32.244771797Z     }
+2026-07-18T15:44:32.244774231Z   ]
+2026-07-18T15:44:32.244776696Z }
+2026-07-18T15:44:32.244779341Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:32.244784751Z   {
+2026-07-18T15:44:32.244787216Z     "text": "Yes, tell me more",
+2026-07-18T15:44:32.244789871Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:32.244792466Z   },
+2026-07-18T15:44:32.244794890Z   {
+2026-07-18T15:44:32.244797455Z     "text": "Not right now",
+2026-07-18T15:44:32.244800130Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:32.244802775Z   }
+2026-07-18T15:44:32.244805209Z ]
+2026-07-18T15:44:32.930789773Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 919611924860: {
+2026-07-18T15:44:32.930861807Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:32.930869091Z   "language": {
+2026-07-18T15:44:32.930873960Z     "code": "en"
+2026-07-18T15:44:32.930878759Z   },
+2026-07-18T15:44:32.930883498Z   "components": [
+2026-07-18T15:44:32.930889478Z     {
+2026-07-18T15:44:32.930893906Z       "type": "header",
+2026-07-18T15:44:32.930898535Z       "parameters": [
+2026-07-18T15:44:32.930903063Z         {
+2026-07-18T15:44:32.930907502Z           "type": "image",
+2026-07-18T15:44:32.930912341Z           "image": {
+2026-07-18T15:44:32.930917039Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:32.930955501Z           }
+2026-07-18T15:44:32.930958897Z         }
+2026-07-18T15:44:32.930961812Z       ]
+2026-07-18T15:44:32.930964818Z     },
+2026-07-18T15:44:32.930967633Z     {
+2026-07-18T15:44:32.930970789Z       "type": "body",
+2026-07-18T15:44:32.930973825Z       "parameters": [
+2026-07-18T15:44:32.930976730Z         {
+2026-07-18T15:44:32.930979606Z           "type": "text",
+2026-07-18T15:44:32.930982531Z           "text": "ANJALI B A",
+2026-07-18T15:44:32.930985627Z           "parameter_name": "name1"
+2026-07-18T15:44:32.930989043Z         },
+2026-07-18T15:44:32.930991929Z         {
+2026-07-18T15:44:32.930994794Z           "type": "text",
+2026-07-18T15:44:32.930997629Z           "text": "ANJALI B A",
+2026-07-18T15:44:32.931000694Z           "parameter_name": "name2"
+2026-07-18T15:44:32.931003550Z         },
+2026-07-18T15:44:32.931006275Z         {
+2026-07-18T15:44:32.931009180Z           "type": "text",
+2026-07-18T15:44:32.931012206Z           "text": "ANJALI B A",
+2026-07-18T15:44:32.931015292Z           "parameter_name": "name3"
+2026-07-18T15:44:32.931018478Z         }
+2026-07-18T15:44:32.931021473Z       ]
+2026-07-18T15:44:32.931024309Z     }
+2026-07-18T15:44:32.931027174Z   ]
+2026-07-18T15:44:32.931029899Z }
+2026-07-18T15:44:32.931032955Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:32.931066176Z   {
+2026-07-18T15:44:32.931069402Z     "text": "Yes, tell me more",
+2026-07-18T15:44:32.931072428Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:32.931075594Z   },
+2026-07-18T15:44:32.931078469Z   {
+2026-07-18T15:44:32.931081184Z     "text": "Not right now",
+2026-07-18T15:44:32.931084230Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:32.931087386Z   }
+2026-07-18T15:44:32.931090171Z ]
+2026-07-18T15:44:33.667353992Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 919845522969: {
+2026-07-18T15:44:33.667497578Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:33.667502447Z   "language": {
+2026-07-18T15:44:33.667551348Z     "code": "en"
+2026-07-18T15:44:33.667555385Z   },
+2026-07-18T15:44:33.667558381Z   "components": [
+2026-07-18T15:44:33.667561537Z     {
+2026-07-18T15:44:33.667564543Z       "type": "header",
+2026-07-18T15:44:33.667567929Z       "parameters": [
+2026-07-18T15:44:33.667570965Z         {
+2026-07-18T15:44:33.667573760Z           "type": "image",
+2026-07-18T15:44:33.667576796Z           "image": {
+2026-07-18T15:44:33.667579711Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:33.667583228Z           }
+2026-07-18T15:44:33.667586033Z         }
+2026-07-18T15:44:33.667588978Z       ]
+2026-07-18T15:44:33.667591964Z     },
+2026-07-18T15:44:33.667595060Z     {
+2026-07-18T15:44:33.667597925Z       "type": "body",
+2026-07-18T15:44:33.667600891Z       "parameters": [
+2026-07-18T15:44:33.667603705Z         {
+2026-07-18T15:44:33.667606631Z           "type": "text",
+2026-07-18T15:44:33.667609556Z           "text": "DHANUSH U",
+2026-07-18T15:44:33.667613033Z           "parameter_name": "name1"
+2026-07-18T15:44:33.667616148Z         },
+2026-07-18T15:44:33.667619074Z         {
+2026-07-18T15:44:33.667621949Z           "type": "text",
+2026-07-18T15:44:33.667625276Z           "text": "DHANUSH U",
+2026-07-18T15:44:33.667628431Z           "parameter_name": "name2"
+2026-07-18T15:44:33.667631567Z         },
+2026-07-18T15:44:33.667634924Z         {
+2026-07-18T15:44:33.667637939Z           "type": "text",
+2026-07-18T15:44:33.667640915Z           "text": "DHANUSH U",
+2026-07-18T15:44:33.667644001Z           "parameter_name": "name3"
+2026-07-18T15:44:33.667647036Z         }
+2026-07-18T15:44:33.667649832Z       ]
+2026-07-18T15:44:33.667652737Z     }
+2026-07-18T15:44:33.667655793Z   ]
+2026-07-18T15:44:33.667659178Z }
+2026-07-18T15:44:33.667662574Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:33.667669367Z   {
+2026-07-18T15:44:33.667680989Z     "text": "Yes, tell me more",
+2026-07-18T15:44:33.667684836Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:33.667688243Z   },
+2026-07-18T15:44:33.667727195Z   {
+2026-07-18T15:44:33.667731413Z     "text": "Not right now",
+2026-07-18T15:44:33.667735200Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:33.667738486Z   }
+2026-07-18T15:44:33.667741532Z ]
+2026-07-18T15:44:34.348673252Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 918618771804: {
+2026-07-18T15:44:34.348745376Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:34.348749232Z   "language": {
+2026-07-18T15:44:34.348752298Z     "code": "en"
+2026-07-18T15:44:34.348755344Z   },
+2026-07-18T15:44:34.348758209Z   "components": [
+2026-07-18T15:44:34.348761135Z     {
+2026-07-18T15:44:34.348763970Z       "type": "header",
+2026-07-18T15:44:34.348767016Z       "parameters": [
+2026-07-18T15:44:34.348769891Z         {
+2026-07-18T15:44:34.348772766Z           "type": "image",
+2026-07-18T15:44:34.348775692Z           "image": {
+2026-07-18T15:44:34.348778637Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:34.348781974Z           }
+2026-07-18T15:44:34.348784769Z         }
+2026-07-18T15:44:34.348787544Z       ]
+2026-07-18T15:44:34.348790339Z     },
+2026-07-18T15:44:34.348793105Z     {
+2026-07-18T15:44:34.348795860Z       "type": "body",
+2026-07-18T15:44:34.348798785Z       "parameters": [
+2026-07-18T15:44:34.348801660Z         {
+2026-07-18T15:44:34.348804445Z           "type": "text",
+2026-07-18T15:44:34.348807370Z           "text": "AKSHAYA B",
+2026-07-18T15:44:34.348810316Z           "parameter_name": "name1"
+2026-07-18T15:44:34.348813311Z         },
+2026-07-18T15:44:34.348816097Z         {
+2026-07-18T15:44:34.348818832Z           "type": "text",
+2026-07-18T15:44:34.348821697Z           "text": "AKSHAYA B",
+2026-07-18T15:44:34.348824593Z           "parameter_name": "name2"
+2026-07-18T15:44:34.348827478Z         },
+2026-07-18T15:44:34.348830233Z         {
+2026-07-18T15:44:34.348832998Z           "type": "text",
+2026-07-18T15:44:34.348835854Z           "text": "AKSHAYA B",
+2026-07-18T15:44:34.348838719Z           "parameter_name": "name3"
+2026-07-18T15:44:34.348841615Z         }
+2026-07-18T15:44:34.348877140Z       ]
+2026-07-18T15:44:34.348880166Z     }
+2026-07-18T15:44:34.348882991Z   ]
+2026-07-18T15:44:34.348885776Z }
+2026-07-18T15:44:34.348888632Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:34.348894513Z   {
+2026-07-18T15:44:34.348897308Z     "text": "Yes, tell me more",
+2026-07-18T15:44:34.348900334Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:34.348903269Z   },
+2026-07-18T15:44:34.348906034Z   {
+2026-07-18T15:44:34.348908810Z     "text": "Not right now",
+2026-07-18T15:44:34.348911874Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:34.348915681Z   }
+2026-07-18T15:44:34.348918517Z ]
+2026-07-18T15:44:39.279152270Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 918548963541: {
+2026-07-18T15:44:39.279229504Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:39.279234703Z   "language": {
+2026-07-18T15:44:39.279239041Z     "code": "en"
+2026-07-18T15:44:39.279243309Z   },
+2026-07-18T15:44:39.279248168Z   "components": [
+2026-07-18T15:44:39.279252476Z     {
+2026-07-18T15:44:39.279256965Z       "type": "header",
+2026-07-18T15:44:39.279261283Z       "parameters": [
+2026-07-18T15:44:39.279265521Z         {
+2026-07-18T15:44:39.279269769Z           "type": "image",
+2026-07-18T15:44:39.279274167Z           "image": {
+2026-07-18T15:44:39.279278225Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:39.279283164Z           }
+2026-07-18T15:44:39.279287090Z         }
+2026-07-18T15:44:39.279291148Z       ]
+2026-07-18T15:44:39.279295095Z     },
+2026-07-18T15:44:39.279299574Z     {
+2026-07-18T15:44:39.279310514Z       "type": "body",
+2026-07-18T15:44:39.279316525Z       "parameters": [
+2026-07-18T15:44:39.279323559Z         {
+2026-07-18T15:44:39.279332085Z           "type": "text",
+2026-07-18T15:44:39.279336894Z           "text": "HEMANTH KUMAR B M",
+2026-07-18T15:44:39.279341461Z           "parameter_name": "name1"
+2026-07-18T15:44:39.279346000Z         },
+2026-07-18T15:44:39.279440486Z         {
+2026-07-18T15:44:39.279448281Z           "type": "text",
+2026-07-18T15:44:39.279451506Z           "text": "HEMANTH KUMAR B M",
+2026-07-18T15:44:39.279454712Z           "parameter_name": "name2"
+2026-07-18T15:44:39.279458008Z         },
+2026-07-18T15:44:39.279461234Z         {
+2026-07-18T15:44:39.279464390Z           "type": "text",
+2026-07-18T15:44:39.279467616Z           "text": "HEMANTH KUMAR B M",
+2026-07-18T15:44:39.279470962Z           "parameter_name": "name3"
+2026-07-18T15:44:39.279474308Z         }
+2026-07-18T15:44:39.279480480Z       ]
+2026-07-18T15:44:39.279485159Z     }
+2026-07-18T15:44:39.279487904Z   ]
+2026-07-18T15:44:39.279491020Z }
+2026-07-18T15:44:39.279494446Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:39.279501469Z   {
+2026-07-18T15:44:39.279504154Z     "text": "Yes, tell me more",
+2026-07-18T15:44:39.279507199Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:39.279509964Z   },
+2026-07-18T15:44:39.279512820Z   {
+2026-07-18T15:44:39.279515394Z     "text": "Not right now",
+2026-07-18T15:44:39.279518390Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:39.279521325Z   }
+2026-07-18T15:44:39.279524051Z ]
+2026-07-18T15:44:39.995914853Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 919632965063: {
+2026-07-18T15:44:39.996077526Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:39.996084387Z   "language": {
+2026-07-18T15:44:39.996087834Z     "code": "en"
+2026-07-18T15:44:39.996090970Z   },
+2026-07-18T15:44:39.996093765Z   "components": [
+2026-07-18T15:44:39.996096901Z     {
+2026-07-18T15:44:39.996099636Z       "type": "header",
+2026-07-18T15:44:39.996102451Z       "parameters": [
+2026-07-18T15:44:39.996105257Z         {
+2026-07-18T15:44:39.996116708Z           "type": "image",
+2026-07-18T15:44:39.996119634Z           "image": {
+2026-07-18T15:44:39.996122649Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:39.996125765Z           }
+2026-07-18T15:44:39.996161261Z         }
+2026-07-18T15:44:39.996164326Z       ]
+2026-07-18T15:44:39.996167152Z     },
+2026-07-18T15:44:39.996169927Z     {
+2026-07-18T15:44:39.996211965Z       "type": "body",
+2026-07-18T15:44:39.996215481Z       "parameters": [
+2026-07-18T15:44:39.996218657Z         {
+2026-07-18T15:44:39.996222114Z           "type": "text",
+2026-07-18T15:44:39.996225590Z           "text": "JEEVAN ANTHONY",
+2026-07-18T15:44:39.996228846Z           "parameter_name": "name1"
+2026-07-18T15:44:39.996232072Z         },
+2026-07-18T15:44:39.996238865Z         {
+2026-07-18T15:44:39.996241991Z           "type": "text",
+2026-07-18T15:44:39.996245106Z           "text": "JEEVAN ANTHONY",
+2026-07-18T15:44:39.996248212Z           "parameter_name": "name2"
+2026-07-18T15:44:39.996251388Z         },
+2026-07-18T15:44:39.996259262Z         {
+2026-07-18T15:44:39.996262499Z           "type": "text",
+2026-07-18T15:44:39.996265524Z           "text": "JEEVAN ANTHONY",
+2026-07-18T15:44:39.996268860Z           "parameter_name": "name3"
+2026-07-18T15:44:39.996271706Z         }
+2026-07-18T15:44:39.996274571Z       ]
+2026-07-18T15:44:39.996277477Z     }
+2026-07-18T15:44:39.996280472Z   ]
+2026-07-18T15:44:39.996283448Z }
+2026-07-18T15:44:39.996286834Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:39.996293637Z   {
+2026-07-18T15:44:39.996296402Z     "text": "Yes, tell me more",
+2026-07-18T15:44:39.996299407Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:39.996302302Z   },
+2026-07-18T15:44:39.996305107Z   {
+2026-07-18T15:44:39.996307742Z     "text": "Not right now",
+2026-07-18T15:44:39.996310558Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:39.996313383Z   }
+2026-07-18T15:44:39.996315988Z ]
+2026-07-18T15:44:40.665795317Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 919945522579: {
+2026-07-18T15:44:40.665855529Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:40.665861420Z   "language": {
+2026-07-18T15:44:40.665865077Z     "code": "en"
+2026-07-18T15:44:40.665871740Z   },
+2026-07-18T15:44:40.665910341Z   "components": [
+2026-07-18T15:44:40.665913828Z     {
+2026-07-18T15:44:40.665916833Z       "type": "header",
+2026-07-18T15:44:40.665922294Z       "parameters": [
+2026-07-18T15:44:40.665925439Z         {
+2026-07-18T15:44:40.665928625Z           "type": "image",
+2026-07-18T15:44:40.665931631Z           "image": {
+2026-07-18T15:44:40.665934757Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:40.665938634Z           }
+2026-07-18T15:44:40.665941459Z         }
+2026-07-18T15:44:40.665944284Z       ]
+2026-07-18T15:44:40.665947279Z     },
+2026-07-18T15:44:40.665950175Z     {
+2026-07-18T15:44:40.665953060Z       "type": "body",
+2026-07-18T15:44:40.665956116Z       "parameters": [
+2026-07-18T15:44:40.665958921Z         {
+2026-07-18T15:44:40.665961666Z           "type": "text",
+2026-07-18T15:44:40.665964742Z           "text": "SONIYA M K",
+2026-07-18T15:44:40.665967718Z           "parameter_name": "name1"
+2026-07-18T15:44:40.665971274Z         },
+2026-07-18T15:44:40.665974070Z         {
+2026-07-18T15:44:40.665978047Z           "type": "text",
+2026-07-18T15:44:40.665981083Z           "text": "SONIYA M K",
+2026-07-18T15:44:40.665984239Z           "parameter_name": "name2"
+2026-07-18T15:44:40.665987465Z         },
+2026-07-18T15:44:40.665990581Z         {
+2026-07-18T15:44:40.665993606Z           "type": "text",
+2026-07-18T15:44:40.665996702Z           "text": "SONIYA M K",
+2026-07-18T15:44:40.665999767Z           "parameter_name": "name3"
+2026-07-18T15:44:40.666002662Z         }
+2026-07-18T15:44:40.666005468Z       ]
+2026-07-18T15:44:40.666008333Z     }
+2026-07-18T15:44:40.666011168Z   ]
+2026-07-18T15:44:40.666013853Z }
+2026-07-18T15:44:40.666016829Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:40.666022680Z   {
+2026-07-18T15:44:40.666025756Z     "text": "Yes, tell me more",
+2026-07-18T15:44:40.666029102Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:40.666037778Z   },
+2026-07-18T15:44:40.666040373Z   {
+2026-07-18T15:44:40.666042918Z     "text": "Not right now",
+2026-07-18T15:44:40.666045543Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:40.666048178Z   }
+2026-07-18T15:44:40.666050672Z ]
+2026-07-18T15:44:41.327599523Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 919731061540: {
+2026-07-18T15:44:41.327654155Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:41.327658873Z   "language": {
+2026-07-18T15:44:41.327662220Z     "code": "en"
+2026-07-18T15:44:41.327665716Z   },
+2026-07-18T15:44:41.327668892Z   "components": [
+2026-07-18T15:44:41.327672108Z     {
+2026-07-18T15:44:41.327678570Z       "type": "header",
+2026-07-18T15:44:41.327683629Z       "parameters": [
+2026-07-18T15:44:41.328395271Z         {
+2026-07-18T15:44:41.328411401Z           "type": "image",
+2026-07-18T15:44:41.328415709Z           "image": {
+2026-07-18T15:44:41.328419296Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:41.328423173Z           }
+2026-07-18T15:44:41.328426459Z         }
+2026-07-18T15:44:41.328429545Z       ]
+2026-07-18T15:44:41.328434304Z     },
+2026-07-18T15:44:41.328442449Z     {
+2026-07-18T15:44:41.328473115Z       "type": "body",
+2026-07-18T15:44:41.328477023Z       "parameters": [
+2026-07-18T15:44:41.328480409Z         {
+2026-07-18T15:44:41.328483635Z           "type": "text",
+2026-07-18T15:44:41.328488955Z           "text": "RAKSHITHA R",
+2026-07-18T15:44:41.328495137Z           "parameter_name": "name1"
+2026-07-18T15:44:41.328498463Z         },
+2026-07-18T15:44:41.328501829Z         {
+2026-07-18T15:44:41.328504825Z           "type": "text",
+2026-07-18T15:44:41.328508020Z           "text": "RAKSHITHA R",
+2026-07-18T15:44:41.328511276Z           "parameter_name": "name2"
+2026-07-18T15:44:41.328514492Z         },
+2026-07-18T15:44:41.328518219Z         {
+2026-07-18T15:44:41.328521926Z           "type": "text",
+2026-07-18T15:44:41.328525423Z           "text": "RAKSHITHA R",
+2026-07-18T15:44:41.328528639Z           "parameter_name": "name3"
+2026-07-18T15:44:41.328532155Z         }
+2026-07-18T15:44:41.328535401Z       ]
+2026-07-18T15:44:41.328538597Z     }
+2026-07-18T15:44:41.328541813Z   ]
+2026-07-18T15:44:41.328577259Z }
+2026-07-18T15:44:41.328584092Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:41.328595573Z   {
+2026-07-18T15:44:41.328599030Z     "text": "Yes, tell me more",
+2026-07-18T15:44:41.328602256Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:41.328605672Z   },
+2026-07-18T15:44:41.328608908Z   {
+2026-07-18T15:44:41.328612124Z     "text": "Not right now",
+2026-07-18T15:44:41.328615600Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:41.328618846Z   }
+2026-07-18T15:44:41.328622182Z ]
+2026-07-18T15:44:42.011118537Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 919986314916: {
+2026-07-18T15:44:42.011199086Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:42.011206259Z   "language": {
+2026-07-18T15:44:42.011209686Z     "code": "en"
+2026-07-18T15:44:42.011213042Z   },
+2026-07-18T15:44:42.011216017Z   "components": [
+2026-07-18T15:44:42.011220706Z     {
+2026-07-18T15:44:42.011223622Z       "type": "header",
+2026-07-18T15:44:42.011226818Z       "parameters": [
+2026-07-18T15:44:42.011229793Z         {
+2026-07-18T15:44:42.011232518Z           "type": "image",
+2026-07-18T15:44:42.011235394Z           "image": {
+2026-07-18T15:44:42.011238450Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:42.011241796Z           }
+2026-07-18T15:44:42.011244581Z         }
+2026-07-18T15:44:42.011247485Z       ]
+2026-07-18T15:44:42.011250311Z     },
+2026-07-18T15:44:42.011253276Z     {
+2026-07-18T15:44:42.011256031Z       "type": "body",
+2026-07-18T15:44:42.011259177Z       "parameters": [
+2026-07-18T15:44:42.011262143Z         {
+2026-07-18T15:44:42.011265449Z           "type": "text",
+2026-07-18T15:44:42.011268495Z           "text": "ROHITH MALVIYA",
+2026-07-18T15:44:42.011271480Z           "parameter_name": "name1"
+2026-07-18T15:44:42.011274426Z         },
+2026-07-18T15:44:42.011277161Z         {
+2026-07-18T15:44:42.011279986Z           "type": "text",
+2026-07-18T15:44:42.011324940Z           "text": "ROHITH MALVIYA",
+2026-07-18T15:44:42.011328827Z           "parameter_name": "name2"
+2026-07-18T15:44:42.011331963Z         },
+2026-07-18T15:44:42.011334918Z         {
+2026-07-18T15:44:42.011337954Z           "type": "text",
+2026-07-18T15:44:42.011340930Z           "text": "ROHITH MALVIYA",
+2026-07-18T15:44:42.011344056Z           "parameter_name": "name3"
+2026-07-18T15:44:42.011347171Z         }
+2026-07-18T15:44:42.011350057Z       ]
+2026-07-18T15:44:42.011352822Z     }
+2026-07-18T15:44:42.011355616Z   ]
+2026-07-18T15:44:42.011358422Z }
+2026-07-18T15:44:42.011361577Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:42.011431888Z   {
+2026-07-18T15:44:42.011440244Z     "text": "Yes, tell me more",
+2026-07-18T15:44:42.011443200Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:42.011445854Z   },
+2026-07-18T15:44:42.011448550Z   {
+2026-07-18T15:44:42.011451245Z     "text": "Not right now",
+2026-07-18T15:44:42.011454050Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:42.011456825Z   }
+2026-07-18T15:44:42.011459440Z ]
+2026-07-18T15:44:42.691660080Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 919611366788: {
+2026-07-18T15:44:42.691747543Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:42.691752643Z   "language": {
+2026-07-18T15:44:42.691755769Z     "code": "en"
+2026-07-18T15:44:42.691758864Z   },
+2026-07-18T15:44:42.691762622Z   "components": [
+2026-07-18T15:44:42.691766188Z     {
+2026-07-18T15:44:42.691769113Z       "type": "header",
+2026-07-18T15:44:42.691771748Z       "parameters": [
+2026-07-18T15:44:42.691774373Z         {
+2026-07-18T15:44:42.691776817Z           "type": "image",
+2026-07-18T15:44:42.691779512Z           "image": {
+2026-07-18T15:44:42.691782097Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:42.691790623Z           }
+2026-07-18T15:44:42.691793148Z         }
+2026-07-18T15:44:42.691795652Z       ]
+2026-07-18T15:44:42.691828754Z     },
+2026-07-18T15:44:42.691831398Z     {
+2026-07-18T15:44:42.691833873Z       "type": "body",
+2026-07-18T15:44:42.691836448Z       "parameters": [
+2026-07-18T15:44:42.691839013Z         {
+2026-07-18T15:44:42.691841507Z           "type": "text",
+2026-07-18T15:44:42.691844062Z           "text": "JAGADEESH S",
+2026-07-18T15:44:42.691846737Z           "parameter_name": "name1"
+2026-07-18T15:44:42.691849432Z         },
+2026-07-18T15:44:42.691851947Z         {
+2026-07-18T15:44:42.691854392Z           "type": "text",
+2026-07-18T15:44:42.691857007Z           "text": "JAGADEESH S",
+2026-07-18T15:44:42.691859611Z           "parameter_name": "name2"
+2026-07-18T15:44:42.691862186Z         },
+2026-07-18T15:44:42.691864701Z         {
+2026-07-18T15:44:42.691867847Z           "type": "text",
+2026-07-18T15:44:42.691870893Z           "text": "JAGADEESH S",
+2026-07-18T15:44:42.691874109Z           "parameter_name": "name3"
+2026-07-18T15:44:42.691877334Z         }
+2026-07-18T15:44:42.691882644Z       ]
+2026-07-18T15:44:42.691888485Z     }
+2026-07-18T15:44:42.691891550Z   ]
+2026-07-18T15:44:42.691895237Z }
+2026-07-18T15:44:42.691898934Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:42.691905577Z   {
+2026-07-18T15:44:42.691908733Z     "text": "Yes, tell me more",
+2026-07-18T15:44:42.691911999Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:42.691914974Z   },
+2026-07-18T15:44:42.691917810Z   {
+2026-07-18T15:44:42.691920505Z     "text": "Not right now",
+2026-07-18T15:44:42.691923520Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:42.691926326Z   }
+2026-07-18T15:44:42.691929001Z ]
+2026-07-18T15:44:43.365028251Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 916362861652: {
+2026-07-18T15:44:43.365092230Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:43.365101638Z   "language": {
+2026-07-18T15:44:43.365109372Z     "code": "en"
+2026-07-18T15:44:43.365118730Z   },
+2026-07-18T15:44:43.365123979Z   "components": [
+2026-07-18T15:44:43.365129128Z     {
+2026-07-18T15:44:43.365164234Z       "type": "header",
+2026-07-18T15:44:43.365168812Z       "parameters": [
+2026-07-18T15:44:43.365174373Z         {
+2026-07-18T15:44:43.365180033Z           "type": "image",
+2026-07-18T15:44:43.365183589Z           "image": {
+2026-07-18T15:44:43.365186915Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:43.365190652Z           }
+2026-07-18T15:44:43.365193858Z         }
+2026-07-18T15:44:43.365197014Z       ]
+2026-07-18T15:44:43.365200902Z     },
+2026-07-18T15:44:43.365204108Z     {
+2026-07-18T15:44:43.365207364Z       "type": "body",
+2026-07-18T15:44:43.365210580Z       "parameters": [
+2026-07-18T15:44:43.365213766Z         {
+2026-07-18T15:44:43.365217583Z           "type": "text",
+2026-07-18T15:44:43.365225117Z           "text": "SUTHA KANNAN B",
+2026-07-18T15:44:43.365228754Z           "parameter_name": "name1"
+2026-07-18T15:44:43.365232220Z         },
+2026-07-18T15:44:43.365235476Z         {
+2026-07-18T15:44:43.365238682Z           "type": "text",
+2026-07-18T15:44:43.365242128Z           "text": "SUTHA KANNAN B",
+2026-07-18T15:44:43.365245544Z           "parameter_name": "name2"
+2026-07-18T15:44:43.365249021Z         },
+2026-07-18T15:44:43.365252397Z         {
+2026-07-18T15:44:43.365255754Z           "type": "text",
+2026-07-18T15:44:43.365259280Z           "text": "SUTHA KANNAN B",
+2026-07-18T15:44:43.365262777Z           "parameter_name": "name3"
+2026-07-18T15:44:43.365266143Z         }
+2026-07-18T15:44:43.365269179Z       ]
+2026-07-18T15:44:43.365272144Z     }
+2026-07-18T15:44:43.365275040Z   ]
+2026-07-18T15:44:43.365278065Z }
+2026-07-18T15:44:43.365281422Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:43.365292892Z   {
+2026-07-18T15:44:43.365296449Z     "text": "Yes, tell me more",
+2026-07-18T15:44:43.365299845Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:43.365303111Z   },
+2026-07-18T15:44:43.365306237Z   {
+2026-07-18T15:44:43.365315424Z     "text": "Not right now",
+2026-07-18T15:44:43.365328138Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:43.365332597Z   }
+2026-07-18T15:44:43.365339720Z ]
+2026-07-18T15:44:44.074665781Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 917975347729: {
+2026-07-18T15:44:44.074820508Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:44.074835486Z   "language": {
+2026-07-18T15:44:44.074839103Z     "code": "en"
+2026-07-18T15:44:44.074843160Z   },
+2026-07-18T15:44:44.074846256Z   "components": [
+2026-07-18T15:44:44.074849222Z     {
+2026-07-18T15:44:44.074852157Z       "type": "header",
+2026-07-18T15:44:44.074855183Z       "parameters": [
+2026-07-18T15:44:44.074858229Z         {
+2026-07-18T15:44:44.074861274Z           "type": "image",
+2026-07-18T15:44:44.074864249Z           "image": {
+2026-07-18T15:44:44.074867385Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:44.074870831Z           }
+2026-07-18T15:44:44.074873957Z         }
+2026-07-18T15:44:44.074876742Z       ]
+2026-07-18T15:44:44.074879678Z     },
+2026-07-18T15:44:44.074882613Z     {
+2026-07-18T15:44:44.074885529Z       "type": "body",
+2026-07-18T15:44:44.074888555Z       "parameters": [
+2026-07-18T15:44:44.074891550Z         {
+2026-07-18T15:44:44.074894406Z           "type": "text",
+2026-07-18T15:44:44.074897551Z           "text": "DEEKSHITH R NAIK",
+2026-07-18T15:44:44.074900607Z           "parameter_name": "name1"
+2026-07-18T15:44:44.074903593Z         },
+2026-07-18T15:44:44.074906478Z         {
+2026-07-18T15:44:44.074909304Z           "type": "text",
+2026-07-18T15:44:44.074912429Z           "text": "DEEKSHITH R NAIK",
+2026-07-18T15:44:44.074915475Z           "parameter_name": "name2"
+2026-07-18T15:44:44.074918570Z         },
+2026-07-18T15:44:44.074921465Z         {
+2026-07-18T15:44:44.074924551Z           "type": "text",
+2026-07-18T15:44:44.074927587Z           "text": "DEEKSHITH R NAIK",
+2026-07-18T15:44:44.074963935Z           "parameter_name": "name3"
+2026-07-18T15:44:44.074967301Z         }
+2026-07-18T15:44:44.074969826Z       ]
+2026-07-18T15:44:44.074972281Z     }
+2026-07-18T15:44:44.074974784Z   ]
+2026-07-18T15:44:44.074977209Z }
+2026-07-18T15:44:44.075045386Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:44.075122479Z   {
+2026-07-18T15:44:44.075126036Z     "text": "Yes, tell me more",
+2026-07-18T15:44:44.075128961Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:44.075131626Z   },
+2026-07-18T15:44:44.075134161Z   {
+2026-07-18T15:44:44.075137047Z     "text": "Not right now",
+2026-07-18T15:44:44.075139671Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:44.075142295Z   }
+2026-07-18T15:44:44.075144700Z ]
+2026-07-18T15:44:44.705630271Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 919945740677: {
+2026-07-18T15:44:44.705721851Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:44.705727732Z   "language": {
+2026-07-18T15:44:44.705731699Z     "code": "en"
+2026-07-18T15:44:44.705735707Z   },
+2026-07-18T15:44:44.705745395Z   "components": [
+2026-07-18T15:44:44.705748922Z     {
+2026-07-18T15:44:44.705752318Z       "type": "header",
+2026-07-18T15:44:44.705755783Z       "parameters": [
+2026-07-18T15:44:44.705759290Z         {
+2026-07-18T15:44:44.705762817Z           "type": "image",
+2026-07-18T15:44:44.705766293Z           "image": {
+2026-07-18T15:44:44.705770110Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:44.705774378Z           }
+2026-07-18T15:44:44.705777815Z         }
+2026-07-18T15:44:44.705781421Z       ]
+2026-07-18T15:44:44.705784698Z     },
+2026-07-18T15:44:44.705787894Z     {
+2026-07-18T15:44:44.705790919Z       "type": "body",
+2026-07-18T15:44:44.705794246Z       "parameters": [
+2026-07-18T15:44:44.705797462Z         {
+2026-07-18T15:44:44.705800527Z           "type": "text",
+2026-07-18T15:44:44.705804044Z           "text": "DHYANESH K R",
+2026-07-18T15:44:44.705807820Z           "parameter_name": "name1"
+2026-07-18T15:44:44.705811437Z         },
+2026-07-18T15:44:44.705814843Z         {
+2026-07-18T15:44:44.705818119Z           "type": "text",
+2026-07-18T15:44:44.705821646Z           "text": "DHYANESH K R",
+2026-07-18T15:44:44.705825273Z           "parameter_name": "name2"
+2026-07-18T15:44:44.705878512Z         },
+2026-07-18T15:44:44.705883511Z         {
+2026-07-18T15:44:44.705886967Z           "type": "text",
+2026-07-18T15:44:44.705890314Z           "text": "DHYANESH K R",
+2026-07-18T15:44:44.705894441Z           "parameter_name": "name3"
+2026-07-18T15:44:44.705898509Z         }
+2026-07-18T15:44:44.705902476Z       ]
+2026-07-18T15:44:44.705906003Z     }
+2026-07-18T15:44:44.705909289Z   ]
+2026-07-18T15:44:44.705912405Z }
+2026-07-18T15:44:44.705916252Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:44.705923595Z   {
+2026-07-18T15:44:44.705927102Z     "text": "Yes, tell me more",
+2026-07-18T15:44:44.705930528Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:44.705933965Z   },
+2026-07-18T15:44:44.705937301Z   {
+2026-07-18T15:44:44.705940517Z     "text": "Not right now",
+2026-07-18T15:44:44.705943923Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:44.705947780Z   }
+2026-07-18T15:44:44.705950986Z ]
+2026-07-18T15:44:45.345315817Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 919980983946: {
+2026-07-18T15:44:45.345361571Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:45.345365369Z   "language": {
+2026-07-18T15:44:45.345551955Z     "code": "en"
+2026-07-18T15:44:45.345555723Z   },
+2026-07-18T15:44:45.345558588Z   "components": [
+2026-07-18T15:44:45.345561674Z     {
+2026-07-18T15:44:45.345564529Z       "type": "header",
+2026-07-18T15:44:45.345567465Z       "parameters": [
+2026-07-18T15:44:45.345570470Z         {
+2026-07-18T15:44:45.345573284Z           "type": "image",
+2026-07-18T15:44:45.345576240Z           "image": {
+2026-07-18T15:44:45.345579236Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:45.345582582Z           }
+2026-07-18T15:44:45.345585427Z         }
+2026-07-18T15:44:45.345588122Z       ]
+2026-07-18T15:44:45.345590887Z     },
+2026-07-18T15:44:45.345593623Z     {
+2026-07-18T15:44:45.345596328Z       "type": "body",
+2026-07-18T15:44:45.345617047Z       "parameters": [
+2026-07-18T15:44:45.345619992Z         {
+2026-07-18T15:44:45.345622717Z           "type": "text",
+2026-07-18T15:44:45.345625603Z           "text": "MITHALI JAIN",
+2026-07-18T15:44:45.345628507Z           "parameter_name": "name1"
+2026-07-18T15:44:45.345631422Z         },
+2026-07-18T15:44:45.345634138Z         {
+2026-07-18T15:44:45.345636843Z           "type": "text",
+2026-07-18T15:44:45.345639698Z           "text": "MITHALI JAIN",
+2026-07-18T15:44:45.345642634Z           "parameter_name": "name2"
+2026-07-18T15:44:45.345645479Z         },
+2026-07-18T15:44:45.345648224Z         {
+2026-07-18T15:44:45.345651019Z           "type": "text",
+2026-07-18T15:44:45.345653855Z           "text": "MITHALI JAIN",
+2026-07-18T15:44:45.345656800Z           "parameter_name": "name3"
+2026-07-18T15:44:45.345660247Z         }
+2026-07-18T15:44:45.345663092Z       ]
+2026-07-18T15:44:45.345665917Z     }
+2026-07-18T15:44:45.345668712Z   ]
+2026-07-18T15:44:45.345671407Z }
+2026-07-18T15:44:45.345674373Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:45.345680234Z   {
+2026-07-18T15:44:45.345682968Z     "text": "Yes, tell me more",
+2026-07-18T15:44:45.345685944Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:45.345688809Z   },
+2026-07-18T15:44:45.345691534Z   {
+2026-07-18T15:44:45.345694239Z     "text": "Not right now",
+2026-07-18T15:44:45.345722402Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:45.345725708Z   }
+2026-07-18T15:44:45.345728604Z ]
+2026-07-18T15:44:50.364832530Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 919480183076: {
+2026-07-18T15:44:50.364887321Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:50.364892962Z   "language": {
+2026-07-18T15:44:50.364897671Z     "code": "en"
+2026-07-18T15:44:50.364902310Z   },
+2026-07-18T15:44:50.364907288Z   "components": [
+2026-07-18T15:44:50.364912047Z     {
+2026-07-18T15:44:50.364916665Z       "type": "header",
+2026-07-18T15:44:50.364921424Z       "parameters": [
+2026-07-18T15:44:50.364943335Z         {
+2026-07-18T15:44:50.364946842Z           "type": "image",
+2026-07-18T15:44:50.364950038Z           "image": {
+2026-07-18T15:44:50.364957532Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:50.364961008Z           }
+2026-07-18T15:44:50.364964023Z         }
+2026-07-18T15:44:50.364966969Z       ]
+2026-07-18T15:44:50.364970105Z     },
+2026-07-18T15:44:50.364973170Z     {
+2026-07-18T15:44:50.364975926Z       "type": "body",
+2026-07-18T15:44:50.364978901Z       "parameters": [
+2026-07-18T15:44:50.364981736Z         {
+2026-07-18T15:44:50.364984552Z           "type": "text",
+2026-07-18T15:44:50.364987477Z           "text": "NITESH M",
+2026-07-18T15:44:50.364990373Z           "parameter_name": "name1"
+2026-07-18T15:44:50.364993338Z         },
+2026-07-18T15:44:50.364996394Z         {
+2026-07-18T15:44:50.364999249Z           "type": "text",
+2026-07-18T15:44:50.365002335Z           "text": "NITESH M",
+2026-07-18T15:44:50.365005271Z           "parameter_name": "name2"
+2026-07-18T15:44:50.365008356Z         },
+2026-07-18T15:44:50.365011272Z         {
+2026-07-18T15:44:50.365014096Z           "type": "text",
+2026-07-18T15:44:50.365017062Z           "text": "NITESH M",
+2026-07-18T15:44:50.365020117Z           "parameter_name": "name3"
+2026-07-18T15:44:50.365023013Z         }
+2026-07-18T15:44:50.365025898Z       ]
+2026-07-18T15:44:50.365028704Z     }
+2026-07-18T15:44:50.365031429Z   ]
+2026-07-18T15:44:50.365034384Z }
+2026-07-18T15:44:50.365037690Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:50.365043411Z   {
+2026-07-18T15:44:50.365046357Z     "text": "Yes, tell me more",
+2026-07-18T15:44:50.365049613Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:50.365052548Z   },
+2026-07-18T15:44:50.365055564Z   {
+2026-07-18T15:44:50.365058429Z     "text": "Not right now",
+2026-07-18T15:44:50.365061766Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:50.365064851Z   }
+2026-07-18T15:44:50.365073597Z ]
+2026-07-18T15:44:51.084757223Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 919113991974: {
+2026-07-18T15:44:51.084818547Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:51.084822924Z   "language": {
+2026-07-18T15:44:51.084826170Z     "code": "en"
+2026-07-18T15:44:51.084829727Z   },
+2026-07-18T15:44:51.084833023Z   "components": [
+2026-07-18T15:44:51.084836239Z     {
+2026-07-18T15:44:51.084840066Z       "type": "header",
+2026-07-18T15:44:51.084843443Z       "parameters": [
+2026-07-18T15:44:51.084846739Z         {
+2026-07-18T15:44:51.084849985Z           "type": "image",
+2026-07-18T15:44:51.084853331Z           "image": {
+2026-07-18T15:44:51.084856477Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:51.084860284Z           }
+2026-07-18T15:44:51.084863400Z         }
+2026-07-18T15:44:51.084866376Z       ]
+2026-07-18T15:44:51.084869281Z     },
+2026-07-18T15:44:51.084872317Z     {
+2026-07-18T15:44:51.084875462Z       "type": "body",
+2026-07-18T15:44:51.084878538Z       "parameters": [
+2026-07-18T15:44:51.084881834Z         {
+2026-07-18T15:44:51.084885080Z           "type": "text",
+2026-07-18T15:44:51.084888647Z           "text": "KAVANA M",
+2026-07-18T15:44:51.084892213Z           "parameter_name": "name1"
+2026-07-18T15:44:51.084896201Z         },
+2026-07-18T15:44:51.084899537Z         {
+2026-07-18T15:44:51.084902783Z           "type": "text",
+2026-07-18T15:44:51.084905819Z           "text": "KAVANA M",
+2026-07-18T15:44:51.084909145Z           "parameter_name": "name2"
+2026-07-18T15:44:51.084912371Z         },
+2026-07-18T15:44:51.084915677Z         {
+2026-07-18T15:44:51.084918693Z           "type": "text",
+2026-07-18T15:44:51.084921829Z           "text": "KAVANA M",
+2026-07-18T15:44:51.084925165Z           "parameter_name": "name3"
+2026-07-18T15:44:51.084929472Z         }
+2026-07-18T15:44:51.084933009Z       ]
+2026-07-18T15:44:51.084936135Z     }
+2026-07-18T15:44:51.084939100Z   ]
+2026-07-18T15:44:51.084942196Z }
+2026-07-18T15:44:51.084945873Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:51.084984554Z   {
+2026-07-18T15:44:51.084988692Z     "text": "Yes, tell me more",
+2026-07-18T15:44:51.084991868Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:51.084994914Z   },
+2026-07-18T15:44:51.084998120Z   {
+2026-07-18T15:44:51.085000975Z     "text": "Not right now",
+2026-07-18T15:44:51.085004301Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:51.085007588Z   }
+2026-07-18T15:44:51.085010784Z ]
+2026-07-18T15:44:51.713904867Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 918050383506: {
+2026-07-18T15:44:51.713957044Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:51.713961662Z   "language": {
+2026-07-18T15:44:51.713965279Z     "code": "en"
+2026-07-18T15:44:51.713969157Z   },
+2026-07-18T15:44:51.713973364Z   "components": [
+2026-07-18T15:44:51.713977172Z     {
+2026-07-18T15:44:51.713980428Z       "type": "header",
+2026-07-18T15:44:51.713983964Z       "parameters": [
+2026-07-18T15:44:51.713987411Z         {
+2026-07-18T15:44:51.713990627Z           "type": "image",
+2026-07-18T15:44:51.713993993Z           "image": {
+2026-07-18T15:44:51.713997600Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:51.714001647Z           }
+2026-07-18T15:44:51.714004914Z         }
+2026-07-18T15:44:51.714008309Z       ]
+2026-07-18T15:44:51.714011505Z     },
+2026-07-18T15:44:51.714014721Z     {
+2026-07-18T15:44:51.714018087Z       "type": "body",
+2026-07-18T15:44:51.714021484Z       "parameters": [
+2026-07-18T15:44:51.714024770Z         {
+2026-07-18T15:44:51.714028136Z           "type": "text",
+2026-07-18T15:44:51.714031573Z           "text": "LAVANYA P",
+2026-07-18T15:44:51.714034959Z           "parameter_name": "name1"
+2026-07-18T15:44:51.714038506Z         },
+2026-07-18T15:44:51.714041792Z         {
+2026-07-18T15:44:51.714044988Z           "type": "text",
+2026-07-18T15:44:51.714048384Z           "text": "LAVANYA P",
+2026-07-18T15:44:51.714051881Z           "parameter_name": "name2"
+2026-07-18T15:44:51.714055217Z         },
+2026-07-18T15:44:51.714058363Z         {
+2026-07-18T15:44:51.714088068Z           "type": "text",
+2026-07-18T15:44:51.714091925Z           "text": "LAVANYA P",
+2026-07-18T15:44:51.714095311Z           "parameter_name": "name3"
+2026-07-18T15:44:51.714098738Z         }
+2026-07-18T15:44:51.714101964Z       ]
+2026-07-18T15:44:51.714105089Z     }
+2026-07-18T15:44:51.714108326Z   ]
+2026-07-18T15:44:51.714135195Z }
+2026-07-18T15:44:51.714138992Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:51.714145755Z   {
+2026-07-18T15:44:51.714149021Z     "text": "Yes, tell me more",
+2026-07-18T15:44:51.714152648Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:51.714156024Z   },
+2026-07-18T15:44:51.714159210Z   {
+2026-07-18T15:44:51.714162466Z     "text": "Not right now",
+2026-07-18T15:44:51.714165933Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:51.714169329Z   }
+2026-07-18T15:44:51.714172594Z ]
+2026-07-18T15:44:52.372859118Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 919740514421: {
+2026-07-18T15:44:52.372912527Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:52.372916945Z   "language": {
+2026-07-18T15:44:52.372920281Z     "code": "en"
+2026-07-18T15:44:52.372923577Z   },
+2026-07-18T15:44:52.372926803Z   "components": [
+2026-07-18T15:44:52.372929999Z     {
+2026-07-18T15:44:52.372933095Z       "type": "header",
+2026-07-18T15:44:52.372936341Z       "parameters": [
+2026-07-18T15:44:52.372939637Z         {
+2026-07-18T15:44:52.372942773Z           "type": "image",
+2026-07-18T15:44:52.372945979Z           "image": {
+2026-07-18T15:44:52.372949515Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:52.372953303Z           }
+2026-07-18T15:44:52.372956298Z         }
+2026-07-18T15:44:52.372959354Z       ]
+2026-07-18T15:44:52.372962420Z     },
+2026-07-18T15:44:52.372965606Z     {
+2026-07-18T15:44:52.372968611Z       "type": "body",
+2026-07-18T15:44:52.372971727Z       "parameters": [
+2026-07-18T15:44:52.372974792Z         {
+2026-07-18T15:44:52.373002404Z           "type": "text",
+2026-07-18T15:44:52.373006020Z           "text": "DHANUSH S",
+2026-07-18T15:44:52.373009437Z           "parameter_name": "name1"
+2026-07-18T15:44:52.373012793Z         },
+2026-07-18T15:44:52.373015809Z         {
+2026-07-18T15:44:52.373018844Z           "type": "text",
+2026-07-18T15:44:52.373022020Z           "text": "DHANUSH S",
+2026-07-18T15:44:52.373025256Z           "parameter_name": "name2"
+2026-07-18T15:44:52.373028493Z         },
+2026-07-18T15:44:52.373031527Z         {
+2026-07-18T15:44:52.373034643Z           "type": "text",
+2026-07-18T15:44:52.373037819Z           "text": "DHANUSH S",
+2026-07-18T15:44:52.373040965Z           "parameter_name": "name3"
+2026-07-18T15:44:52.373044171Z         }
+2026-07-18T15:44:52.373047187Z       ]
+2026-07-18T15:44:52.373050092Z     }
+2026-07-18T15:44:52.373053208Z   ]
+2026-07-18T15:44:52.373056244Z }
+2026-07-18T15:44:52.373059480Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:52.373066252Z   {
+2026-07-18T15:44:52.373069408Z     "text": "Yes, tell me more",
+2026-07-18T15:44:52.373072855Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:52.373076241Z   },
+2026-07-18T15:44:52.373079317Z   {
+2026-07-18T15:44:52.373082393Z     "text": "Not right now",
+2026-07-18T15:44:52.373085588Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:52.373088774Z   }
+2026-07-18T15:44:52.373091769Z ]
+2026-07-18T15:44:53.007004644Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 919900313207: {
+2026-07-18T15:44:53.007069404Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:53.007073692Z   "language": {
+2026-07-18T15:44:53.007076978Z     "code": "en"
+2026-07-18T15:44:53.007080225Z   },
+2026-07-18T15:44:53.007083411Z   "components": [
+2026-07-18T15:44:53.007086677Z     {
+2026-07-18T15:44:53.007089863Z       "type": "header",
+2026-07-18T15:44:53.007093139Z       "parameters": [
+2026-07-18T15:44:53.007096265Z         {
+2026-07-18T15:44:53.007099400Z           "type": "image",
+2026-07-18T15:44:53.007102626Z           "image": {
+2026-07-18T15:44:53.007142330Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:53.007146668Z           }
+2026-07-18T15:44:53.007149784Z         }
+2026-07-18T15:44:53.007152880Z       ]
+2026-07-18T15:44:53.007155946Z     },
+2026-07-18T15:44:53.007159000Z     {
+2026-07-18T15:44:53.007162246Z       "type": "body",
+2026-07-18T15:44:53.007165352Z       "parameters": [
+2026-07-18T15:44:53.007168428Z         {
+2026-07-18T15:44:53.007171313Z           "type": "text",
+2026-07-18T15:44:53.007174610Z           "text": "RAKSHITH P",
+2026-07-18T15:44:53.007177876Z           "parameter_name": "name1"
+2026-07-18T15:44:53.007181362Z         },
+2026-07-18T15:44:53.007184528Z         {
+2026-07-18T15:44:53.007187604Z           "type": "text",
+2026-07-18T15:44:53.007190670Z           "text": "RAKSHITH P",
+2026-07-18T15:44:53.007193986Z           "parameter_name": "name2"
+2026-07-18T15:44:53.007197112Z         },
+2026-07-18T15:44:53.007200057Z         {
+2026-07-18T15:44:53.007202993Z           "type": "text",
+2026-07-18T15:44:53.007206059Z           "text": "RAKSHITH P",
+2026-07-18T15:44:53.007209435Z           "parameter_name": "name3"
+2026-07-18T15:44:53.007212520Z         }
+2026-07-18T15:44:53.007215515Z       ]
+2026-07-18T15:44:53.007218571Z     }
+2026-07-18T15:44:53.007222448Z   ]
+2026-07-18T15:44:53.007225544Z }
+2026-07-18T15:44:53.007228720Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:53.007235813Z   {
+2026-07-18T15:44:53.007238899Z     "text": "Yes, tell me more",
+2026-07-18T15:44:53.007242155Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:53.007245311Z   },
+2026-07-18T15:44:53.007248307Z   {
+2026-07-18T15:44:53.007251232Z     "text": "Not right now",
+2026-07-18T15:44:53.007254508Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:53.007257764Z   }
+2026-07-18T15:44:53.007260720Z ]
+2026-07-18T15:44:53.658046380Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 919731181675: {
+2026-07-18T15:44:53.658133472Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:53.658138111Z   "language": {
+2026-07-18T15:44:53.658141416Z     "code": "en"
+2026-07-18T15:44:53.658144532Z   },
+2026-07-18T15:44:53.658147397Z   "components": [
+2026-07-18T15:44:53.658150583Z     {
+2026-07-18T15:44:53.658154220Z       "type": "header",
+2026-07-18T15:44:53.658157496Z       "parameters": [
+2026-07-18T15:44:53.658160432Z         {
+2026-07-18T15:44:53.658163267Z           "type": "image",
+2026-07-18T15:44:53.658166122Z           "image": {
+2026-07-18T15:44:53.658169218Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:53.658172705Z           }
+2026-07-18T15:44:53.658175550Z         }
+2026-07-18T15:44:53.658178405Z       ]
+2026-07-18T15:44:53.658181341Z     },
+2026-07-18T15:44:53.658184016Z     {
+2026-07-18T15:44:53.658186791Z       "type": "body",
+2026-07-18T15:44:53.658189566Z       "parameters": [
+2026-07-18T15:44:53.658192341Z         {
+2026-07-18T15:44:53.658195005Z           "type": "text",
+2026-07-18T15:44:53.658197961Z           "text": "B K NITHYA",
+2026-07-18T15:44:53.658200927Z           "parameter_name": "name1"
+2026-07-18T15:44:53.658203822Z         },
+2026-07-18T15:44:53.658206677Z         {
+2026-07-18T15:44:53.658209463Z           "type": "text",
+2026-07-18T15:44:53.658212328Z           "text": "B K NITHYA",
+2026-07-18T15:44:53.658215293Z           "parameter_name": "name2"
+2026-07-18T15:44:53.658218419Z         },
+2026-07-18T15:44:53.658221174Z         {
+2026-07-18T15:44:53.658224240Z           "type": "text",
+2026-07-18T15:44:53.658227356Z           "text": "B K NITHYA",
+2026-07-18T15:44:53.658230632Z           "parameter_name": "name3"
+2026-07-18T15:44:53.658233638Z         }
+2026-07-18T15:44:53.658236483Z       ]
+2026-07-18T15:44:53.658239369Z     }
+2026-07-18T15:44:53.658242124Z   ]
+2026-07-18T15:44:53.658244999Z }
+2026-07-18T15:44:53.658248005Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:53.658260668Z   {
+2026-07-18T15:44:53.658263974Z     "text": "Yes, tell me more",
+2026-07-18T15:44:53.658267120Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:53.658270135Z   },
+2026-07-18T15:44:53.658273021Z   {
+2026-07-18T15:44:53.658275736Z     "text": "Not right now",
+2026-07-18T15:44:53.658278872Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:53.658281937Z   }
+2026-07-18T15:44:53.658284893Z ]
+2026-07-18T15:44:54.296772863Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 919886194618: {
+2026-07-18T15:44:54.296826032Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:54.296830720Z   "language": {
+2026-07-18T15:44:54.296834297Z     "code": "en"
+2026-07-18T15:44:54.296837733Z   },
+2026-07-18T15:44:54.296841070Z   "components": [
+2026-07-18T15:44:54.296844566Z     {
+2026-07-18T15:44:54.296847762Z       "type": "header",
+2026-07-18T15:44:54.296851239Z       "parameters": [
+2026-07-18T15:44:54.296854735Z         {
+2026-07-18T15:44:54.296857911Z           "type": "image",
+2026-07-18T15:44:54.296861398Z           "image": {
+2026-07-18T15:44:54.296864874Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:54.296868762Z           }
+2026-07-18T15:44:54.296872058Z         }
+2026-07-18T15:44:54.296875364Z       ]
+2026-07-18T15:44:54.296878480Z     },
+2026-07-18T15:44:54.296881645Z     {
+2026-07-18T15:44:54.296884971Z       "type": "body",
+2026-07-18T15:44:54.296888297Z       "parameters": [
+2026-07-18T15:44:54.296891583Z         {
+2026-07-18T15:44:54.296894930Z           "type": "text",
+2026-07-18T15:44:54.296898326Z           "text": "KAVYASHREE V",
+2026-07-18T15:44:54.296901702Z           "parameter_name": "name1"
+2026-07-18T15:44:54.296905219Z         },
+2026-07-18T15:44:54.296908425Z         {
+2026-07-18T15:44:54.296911581Z           "type": "text",
+2026-07-18T15:44:54.296914937Z           "text": "KAVYASHREE V",
+2026-07-18T15:44:54.296918404Z           "parameter_name": "name2"
+2026-07-18T15:44:54.296921720Z         },
+2026-07-18T15:44:54.296925056Z         {
+2026-07-18T15:44:54.296928352Z           "type": "text",
+2026-07-18T15:44:54.296931618Z           "text": "KAVYASHREE V",
+2026-07-18T15:44:54.296960512Z           "parameter_name": "name3"
+2026-07-18T15:44:54.296964379Z         }
+2026-07-18T15:44:54.296967685Z       ]
+2026-07-18T15:44:54.296970821Z     }
+2026-07-18T15:44:54.296973947Z   ]
+2026-07-18T15:44:54.296977323Z }
+2026-07-18T15:44:54.296980589Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:54.296987081Z   {
+2026-07-18T15:44:54.296990297Z     "text": "Yes, tell me more",
+2026-07-18T15:44:54.296993733Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:54.296997239Z   },
+2026-07-18T15:44:54.297000486Z   {
+2026-07-18T15:44:54.297003611Z     "text": "Not right now",
+2026-07-18T15:44:54.297007128Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:54.297010534Z   }
+2026-07-18T15:44:54.297013640Z ]
+2026-07-18T15:44:54.937537311Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 919886492445: {
+2026-07-18T15:44:54.937595709Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:54.937599887Z   "language": {
+2026-07-18T15:44:54.937603293Z     "code": "en"
+2026-07-18T15:44:54.937606409Z   },
+2026-07-18T15:44:54.937609405Z   "components": [
+2026-07-18T15:44:54.937612360Z     {
+2026-07-18T15:44:54.937615286Z       "type": "header",
+2026-07-18T15:44:54.937618452Z       "parameters": [
+2026-07-18T15:44:54.937621387Z         {
+2026-07-18T15:44:54.937624293Z           "type": "image",
+2026-07-18T15:44:54.937627469Z           "image": {
+2026-07-18T15:44:54.937630915Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:54.937634562Z           }
+2026-07-18T15:44:54.937637667Z         }
+2026-07-18T15:44:54.937640462Z       ]
+2026-07-18T15:44:54.937643297Z     },
+2026-07-18T15:44:54.937646033Z     {
+2026-07-18T15:44:54.937648838Z       "type": "body",
+2026-07-18T15:44:54.937651723Z       "parameters": [
+2026-07-18T15:44:54.937654569Z         {
+2026-07-18T15:44:54.937657624Z           "type": "text",
+2026-07-18T15:44:54.937660840Z           "text": "SHANKARA K C",
+2026-07-18T15:44:54.937733526Z           "parameter_name": "name1"
+2026-07-18T15:44:54.937737804Z         },
+2026-07-18T15:44:54.937741040Z         {
+2026-07-18T15:44:54.937744306Z           "type": "text",
+2026-07-18T15:44:54.937747671Z           "text": "SHANKARA K C",
+2026-07-18T15:44:54.937751158Z           "parameter_name": "name2"
+2026-07-18T15:44:54.937754534Z         },
+2026-07-18T15:44:54.937757830Z         {
+2026-07-18T15:44:54.937761006Z           "type": "text",
+2026-07-18T15:44:54.937764413Z           "text": "SHANKARA K C",
+2026-07-18T15:44:54.937767809Z           "parameter_name": "name3"
+2026-07-18T15:44:54.937771275Z         }
+2026-07-18T15:44:54.937774431Z       ]
+2026-07-18T15:44:54.937777707Z     }
+2026-07-18T15:44:54.937780873Z   ]
+2026-07-18T15:44:54.937783869Z }
+2026-07-18T15:44:54.937786985Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:54.937794168Z   {
+2026-07-18T15:44:54.937797344Z     "text": "Yes, tell me more",
+2026-07-18T15:44:54.937800920Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:54.937804316Z   },
+2026-07-18T15:44:54.937807623Z   {
+2026-07-18T15:44:54.937811480Z     "text": "Not right now",
+2026-07-18T15:44:54.937815447Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:54.937818804Z   }
+2026-07-18T15:44:54.937822280Z ]
+2026-07-18T15:44:55.561147330Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 918105566934: {
+2026-07-18T15:44:55.561244140Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:55.561249931Z   "language": {
+2026-07-18T15:44:55.561253027Z     "code": "en"
+2026-07-18T15:44:55.561255762Z   },
+2026-07-18T15:44:55.561258236Z   "components": [
+2026-07-18T15:44:55.561260861Z     {
+2026-07-18T15:44:55.561263346Z       "type": "header",
+2026-07-18T15:44:55.561265911Z       "parameters": [
+2026-07-18T15:44:55.561268405Z         {
+2026-07-18T15:44:55.561270870Z           "type": "image",
+2026-07-18T15:44:55.561273445Z           "image": {
+2026-07-18T15:44:55.561276010Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:55.561298982Z           }
+2026-07-18T15:44:55.561301567Z         }
+2026-07-18T15:44:55.561304011Z       ]
+2026-07-18T15:44:55.561306426Z     },
+2026-07-18T15:44:55.561308860Z     {
+2026-07-18T15:44:55.561311335Z       "type": "body",
+2026-07-18T15:44:55.561313870Z       "parameters": [
+2026-07-18T15:44:55.561316364Z         {
+2026-07-18T15:44:55.561318759Z           "type": "text",
+2026-07-18T15:44:55.561321253Z           "text": "KUMARAN V",
+2026-07-18T15:44:55.561323818Z           "parameter_name": "name1"
+2026-07-18T15:44:55.561326403Z         },
+2026-07-18T15:44:55.561329459Z         {
+2026-07-18T15:44:55.561332374Z           "type": "text",
+2026-07-18T15:44:55.561335380Z           "text": "KUMARAN V",
+2026-07-18T15:44:55.561338526Z           "parameter_name": "name2"
+2026-07-18T15:44:55.561341692Z         },
+2026-07-18T15:44:55.561344728Z         {
+2026-07-18T15:44:55.561350278Z           "type": "text",
+2026-07-18T15:44:55.561355487Z           "text": "KUMARAN V",
+2026-07-18T15:44:55.561358392Z           "parameter_name": "name3"
+2026-07-18T15:44:55.561361247Z         }
+2026-07-18T15:44:55.561364013Z       ]
+2026-07-18T15:44:55.561392867Z     }
+2026-07-18T15:44:55.561396073Z   ]
+2026-07-18T15:44:55.561398858Z }
+2026-07-18T15:44:55.561401864Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:55.561407533Z   {
+2026-07-18T15:44:55.561410218Z     "text": "Yes, tell me more",
+2026-07-18T15:44:55.561413344Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:55.561416300Z   },
+2026-07-18T15:44:55.561419045Z   {
+2026-07-18T15:44:55.561421690Z     "text": "Not right now",
+2026-07-18T15:44:55.561424595Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:55.561427370Z   }
+2026-07-18T15:44:55.561430056Z ]
+2026-07-18T15:44:56.158756692Z [meta-api] Sending template "mbbs_seat_reserved_v2" to 919743822549: {
+2026-07-18T15:44:56.158810421Z   "name": "mbbs_seat_reserved_v2",
+2026-07-18T15:44:56.158814920Z   "language": {
+2026-07-18T15:44:56.158841369Z     "code": "en"
+2026-07-18T15:44:56.158844806Z   },
+2026-07-18T15:44:56.158848291Z   "components": [
+2026-07-18T15:44:56.158852189Z     {
+2026-07-18T15:44:56.158855214Z       "type": "header",
+2026-07-18T15:44:56.158858430Z       "parameters": [
+2026-07-18T15:44:56.158861737Z         {
+2026-07-18T15:44:56.158864923Z           "type": "image",
+2026-07-18T15:44:56.158868028Z           "image": {
+2026-07-18T15:44:56.158871154Z             "link": "https://iprmttpwlnnqdwpwnbkj.supabase.co/storage/v1/object/public/chat-media/account-25c63f0b-c6ef-4dd1-a2da-d5af4a13a29f/templates/mbbs_seat_reserved_v2-1784309933738.png"
+2026-07-18T15:44:56.158875302Z           }
+2026-07-18T15:44:56.158878859Z         }
+2026-07-18T15:44:56.158881804Z       ]
+2026-07-18T15:44:56.158884860Z     },
+2026-07-18T15:44:56.158887826Z     {
+2026-07-18T15:44:56.158891012Z       "type": "body",
+2026-07-18T15:44:56.158894137Z       "parameters": [
+2026-07-18T15:44:56.158897283Z         {
+2026-07-18T15:44:56.158900598Z           "type": "text",
+2026-07-18T15:44:56.158903895Z           "text": "VACHAN R",
+2026-07-18T15:44:56.158907071Z           "parameter_name": "name1"
+2026-07-18T15:44:56.158910267Z         },
+2026-07-18T15:44:56.158913192Z         {
+2026-07-18T15:44:56.158916057Z           "type": "text",
+2026-07-18T15:44:56.158919704Z           "text": "VACHAN R",
+2026-07-18T15:44:56.158922830Z           "parameter_name": "name2"
+2026-07-18T15:44:56.158926237Z         },
+2026-07-18T15:44:56.158929192Z         {
+2026-07-18T15:44:56.158932188Z           "type": "text",
+2026-07-18T15:44:56.158935243Z           "text": "VACHAN R",
+2026-07-18T15:44:56.158938530Z           "parameter_name": "name3"
+2026-07-18T15:44:56.158941545Z         }
+2026-07-18T15:44:56.158944571Z       ]
+2026-07-18T15:44:56.158947557Z     }
+2026-07-18T15:44:56.158950522Z   ]
+2026-07-18T15:44:56.158953478Z }
+2026-07-18T15:44:56.158956522Z [meta-api] Local template data — body_text: "Hello,\n\nWhile {{name1}}'s NEET counselling is underway, we wanted to share some good news — we have provisionally reserved an 🩺👩🏻‍⚕️👨🏻‍⚕️ MBBS seat at Kyrgyz State Medical Academy (NMC-recognized, WHO-listed) for {{name2}}, valid until counselling concludes.👨🏻‍🎓 👩🏻‍🎓\n\nThis means {{name3}} has a confirmed, respected path to becoming a doctor either way. Would you like the details?", buttons: [
+2026-07-18T15:44:56.158962884Z   {
+2026-07-18T15:44:56.158986218Z     "text": "Yes, tell me more",
+2026-07-18T15:44:56.158996948Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:56.159000365Z   },
+2026-07-18T15:44:56.159003490Z   {
+2026-07-18T15:44:56.159006566Z     "text": "Not right now",
+2026-07-18T15:44:56.159009963Z     "type": "QUICK_REPLY"
+2026-07-18T15:44:56.159013138Z   }
+2026-07-18T15:44:56.159016163Z ]
