@@ -369,7 +369,7 @@ async function handleStatusUpdate(status: {
 
   const { data: recipient, error: recFetchErr } = await supabaseAdmin()
     .from('broadcast_recipients')
-    .select('id, status')
+    .select('id, status, retry_count')
     .eq('whatsapp_message_id', status.id)
     .maybeSingle()
 
@@ -384,6 +384,8 @@ async function handleStatusUpdate(status: {
   if (!isValidStatusTransition(recipient.status, status.status)) return
 
   let errorMessage: string | undefined = undefined
+  let isEcosystemError = false
+
   if (status.status === 'failed' && status.errors && status.errors.length > 0) {
     const err = status.errors[0]
     errorMessage =
@@ -391,6 +393,14 @@ async function handleStatusUpdate(status: {
       err.message ||
       err.title ||
       'Unknown error from Meta'
+      
+    if (
+      err.code === 131047 ||
+      err.code === 131056 ||
+      errorMessage.toLowerCase().includes('healthy ecosystem')
+    ) {
+      isEcosystemError = true
+    }
   }
 
   const update: Record<string, unknown> = { status: status.status }
@@ -398,6 +408,17 @@ async function handleStatusUpdate(status: {
   if (status.status === 'delivered') update.delivered_at = tsIso
   if (status.status === 'read') update.read_at = tsIso
   if (errorMessage) update.error_message = errorMessage
+  
+  if (isEcosystemError && recipient.retry_count < 3) {
+    const RETRY_DELAYS_MS = [
+      2 * 60 * 60 * 1000,   // retry 1: 2 hours
+      8 * 60 * 60 * 1000,   // retry 2: 8 hours
+      24 * 60 * 60 * 1000,  // retry 3: 24 hours
+    ]
+    update.status = 'retry_pending'
+    update.is_ecosystem_error = true
+    update.next_retry_at = new Date(Date.now() + RETRY_DELAYS_MS[recipient.retry_count]).toISOString()
+  }
 
   const { error: recUpdateErr } = await supabaseAdmin()
     .from('broadcast_recipients')

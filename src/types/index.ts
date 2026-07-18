@@ -319,7 +319,7 @@ export interface Deal {
 }
 
 export type BroadcastStatus = 'draft' | 'scheduled' | 'sending' | 'sent' | 'failed';
-export type RecipientStatus = 'pending' | 'sent' | 'delivered' | 'read' | 'replied' | 'failed';
+export type RecipientStatus = 'pending' | 'retry_pending' | 'sent' | 'delivered' | 'read' | 'replied' | 'failed';
 
 export interface Broadcast {
   id: string;
@@ -361,6 +361,9 @@ export interface BroadcastRecipient {
    * Added in migration 003.
    */
   whatsapp_message_id?: string;
+  retry_count: number;
+  next_retry_at?: string | null;
+  is_ecosystem_error: boolean;
   created_at: string;
   contact?: Contact;
 }

@@ -35,6 +35,7 @@ export async function register() {
   const endpoints = [
     `${base}/api/automations/cron`,
     `${base}/api/flows/cron`,
+    `${base}/api/whatsapp/broadcast/retry`,
   ]
 
   async function tick() {

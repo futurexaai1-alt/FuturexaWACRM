@@ -32,6 +32,7 @@ import {
   Download,
   ChevronDown,
   Trash2,
+  RefreshCw,
 } from 'lucide-react';
 import { toast } from 'sonner';
 import {
@@ -155,8 +156,47 @@ export default function BroadcastDetailPage() {
   );
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [deleting, setDeleting] = useState(false);
+  const [retrying, setRetrying] = useState(false);
 
   useEffect(() => {
+    const supabase = createClient();
+    
+    // Realtime subscription
+    const channel = supabase
+      .channel(`broadcast-${broadcastId}`)
+      .on(
+        'postgres_changes',
+        {
+          event: '*',
+          schema: 'public',
+          table: 'broadcast_recipients',
+          filter: `broadcast_id=eq.${broadcastId}`,
+        },
+        (payload) => {
+          const newRow = payload.new as { id: string; [key: string]: any };
+          setRecipients((prev) => {
+            const idx = prev.findIndex((r) => r.id === newRow.id);
+            if (idx === -1) return prev;
+            const updated = [...prev];
+            updated[idx] = { ...updated[idx], ...(newRow as Partial<BroadcastRecipient>) };
+            return updated;
+          });
+        }
+      )
+      .on(
+        'postgres_changes',
+        {
+          event: 'UPDATE',
+          schema: 'public',
+          table: 'broadcasts',
+          filter: `id=eq.${broadcastId}`,
+        },
+        (payload) => {
+          setBroadcast((prev) => prev ? { ...prev, ...(payload.new as Partial<Broadcast>) } : prev);
+        }
+      )
+      .subscribe();
+
     async function fetchData() {
       try {
         const supabase = createClient();
@@ -186,6 +226,10 @@ export default function BroadcastDetailPage() {
     }
 
     fetchData();
+    
+    return () => {
+      supabase.removeChannel(channel);
+    };
   }, [broadcastId]);
 
   const filteredRecipients = useMemo(
@@ -243,6 +287,24 @@ export default function BroadcastDetailPage() {
     router.push('/broadcasts');
   }
 
+  async function handleRetry() {
+    setRetrying(true);
+    try {
+      const res = await fetch('/api/whatsapp/broadcast/retry-manual', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ broadcast_id: broadcastId }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Retry failed');
+      toast.success(`Retried ${data.processed} recipients (${data.failed} failed immediately)`);
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : 'Retry failed');
+    } finally {
+      setRetrying(false);
+    }
+  }
+
   if (loading) {
     return (
       <div className="flex h-64 items-center justify-center">
@@ -263,6 +325,10 @@ export default function BroadcastDetailPage() {
   }
 
   const status = getBroadcastStatus(broadcast.status);
+  
+  const retryPendingCount = recipients.filter(r => r.status === 'retry_pending').length;
+  const trueFailedCount = Math.max(0, broadcast.failed_count - retryPendingCount);
+  const hasEcosystemErrors = recipients.some(r => r.is_ecosystem_error && (r.status === 'failed' || r.status === 'retry_pending'));
 
   const funnelSteps: FunnelStep[] = [
     { label: 'Sent', value: broadcast.sent_count, color: 'bg-primary' },
@@ -302,6 +368,24 @@ export default function BroadcastDetailPage() {
             </div>
           </div>
         </div>
+
+        <div className="flex items-center gap-2">
+          {hasEcosystemErrors && (
+            <Button
+              variant="outline"
+              size="sm"
+              disabled={retrying}
+              onClick={handleRetry}
+              className="border-amber-500/30 bg-transparent text-amber-500 hover:bg-amber-500/10 disabled:opacity-50"
+            >
+              {retrying ? (
+                <Loader2 className="h-3.5 w-3.5 animate-spin" />
+              ) : (
+                <RefreshCw className="h-3.5 w-3.5" />
+              )}
+              {retrying ? 'Retrying…' : 'Retry Failed'}
+            </Button>
+          )}
 
         {/* Delete — inline-confirm pattern matches the pipeline-settings
             "Delete Pipeline" flow. Mid-send broadcasts can't be deleted
@@ -345,10 +429,11 @@ export default function BroadcastDetailPage() {
             Delete
           </Button>
         )}
+        </div>
       </div>
 
-      {/* Stats — 6 cards: Total / Sent / Delivered / Read / Replied / Failed */}
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+      {/* Stats — 7 cards: Total / Sent / Delivered / Read / Replied / Retry / Failed */}
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-7">
         <StatCard
           label="Total Recipients"
           value={broadcast.total_recipients}
@@ -385,8 +470,15 @@ export default function BroadcastDetailPage() {
           color="bg-indigo-500/10 text-indigo-400"
         />
         <StatCard
+          label="Retry Pending"
+          value={retryPendingCount}
+          total={broadcast.total_recipients}
+          icon={<RefreshCw className="h-4 w-4" />}
+          color="bg-amber-500/10 text-amber-500"
+        />
+        <StatCard
           label="Failed"
-          value={broadcast.failed_count}
+          value={trueFailedCount}
           total={broadcast.total_recipients}
           icon={<AlertCircle className="h-4 w-4" />}
           color="bg-red-500/10 text-red-400"
@@ -512,8 +604,22 @@ export default function BroadcastDetailPage() {
                           ? new Date(recipient.read_at).toLocaleString()
                           : '-'}
                       </TableCell>
-                      <TableCell className="max-w-xs truncate text-xs text-red-400">
-                        {recipient.error_message ?? '-'}
+                      <TableCell className="max-w-xs text-xs">
+                        {recipient.status === 'retry_pending' ? (
+                          <div className="text-amber-500">
+                            Retry {recipient.retry_count + 1}/3 at {recipient.next_retry_at ? new Date(recipient.next_retry_at).toLocaleString() : ''}
+                            {recipient.error_message && <div className="text-amber-500/70 truncate" title={recipient.error_message}>{recipient.error_message}</div>}
+                          </div>
+                        ) : recipient.status === 'failed' && recipient.retry_count >= 3 ? (
+                          <div>
+                            <span className="text-red-400 font-medium">Permanently failed after 4 attempts</span>
+                            {recipient.error_message && <div className="text-red-400/70 truncate" title={recipient.error_message}>{recipient.error_message}</div>}
+                          </div>
+                        ) : (
+                          <span className="truncate block text-red-400" title={recipient.error_message ?? undefined}>
+                            {recipient.error_message ?? '-'}
+                          </span>
+                        )}
                       </TableCell>
                     </TableRow>
                   );
