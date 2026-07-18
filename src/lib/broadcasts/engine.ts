@@ -91,7 +91,7 @@ export async function processScheduledBroadcasts() {
       const { data: rawTemplateRow } = await admin
         .from('message_templates')
         .select('*')
-        .eq('user_id', broadcast.user_id)
+        .eq('account_id', broadcast.account_id)
         .eq('name', broadcast.template_name)
         .eq('language', broadcast.template_language || 'en_US')
         .maybeSingle();

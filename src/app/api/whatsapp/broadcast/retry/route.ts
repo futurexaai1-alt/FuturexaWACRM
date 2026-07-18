@@ -151,7 +151,9 @@ export async function GET(request: Request) {
       await admin.from('broadcast_recipients').update({
         status: 'sent',
         whatsapp_message_id: sentMessageId,
-        next_retry_at: null
+        next_retry_at: null,
+        error_message: null,
+        is_ecosystem_error: false
       }).eq('id', row.id)
       processed++
     } else {

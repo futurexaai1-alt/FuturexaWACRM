@@ -179,7 +179,9 @@ export async function POST(request: Request) {
           status: 'sent',
           whatsapp_message_id: sentMessageId,
           retry_count: 0,
-          next_retry_at: null
+          next_retry_at: null,
+          error_message: null,
+          is_ecosystem_error: false
         }).eq('id', row.id)
         processed++
       } else {

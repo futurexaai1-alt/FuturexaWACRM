@@ -407,8 +407,15 @@ async function handleStatusUpdate(status: {
   if (status.status === 'sent' && !('sent_at' in update)) update.sent_at = tsIso
   if (status.status === 'delivered') update.delivered_at = tsIso
   if (status.status === 'read') update.read_at = tsIso
-  if (errorMessage) update.error_message = errorMessage
-  
+  if (errorMessage) {
+    update.error_message = errorMessage
+  } else if (status.status !== 'failed') {
+    // Clear out any stale error fields when transitioning to a successful state
+    update.error_message = null
+    update.is_ecosystem_error = false
+    update.next_retry_at = null
+  }
+
   if (isEcosystemError && recipient.retry_count < 3) {
     const RETRY_DELAYS_MS = [
       2 * 60 * 60 * 1000,   // retry 1: 2 hours
