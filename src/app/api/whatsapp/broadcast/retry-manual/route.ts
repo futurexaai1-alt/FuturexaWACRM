@@ -88,7 +88,7 @@ export async function POST(request: Request) {
       .select('*, contact:contacts(*)')
       .eq('broadcast_id', broadcast_id)
       .in('status', ['failed', 'retry_pending'])
-      .eq('is_ecosystem_error', true)
+      .or('is_ecosystem_error.eq.true,error_message.ilike.*healthy ecosystem*')
       
     if (recipient_ids && Array.isArray(recipient_ids) && recipient_ids.length > 0) {
       query = query.in('id', recipient_ids)

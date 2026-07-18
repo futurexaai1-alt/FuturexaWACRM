@@ -328,7 +328,10 @@ export default function BroadcastDetailPage() {
   
   const retryPendingCount = recipients.filter(r => r.status === 'retry_pending').length;
   const trueFailedCount = Math.max(0, broadcast.failed_count - retryPendingCount);
-  const hasEcosystemErrors = recipients.some(r => r.is_ecosystem_error && (r.status === 'failed' || r.status === 'retry_pending'));
+  const hasEcosystemErrors = recipients.some(r => 
+    (r.is_ecosystem_error || r.error_message?.toLowerCase().includes('healthy ecosystem')) && 
+    (r.status === 'failed' || r.status === 'retry_pending')
+  );
 
   const funnelSteps: FunnelStep[] = [
     { label: 'Sent', value: broadcast.sent_count, color: 'bg-primary' },
