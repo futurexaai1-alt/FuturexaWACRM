@@ -58,7 +58,7 @@ function RateCell({
 
 export default function BroadcastsPage() {
   const router = useRouter();
-  const canCreate = useCan('send-messages');
+  const canCreate = useCan('run-broadcasts');
   const [broadcasts, setBroadcasts] = useState<Broadcast[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);

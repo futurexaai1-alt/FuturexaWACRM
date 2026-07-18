@@ -69,6 +69,7 @@ export default function ContactsPage() {
   const supabase = createClient();
   const canEdit = useCan('send-messages');
   const canEditSettings = useCan('edit-settings');
+  const canBulkImport = useCan('bulk-import-contacts');
 
   const [contacts, setContacts] = useState<ContactWithTags[]>([]);
   const [loading, setLoading] = useState(true);
@@ -363,8 +364,8 @@ export default function ContactsPage() {
           )}
           <GatedButton
             variant="outline"
-            canAct={canEdit}
-            gateReason="add or import contacts"
+            canAct={canBulkImport}
+            gateReason="bulk import contacts"
             onClick={() => setImportOpen(true)}
             className="border-border text-muted-foreground hover:bg-muted"
           >

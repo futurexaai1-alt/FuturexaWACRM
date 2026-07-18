@@ -107,3 +107,13 @@ export function canDeleteAccount(role: AccountRole): boolean {
 export function canTransferOwnership(role: AccountRole): boolean {
   return role === "owner";
 }
+
+/** Owner / admin: run broadcasts. Agents can only view history. */
+export function canRunBroadcasts(role: AccountRole): boolean {
+  return hasMinRole(role, "admin");
+}
+
+/** Owner / admin: bulk import contacts. Agents can only add individuals. */
+export function canBulkImportContacts(role: AccountRole): boolean {
+  return hasMinRole(role, "admin");
+}

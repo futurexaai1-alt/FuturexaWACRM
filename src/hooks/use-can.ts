@@ -8,6 +8,8 @@ import {
   canSendMessages,
   canTransferOwnership,
   canViewOnly,
+  canRunBroadcasts,
+  canBulkImportContacts,
 } from "@/lib/auth/roles";
 
 /**
@@ -22,7 +24,9 @@ export type CanAction =
   | "send-messages"
   | "view-only"
   | "delete-account"
-  | "transfer-ownership";
+  | "transfer-ownership"
+  | "run-broadcasts"
+  | "bulk-import-contacts";
 
 /**
  * Inline alternative to `<RequireRole>` for places that need a
@@ -54,6 +58,10 @@ export function useCan(action: CanAction): boolean {
       return canDeleteAccount(accountRole);
     case "transfer-ownership":
       return canTransferOwnership(accountRole);
+    case "run-broadcasts":
+      return canRunBroadcasts(accountRole);
+    case "bulk-import-contacts":
+      return canBulkImportContacts(accountRole);
     default: {
       // Exhaustiveness check — adding a new `CanAction` without a
       // case here fails the typecheck because TS narrows `action`

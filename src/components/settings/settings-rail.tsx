@@ -3,6 +3,7 @@
 import { useEffect, useRef, type ReactNode } from 'react';
 
 import { cn } from '@/lib/utils';
+import { useCan } from '@/hooks/use-can';
 import {
   RAIL_GROUPS,
   SECTION_META,
@@ -31,6 +32,7 @@ export function SettingsRail({
   hints?: Partial<Record<SettingsSection, ReactNode>>;
 }) {
   const activeRef = useRef<HTMLButtonElement>(null);
+  const canEditSettings = useCan('edit-settings');
 
   // When horizontal (mobile), keep the active chip in view. On desktop
   // the rail is a static column, so skip.
@@ -68,6 +70,7 @@ export function SettingsRail({
               </div>
             ) : null}
             {items.map((s) => {
+              if (s === 'whatsapp' && !canEditSettings) return null;
               const meta = SECTION_META[s];
               const Icon = meta.icon;
               const isActive = s === active;
