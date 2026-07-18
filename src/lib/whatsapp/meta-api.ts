@@ -489,7 +489,7 @@ export async function uploadMediaToMeta(
   formData.append('messaging_product', 'whatsapp')
   
   // Create a Blob from the bytes so FormData attaches it as a File
-  const blob = new Blob([bytes], { type: mimeType })
+  const blob = new Blob([bytes as any], { type: mimeType })
   formData.append('file', blob, fileName || 'media')
 
   const response = await fetch(url, {
@@ -511,43 +511,7 @@ export async function uploadMediaToMeta(
   return { id: data.id }
 }
 
-// ============================================================
-  accessToken: string
-  mimeType: string
-  bytes: Uint8Array
-  fileName?: string
-}
 
-export async function uploadMediaToMeta(
-  args: UploadMediaToMetaArgs
-): Promise<{ id: string }> {
-  const { phoneNumberId, accessToken, mimeType, bytes, fileName } = args
-  const url = `${META_API_BASE}/${phoneNumberId}/media`
-
-  const formData = new FormData()
-  formData.append('messaging_product', 'whatsapp')
-  
-  const blob = new Blob([bytes], { type: mimeType })
-  formData.append('file', blob, fileName || 'media')
-
-  const response = await fetch(url, {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${accessToken}`,
-    },
-    body: formData,
-  })
-
-  if (!response.ok) {
-    await throwMetaError(response, `Media upload failed: ${response.status}`)
-  }
-
-  const data = (await response.json()) as { id?: string }
-  if (!data.id) {
-    throw new Error('Media upload did not return an id.')
-  }
-  return { id: data.id }
-}
 
 // ============================================================
 // Resumable Upload (media handles for template headers)
