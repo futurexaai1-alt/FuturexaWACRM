@@ -559,7 +559,8 @@ async function processMessage(
   const conversation = await findOrCreateConversation(
     accountId,
     configOwnerUserId,
-    contactRecord.id
+    contactRecord.id,
+    senderPhone
   )
   if (!conversation) return
 
@@ -986,6 +987,7 @@ async function findOrCreateConversation(
   accountId: string,
   configOwnerUserId: string,
   contactId: string,
+  contactPhone: string
 ) {
   // Look for existing conversation in this account
   const { data: existing, error: findError } = await supabaseAdmin()
@@ -1007,6 +1009,7 @@ async function findOrCreateConversation(
       account_id: accountId,
       user_id: configOwnerUserId,
       contact_id: contactId,
+      contact_phone: contactPhone,
     })
     .select()
     .single()

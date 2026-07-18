@@ -53,6 +53,7 @@ export function useStartConversation() {
             account_id: accountId,
             user_id: userId,
             contact_id: contact.id,
+            contact_phone: contact.phone,
             status: 'open',
             unread_count: 0,
           })

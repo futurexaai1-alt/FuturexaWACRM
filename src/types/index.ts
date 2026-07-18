@@ -148,6 +148,7 @@ export interface Conversation {
   id: string;
   user_id: string;
   contact_id: string | null;
+  contact_phone?: string;
   status: ConversationStatus;
   assigned_agent_id?: string;
   last_message_text?: string;

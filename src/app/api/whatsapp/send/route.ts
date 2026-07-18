@@ -149,7 +149,8 @@ export async function POST(request: Request) {
     }
 
     const contact = conversation.contact
-    if (!contact?.phone) {
+    const phone = contact?.phone || conversation.contact_phone
+    if (!phone) {
       return NextResponse.json(
         { error: 'Contact phone number not found' },
         { status: 400 }
@@ -157,7 +158,7 @@ export async function POST(request: Request) {
     }
 
     // Sanitize and validate phone
-    const sanitizedPhone = sanitizePhoneForMeta(contact.phone)
+    const sanitizedPhone = sanitizePhoneForMeta(phone)
     if (!isValidE164(sanitizedPhone)) {
       return NextResponse.json(
         { error: 'Invalid phone number format' },
