@@ -141,6 +141,8 @@ async function fetchCustomValueIndex(
   return index;
 }
 
+import { triggerBroadcastsAction } from '@/actions/trigger-broadcasts';
+
 export function useBroadcastSending(): UseBroadcastSendingReturn {
   const { accountId } = useAuth();
   const [isProcessing, setIsProcessing] = useState(false);
@@ -415,15 +417,11 @@ export function useBroadcastSending(): UseBroadcastSendingReturn {
       // (The endpoint handles optimistic locking so it's safe if cron hits it too).
       setProgress(90);
       
-      // Fire and forget (don't await) if they want it now
+      // Trigger background send immediately if they want it now.
+      // Calling the server action instantly kicks off the engine process
+      // instead of waiting up to 60s for the next cron tick.
       if (!payload.scheduledAt || new Date(payload.scheduledAt) <= new Date()) {
-         fetch('/api/whatsapp/broadcast/cron', {
-           method: 'GET',
-           // Note: since this is from client, we won't have the secret, 
-           // but we can just let the standard instrumentation.ts interval pick it up!
-           // Actually, since the cron endpoint requires the secret, this fetch will 401.
-           // That's fine! The instrumentation.ts runs every 60s, so it will pick it up automatically.
-         }).catch(() => {});
+         triggerBroadcastsAction().catch(() => {});
       }
 
       setProgress(100);
