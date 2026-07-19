@@ -37,8 +37,9 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { useAuth } from '@/hooks/use-auth';
+import type { AccountRole } from '@/lib/auth/roles';
 
-type InviteRole = 'admin' | 'agent' | 'viewer';
+type InviteRole = Exclude<AccountRole, 'owner'>;
 
 interface InviteMemberDialogProps {
   open: boolean;
@@ -57,6 +58,10 @@ const EXPIRY_OPTIONS: { value: string; label: string }[] = [
 const ROLE_DESCRIPTIONS: Record<InviteRole, string> = {
   admin:
     'Can invite teammates, manage settings, send messages, and edit data.',
+  manager:
+    'Can manage pipelines, deals, and reports, plus view automations and flows. No team member management.',
+  team_leader:
+    'Can manage and assign inbox conversations, view reports, and reply to messages. No pipelines, broadcasts, or automations settings.',
   agent:
     'Can use the inbox, contacts, broadcasts, automations, and flows. No settings or member access.',
   viewer: 'Read-only access across every page. Cannot send or edit anything.',
@@ -289,6 +294,8 @@ export function InviteMemberDialog({
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="admin">Admin</SelectItem>
+                    <SelectItem value="manager">Manager</SelectItem>
+                    <SelectItem value="team_leader">Team Leader</SelectItem>
                     <SelectItem value="agent">Agent</SelectItem>
                     <SelectItem value="viewer">Viewer</SelectItem>
                   </SelectContent>

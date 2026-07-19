@@ -86,7 +86,7 @@ interface Member {
 
 interface Invitation {
   id: string;
-  role: 'admin' | 'agent' | 'viewer';
+  role: AccountRole;
   label: string | null;
   created_at: string;
   expires_at: string;
@@ -96,6 +96,8 @@ interface Invitation {
 // promotions go through the (deferred) Transfer Ownership flow.
 const EDITABLE_ROLES: { value: AccountRole; label: string; hint: string }[] = [
   { value: 'admin', label: 'Admin', hint: 'Manage members + everything' },
+  { value: 'manager', label: 'Manager', hint: 'Manage deals + features; no team manage' },
+  { value: 'team_leader', label: 'Team Leader', hint: 'Manage inbox + conversations' },
   { value: 'agent', label: 'Agent', hint: 'Use features; no settings' },
   { value: 'viewer', label: 'Viewer', hint: 'Read-only across the app' },
 ];
