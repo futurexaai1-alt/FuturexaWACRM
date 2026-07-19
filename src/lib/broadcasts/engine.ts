@@ -2,6 +2,7 @@ import { createClient } from '@supabase/supabase-js';
 import { sendTemplateMessage } from '@/lib/whatsapp/meta-api';
 import { resolveVariables, VariableMapping } from '@/lib/broadcasts/variables';
 import { isMessageTemplate } from '@/lib/whatsapp/template-row-guard';
+import { decrypt } from '@/lib/whatsapp/encryption';
 import { Contact } from '@/types';
 
 const SEND_BATCH_SIZE = 10;
@@ -102,7 +103,7 @@ export async function processScheduledBroadcasts() {
         throw new Error('Missing WhatsApp config or template');
       }
 
-      const accessToken = configRow.access_token;
+      const accessToken = decrypt(configRow.access_token);
       const phoneNumberId = configRow.phone_number_id;
 
       // 4. Fetch pending recipients
