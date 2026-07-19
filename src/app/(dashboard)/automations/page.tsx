@@ -19,7 +19,7 @@ import {
 } from "lucide-react"
 
 import { createClient } from "@/lib/supabase/client"
-import { useCan } from "@/hooks/use-can"
+import { useAuth } from "@/hooks/use-auth"
 import type { Automation } from "@/types"
 import { Button } from "@/components/ui/button"
 import { GatedButton } from "@/components/ui/gated-button"
@@ -59,7 +59,9 @@ const TEMPLATE_ICON: Record<TemplateSlug, typeof Zap> = {
 
 export default function AutomationsPage() {
   const router = useRouter()
-  const canCreate = useCan("send-messages")
+  const { hasPermission } = useAuth()
+  const canCreate = hasPermission("automations.create")
+  const canDelete = hasPermission("automations.delete")
   const [automations, setAutomations] = useState<Automation[] | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [pendingDelete, setPendingDelete] = useState<Automation | null>(null)
@@ -217,6 +219,8 @@ export default function AutomationsPage() {
             <AutomationCard
               key={a.id}
               automation={a}
+              canCreate={canCreate}
+              canDelete={canDelete}
               onToggle={(next) => toggleActive(a, next)}
               onEdit={() => router.push(`/automations/${a.id}/edit`)}
               onDuplicate={() => duplicate(a)}
@@ -262,6 +266,8 @@ export default function AutomationsPage() {
 
 function AutomationCard({
   automation,
+  canCreate,
+  canDelete,
   onToggle,
   onEdit,
   onDuplicate,
@@ -269,6 +275,8 @@ function AutomationCard({
   onDelete,
 }: {
   automation: Automation
+  canCreate: boolean
+  canDelete: boolean
   onToggle: (next: boolean) => void
   onEdit: () => void
   onDuplicate: () => void
@@ -289,7 +297,8 @@ function AutomationCard({
         <button
           type="button"
           onClick={onEdit}
-          className="min-w-0 flex-1 text-left"
+          disabled={!canCreate}
+          className="min-w-0 flex-1 text-left disabled:opacity-80"
         >
           <div className="flex items-center gap-2">
             <span className="truncate text-sm font-semibold text-foreground">
@@ -326,6 +335,7 @@ function AutomationCard({
           <Switch
             checked={automation.is_active}
             onCheckedChange={(v) => onToggle(!!v)}
+            disabled={!canCreate}
             aria-label={automation.is_active ? "Deactivate" : "Activate"}
           />
 
@@ -337,11 +347,11 @@ function AutomationCard({
               <MoreVertical className="h-4 w-4" />
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-              <DropdownMenuItem onClick={onEdit}>
+              <DropdownMenuItem onClick={onEdit} disabled={!canCreate}>
                 <Pencil className="h-4 w-4" />
                 Edit
               </DropdownMenuItem>
-              <DropdownMenuItem onClick={onDuplicate}>
+              <DropdownMenuItem onClick={onDuplicate} disabled={!canCreate}>
                 <Copy className="h-4 w-4" />
                 Duplicate
               </DropdownMenuItem>
@@ -350,7 +360,7 @@ function AutomationCard({
                 View Logs
               </DropdownMenuItem>
               <DropdownMenuSeparator />
-              <DropdownMenuItem variant="destructive" onClick={onDelete}>
+              <DropdownMenuItem variant="destructive" onClick={onDelete} disabled={!canDelete}>
                 <Trash2 className="h-4 w-4" />
                 Delete
               </DropdownMenuItem>

@@ -54,7 +54,7 @@ import { ContactForm } from '@/components/contacts/contact-form';
 import { ContactDetailView } from '@/components/contacts/contact-detail-view';
 import { ImportModal } from '@/components/contacts/import-modal';
 import { CustomFieldsManager } from '@/components/contacts/custom-fields-manager';
-import { useCan } from '@/hooks/use-can';
+import { useAuth } from '@/hooks/use-auth';
 import { GatedButton } from '@/components/ui/gated-button';
 import { Checkbox } from '@/components/ui/checkbox';
 import { useStartConversation } from '@/hooks/use-start-conversation';
@@ -67,9 +67,11 @@ interface ContactWithTags extends Contact {
 
 export default function ContactsPage() {
   const supabase = createClient();
-  const canEdit = useCan('send-messages');
-  const canEditSettings = useCan('edit-settings');
-  const canBulkImport = useCan('bulk-import-contacts');
+  const { hasPermission } = useAuth();
+  const canEdit = hasPermission('contacts.edit');
+  const canDelete = hasPermission('contacts.delete');
+  const canEditSettings = hasPermission('whatsapp.manage');
+  const canBulkImport = hasPermission('contacts.create');
 
   const [contacts, setContacts] = useState<ContactWithTags[]>([]);
   const [loading, setLoading] = useState(true);
@@ -519,7 +521,7 @@ export default function ContactsPage() {
             <GatedButton
               variant="destructive"
               size="sm"
-              canAct={canEdit}
+              canAct={canDelete && selected.size > 0}
               gateReason="delete contacts"
               onClick={() => setBulkDeleteOpen(true)}
             >
@@ -691,7 +693,8 @@ export default function ContactsPage() {
                         </DropdownMenuItem>
                         <DropdownMenuSeparator className="bg-border" />
                         <DropdownMenuItem
-                          variant="destructive"
+                          disabled={!canDelete}
+                          className="text-destructive focus:text-destructive"
                           onClick={(e) => {
                             e.stopPropagation();
                             confirmDelete(contact);

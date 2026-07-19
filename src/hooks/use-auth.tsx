@@ -16,6 +16,7 @@ import {
   canEditSettings as canEditSettingsFor,
   canManageMembers as canManageMembersFor,
   canSendMessages as canSendMessagesFor,
+  hasPermissionFor,
   isAccountRole,
   type AccountRole,
 } from "@/lib/auth/roles";
@@ -101,6 +102,8 @@ interface AuthContextValue {
   canEditSettings: boolean;
   /** True if the caller can send messages and edit operational data (agent+). */
   canSendMessages: boolean;
+  /** Checks if the user has a specific granular permission */
+  hasPermission: (permission: string) => boolean;
 }
 
 const AuthContext = createContext<AuthContextValue | null>(null);
@@ -308,6 +311,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       canManageMembers: role ? canManageMembersFor(role) : false,
       canEditSettings: role ? canEditSettingsFor(role) : false,
       canSendMessages: role ? canSendMessagesFor(role) : false,
+      hasPermission: (permission: string) => hasPermissionFor(role, permission),
     };
   }, [profile?.account_role, profile?.account_id]);
 
@@ -361,6 +365,7 @@ export function useAuth(): AuthContextValue {
       canManageMembers: false,
       canEditSettings: false,
       canSendMessages: false,
+      hasPermission: () => false,
     };
   }
   return ctx;

@@ -29,7 +29,7 @@ import { NextResponse } from "next/server";
 import type { SupabaseClient } from "@supabase/supabase-js";
 
 import { createClient } from "@/lib/supabase/server";
-import { hasMinRole, isAccountRole, type AccountRole } from "./roles";
+import { hasPermissionFor, isAccountRole, type AccountRole } from "./roles";
 
 // ------------------------------------------------------------
 // Errors
@@ -156,17 +156,17 @@ export async function getCurrentAccount(): Promise<AccountContext> {
 }
 
 /**
- * Resolve the caller's account context and enforce a minimum role.
+ * Resolve the caller's account context and enforce a specific permission.
  *
  * Throws `UnauthorizedError` / `ForbiddenError` as documented on
- * `getCurrentAccount`, plus `ForbiddenError("Insufficient role")`
- * when the caller is below `min`.
+ * `getCurrentAccount`, plus `ForbiddenError("Insufficient permissions")`
+ * when the caller lacks the required permission.
  */
-export async function requireRole(min: AccountRole): Promise<AccountContext> {
+export async function requirePermission(permission: string): Promise<AccountContext> {
   const ctx = await getCurrentAccount();
-  if (!hasMinRole(ctx.role, min)) {
+  if (!hasPermissionFor(ctx.role, permission)) {
     throw new ForbiddenError(
-      `This action requires the '${min}' role or higher`,
+      `This action requires the '${permission}' permission`,
     );
   }
   return ctx;

@@ -62,7 +62,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { RequireRole } from '@/components/auth/require-role';
+import { RequirePermission } from '@/components/auth/require-role';
 import { useAuth } from '@/hooks/use-auth';
 import { usePresence } from '@/hooks/use-presence';
 import type { AccountRole } from '@/lib/auth/roles';
@@ -284,12 +284,12 @@ export function MembersTab() {
         title="Team members"
         description="People with access to this account. Roles control what each teammate can do."
         action={
-          <RequireRole min="admin">
+          <RequirePermission permission="team.manage">
             <Button onClick={() => setInviteOpen(true)}>
               <Plus className="size-4" />
               Invite member
             </Button>
-          </RequireRole>
+          </RequirePermission>
         }
       />
 
@@ -472,7 +472,7 @@ export function MembersTab() {
       </Card>
 
       {/* Pending invitations — admin+ only */}
-      <RequireRole min="admin">
+      <RequirePermission permission="team.manage">
         <div>
           <div className="mb-2 flex items-center gap-2">
             <UsersRound className="size-4 text-muted-foreground" />
@@ -559,7 +559,7 @@ export function MembersTab() {
             </Card>
           )}
         </div>
-      </RequireRole>
+      </RequirePermission>
 
       <InviteMemberDialog
         open={inviteOpen}

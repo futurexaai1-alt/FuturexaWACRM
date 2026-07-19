@@ -1,56 +1,22 @@
 // ============================================================
 // Account role helpers — pure, unit-testable, no I/O.
 //
-// Mirrors the `account_role_enum` Postgres type from migration
-// 017_account_sharing.sql. The hierarchy is intentionally a flat
-// ordinal (owner=4 … viewer=1) — it matches the same CASE
-// expression the `is_account_member(account_id, min_role)` SQL
-// helper uses, so server-side TypeScript guards and database-side
-// RLS speak the same language.
-//
-// Predicates (`canManageMembers`, `canEditSettings`, …) are the
-// single source of truth for "what can this role do?" — both
-// API route guards and UI gates should call them rather than
-// open-coding their own role checks. That keeps role-policy
-// changes a one-file diff.
+// Replaces the old hierarchical role system with a permission-based
+// RBAC system. The frontend maintains a static map of role permissions
+// that matches the `role_permissions` table populated in Supabase.
 // ============================================================
 
-export type AccountRole = "owner" | "admin" | "agent" | "viewer";
+export type AccountRole = "owner" | "admin" | "manager" | "team_leader" | "agent" | "viewer";
 
-/** Ordered list of every valid role, lowest privilege first. */
 export const ACCOUNT_ROLES: readonly AccountRole[] = [
   "viewer",
   "agent",
+  "team_leader",
+  "manager",
   "admin",
   "owner",
 ] as const;
 
-/**
- * Numeric rank of a role. Higher = more privileged. Mirrors the
- * CASE expression in `is_account_member` so JS/SQL stay aligned.
- */
-export function roleRank(role: AccountRole): number {
-  switch (role) {
-    case "owner":
-      return 4;
-    case "admin":
-      return 3;
-    case "agent":
-      return 2;
-    case "viewer":
-      return 1;
-  }
-}
-
-/**
- * True iff `role` is at least as privileged as `min`. Use this
- * for any "user has at least admin" / "at least agent" checks.
- */
-export function hasMinRole(role: AccountRole, min: AccountRole): boolean {
-  return roleRank(role) >= roleRank(min);
-}
-
-/** Type-narrow an unknown string into a valid `AccountRole`. */
 export function isAccountRole(value: unknown): value is AccountRole {
   return (
     typeof value === "string" &&
@@ -59,61 +25,135 @@ export function isAccountRole(value: unknown): value is AccountRole {
 }
 
 // ============================================================
-// Capability predicates
-//
-// Every UI gate and API route guard should call one of these
-// instead of comparing role strings inline. Adding a capability
-// = one new predicate here + one call site change per consumer.
+// Granular Permissions
 // ============================================================
 
-/** Owner / admin: invite, remove, change roles. */
-export function canManageMembers(role: AccountRole): boolean {
-  return hasMinRole(role, "admin");
-}
+const ROLE_PERMISSIONS: Record<Exclude<AccountRole, "owner">, string[]> = {
+  viewer: [
+    "dashboard.view",
+    "inbox.view",
+    "contacts.view",
+    "pipelines.view",
+    "broadcasts.view",
+    "automations.view",
+    "flows.view",
+    "reports.view",
+  ],
+  agent: [
+    "dashboard.view",
+    "inbox.view",
+    "inbox.reply",
+    "contacts.view",
+    "settings.personal",
+  ],
+  team_leader: [
+    "dashboard.view",
+    "inbox.view",
+    "inbox.reply",
+    "inbox.assign",
+    "inbox.close",
+    "contacts.view",
+    "reports.view",
+    "settings.personal",
+  ],
+  manager: [
+    "dashboard.view",
+    "inbox.view",
+    "inbox.reply",
+    "inbox.assign",
+    "inbox.close",
+    "contacts.view",
+    "contacts.create",
+    "contacts.edit",
+    "pipelines.view",
+    "pipelines.create",
+    "pipelines.update",
+    "broadcasts.view",
+    "automations.view",
+    "flows.view",
+    "reports.view",
+    "reports.export",
+    "settings.personal",
+  ],
+  admin: [
+    "dashboard.view",
+    "inbox.view",
+    "inbox.reply",
+    "inbox.assign",
+    "inbox.close",
+    "contacts.view",
+    "contacts.create",
+    "contacts.edit",
+    "contacts.delete",
+    "pipelines.view",
+    "pipelines.create",
+    "pipelines.update",
+    "pipelines.delete",
+    "broadcasts.view",
+    "broadcasts.create",
+    "broadcasts.send",
+    "automations.view",
+    "automations.create",
+    "automations.update",
+    "automations.delete",
+    "flows.view",
+    "flows.create",
+    "flows.update",
+    "flows.delete",
+    "reports.view",
+    "reports.export",
+    "team.manage",
+    "settings.personal",
+    "whatsapp.manage",
+  ],
+};
 
 /**
- * Owner / admin: edit account-wide settings (WhatsApp config,
- * message templates, pipelines, tags, custom fields, account
- * name). Excludes per-user settings like avatar or own password.
+ * Core permission check helper for the frontend.
+ * Evaluates whether a role has a specific granular permission.
+ * 'owner' bypasses the check and always returns true.
  */
-export function canEditSettings(role: AccountRole): boolean {
-  return hasMinRole(role, "admin");
+export function hasPermissionFor(role: AccountRole | null, permission: string): boolean {
+  if (!role) return false;
+  if (role === "owner") return true;
+  const permissions = ROLE_PERMISSIONS[role];
+  return permissions ? permissions.includes(permission) : false;
 }
 
-/**
- * Owner / admin / agent: write operational data — send messages,
- * create contacts, move deals, run broadcasts, edit automations.
- * Viewers are read-only.
- */
-export function canSendMessages(role: AccountRole): boolean {
-  return hasMinRole(role, "agent");
+// ============================================================
+// Capability predicates (Legacy wrappers mapped to permissions)
+// We keep these so existing UI code doesn't break instantly,
+// but they now delegate to hasPermissionFor under the hood.
+// ============================================================
+
+export function canManageMembers(role: AccountRole | null): boolean {
+  return hasPermissionFor(role, "team.manage");
 }
 
-/**
- * Viewer: read-only across everything. Provided as a positive
- * predicate so UI gates read naturally (`if (canViewOnly(role))`
- * shows the "Read-only" tooltip without inverting `canSendMessages`).
- */
-export function canViewOnly(role: AccountRole): boolean {
+export function canEditSettings(role: AccountRole | null): boolean {
+  return hasPermissionFor(role, "whatsapp.manage");
+}
+
+export function canSendMessages(role: AccountRole | null): boolean {
+  return hasPermissionFor(role, "inbox.reply");
+}
+
+export function canViewOnly(role: AccountRole | null): boolean {
   return role === "viewer";
 }
 
-/** Owner only: irreversible destructive operations. */
-export function canDeleteAccount(role: AccountRole): boolean {
-  return role === "owner";
+export function canDeleteAccount(role: AccountRole | null): boolean {
+  return hasPermissionFor(role, "workspace.delete");
 }
 
-/** Owner only: hand the account to another member. */
-export function canTransferOwnership(role: AccountRole): boolean {
-  return role === "owner";
+export function canTransferOwnership(role: AccountRole | null): boolean {
+  return hasPermissionFor(role, "workspace.transfer");
 }
 
-/** Owner / admin: run broadcasts. Agents can only view history. */
-export function canRunBroadcasts(role: AccountRole): boolean {
-  return hasMinRole(role, "admin");
+export function canRunBroadcasts(role: AccountRole | null): boolean {
+  return hasPermissionFor(role, "broadcasts.send");
 }
 
-/** Owner / admin: bulk import contacts. Agents can only add individuals. */
-export function canBulkImportContacts(role: AccountRole): boolean {
-  return hasMinRole(role, "admin");
+export function canBulkImportContacts(role: AccountRole | null): boolean {
+  return hasPermissionFor(role, "contacts.create");
 }

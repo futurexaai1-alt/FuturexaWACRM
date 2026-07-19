@@ -47,6 +47,18 @@ const ROLE_CHIP: Record<
     className:
       "border-primary/40 bg-primary/10 text-primary",
   },
+  manager: {
+    icon: UsersRound,
+    label: "Manager",
+    className:
+      "border-primary/40 bg-primary/10 text-primary",
+  },
+  team_leader: {
+    icon: Users,
+    label: "Team Leader",
+    className:
+      "border-border bg-muted text-foreground",
+  },
   agent: {
     icon: UserCog,
     label: "Agent",
@@ -84,16 +96,18 @@ interface NavItem {
    * Purely informational — doesn't affect routing or access.
    */
   beta?: boolean;
+  /** RBAC permission required to see this nav item */
+  permission?: string;
 }
 
 const navItems: NavItem[] = [
-  { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
-  { href: "/inbox", label: "Inbox", icon: MessageSquare },
-  { href: "/contacts", label: "Contacts", icon: Users },
-  { href: "/pipelines", label: "Pipelines", icon: GitBranch },
-  { href: "/broadcasts", label: "Broadcasts", icon: Radio },
-  { href: "/automations", label: "Automations", icon: Zap },
-  { href: "/flows", label: "Flows", icon: Workflow, beta: true },
+  { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard, permission: "dashboard.view" },
+  { href: "/inbox", label: "Inbox", icon: MessageSquare, permission: "inbox.view" },
+  { href: "/contacts", label: "Contacts", icon: Users, permission: "contacts.view" },
+  { href: "/pipelines", label: "Pipelines", icon: GitBranch, permission: "pipelines.view" },
+  { href: "/broadcasts", label: "Broadcasts", icon: Radio, permission: "broadcasts.view" },
+  { href: "/automations", label: "Automations", icon: Zap, permission: "automations.view" },
+  { href: "/flows", label: "Flows", icon: Workflow, beta: true, permission: "flows.view" },
 ];
 
 const bottomNavItems = [
@@ -108,7 +122,7 @@ interface SidebarProps {
 
 export function Sidebar({ open = false, onClose }: SidebarProps) {
   const pathname = usePathname();
-  const { profile, profileLoading, account, accountRole, signOut } = useAuth();
+  const { profile, profileLoading, account, accountRole, hasPermission, signOut } = useAuth();
   const totalUnread = useTotalUnread();
   // Only surface the account-name strip when it actually carries
   // information. A solo user's personal account is named after them
@@ -205,6 +219,8 @@ export function Sidebar({ open = false, onClose }: SidebarProps) {
         <nav className="flex-1 overflow-y-auto px-3 py-4">
           <ul className="flex flex-col gap-1">
             {navItems.map((item) => {
+              if (item.permission && !hasPermission(item.permission)) return null;
+
               const isActive =
                 pathname === item.href ||
                 (item.href !== "/dashboard" && pathname.startsWith(item.href));
