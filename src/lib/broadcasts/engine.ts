@@ -148,7 +148,10 @@ export async function processScheduledBroadcasts() {
               to: contact.phone,
               templateName: template.name,
               language: template.language || 'en_US',
-              params,
+              template,
+              messageParams: {
+                body: params,
+              },
             });
 
             await admin
