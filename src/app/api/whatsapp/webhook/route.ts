@@ -11,6 +11,7 @@ import {
   handleTemplateWebhookChange,
   isTemplateWebhookField,
 } from '@/lib/whatsapp/template-webhook'
+import { sendPushNotification } from '@/lib/push-notifications'
 
 // Lazy-initialized to avoid build-time crash when env vars are missing
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -691,6 +692,27 @@ async function processMessage(
 
   if (convError) {
     console.error('Error updating conversation:', convError)
+  }
+
+  // Send Push Notification to all account members
+  try {
+    const { data: members } = await supabaseAdmin()
+      .from('account_members')
+      .select('user_id')
+      .eq('account_id', accountId)
+    
+    if (members && members.length > 0) {
+      const userIds = members.map((m: { user_id: string }) => m.user_id)
+      const pushTitle = contactName || senderPhone
+      const pushBody = contentText ?? (message.type === 'image' ? '📷 Image' : `[${message.type}]`)
+      
+      // Fire-and-forget push notification
+      sendPushNotification(userIds, pushTitle, pushBody, {
+        url: `/chat?contact=${contactRecord.id}`
+      }).catch(err => console.error('Failed to send push notification:', err))
+    }
+  } catch (pushErr) {
+    console.error('Error triggering push notification:', pushErr)
   }
 
   // If this contact was a recent broadcast recipient, flag the reply

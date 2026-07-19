@@ -6,6 +6,7 @@ import { AuthProvider, useAuth } from "@/hooks/use-auth";
 import { Sidebar } from "@/components/layout/sidebar";
 import { Header } from "@/components/layout/header";
 import { PresenceHeartbeat } from "@/components/presence/presence-heartbeat";
+import { usePushNotifications } from "@/hooks/use-push-notifications";
 
 // Auth-gated dashboard shell. Extracted from the layout so the layout
 // itself can stay a server component and export metadata (noindex) —
@@ -14,6 +15,9 @@ import { PresenceHeartbeat } from "@/components/presence/presence-heartbeat";
 function DashboardShellInner({ children }: { children: React.ReactNode }) {
   const { user, loading } = useAuth();
   const router = useRouter();
+
+  // Initialize Push Notifications (Web / Capacitor)
+  usePushNotifications();
 
   // Sidebar drawer state — only used on mobile. On lg+ the sidebar is
   // always visible and this stays at `false` (ignored by the component).
