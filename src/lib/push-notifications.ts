@@ -1,4 +1,4 @@
-import { adminMessaging } from './firebase/admin';
+import { getAdminMessaging } from './firebase/admin';
 import { createClient } from './supabase/server';
 
 export async function sendPushNotification(
@@ -37,6 +37,7 @@ export async function sendPushNotification(
       tokens: tokenStrings,
     };
 
+    const adminMessaging = getAdminMessaging();
     const response = await adminMessaging.sendEachForMulticast(message);
     
     // Optional: Handle cleanup of invalid/expired tokens based on response
