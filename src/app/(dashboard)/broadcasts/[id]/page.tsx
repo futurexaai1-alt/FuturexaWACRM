@@ -39,6 +39,8 @@ import {
   getBroadcastStatus,
   getRecipientStatus,
 } from '@/lib/broadcast-status';
+import { useCan } from '@/hooks/use-can';
+import { GatedButton } from '@/components/ui/gated-button';
 
 interface StatCardProps {
   label: string;
@@ -146,6 +148,7 @@ export default function BroadcastDetailPage() {
   const params = useParams();
   const router = useRouter();
   const broadcastId = params.id as string;
+  const canRun = useCan('run-broadcasts');
 
   const [broadcast, setBroadcast] = useState<Broadcast | null>(null);
   const [recipients, setRecipients] = useState<BroadcastRecipient[]>([]);
@@ -381,9 +384,11 @@ export default function BroadcastDetailPage() {
 
         <div className="flex items-center gap-2">
           {hasEcosystemErrors && (
-            <Button
+            <GatedButton
               variant="outline"
               size="sm"
+              canAct={canRun}
+              gateReason="retry broadcasts"
               disabled={retrying}
               onClick={() => handleRetry()}
               className="border-amber-500/30 bg-transparent text-amber-500 hover:bg-amber-500/10 disabled:opacity-50"
@@ -394,7 +399,7 @@ export default function BroadcastDetailPage() {
                 <RefreshCw className="h-3.5 w-3.5" />
               )}
               {retrying ? 'Retrying…' : 'Retry Failed'}
-            </Button>
+            </GatedButton>
           )}
 
         {/* Delete — inline-confirm pattern matches the pipeline-settings
@@ -423,9 +428,11 @@ export default function BroadcastDetailPage() {
             </Button>
           </div>
         ) : (
-          <Button
+          <GatedButton
             variant="outline"
             size="sm"
+            canAct={canRun}
+            gateReason="delete broadcasts"
             disabled={broadcast.status === 'sending'}
             onClick={() => setConfirmDelete(true)}
             title={
@@ -437,7 +444,7 @@ export default function BroadcastDetailPage() {
           >
             <Trash2 className="h-3.5 w-3.5" />
             Delete
-          </Button>
+          </GatedButton>
         )}
         </div>
       </div>
@@ -635,16 +642,18 @@ export default function BroadcastDetailPage() {
                         )}
                         
                         {canRetry && (
-                          <Button
+                          <GatedButton
                             variant="ghost"
                             size="sm"
+                            canAct={canRun}
+                            gateReason="retry broadcasts"
                             onClick={() => handleRetry(recipient.id)}
                             disabled={retryingId === recipient.id || retrying}
                             className="mt-1 h-6 px-2 text-xs text-amber-500 hover:text-amber-600 hover:bg-amber-500/10 -ml-2"
                           >
                             {retryingId === recipient.id ? <Loader2 className="h-3 w-3 animate-spin mr-1" /> : <RefreshCw className="h-3 w-3 mr-1" />}
                             Retry Now
-                          </Button>
+                          </GatedButton>
                         )}
                       </TableCell>
                     </TableRow>

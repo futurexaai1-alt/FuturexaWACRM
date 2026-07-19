@@ -15,6 +15,7 @@ import {
   rateLimitResponse,
   RATE_LIMITS,
 } from '@/lib/rate-limit'
+import { canRunBroadcasts } from '@/lib/auth/roles'
 
 interface BroadcastResult {
   phone: string
@@ -85,13 +86,20 @@ export async function POST(request: Request) {
     // by a teammate.
     const { data: profile } = await supabase
       .from('profiles')
-      .select('account_id')
+      .select('account_id, account_role')
       .eq('user_id', user.id)
       .maybeSingle()
     const accountId = profile?.account_id as string | undefined
     if (!accountId) {
       return NextResponse.json(
         { error: 'Your profile is not linked to an account.' },
+        { status: 403 },
+      )
+    }
+
+    if (!canRunBroadcasts(profile?.account_role as any)) {
+      return NextResponse.json(
+        { error: 'Your role does not have permission to run broadcasts.' },
         { status: 403 },
       )
     }

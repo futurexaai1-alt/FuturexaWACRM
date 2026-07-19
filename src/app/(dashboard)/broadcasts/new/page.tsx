@@ -11,6 +11,8 @@ import { Step2SelectAudience } from '@/components/broadcasts/step2-select-audien
 import { Step3Personalize } from '@/components/broadcasts/step3-personalize';
 import { Step4ScheduleSend } from '@/components/broadcasts/step4-schedule-send';
 import { useBroadcastSending } from '@/hooks/use-broadcast-sending';
+import { useCan } from '@/hooks/use-can';
+import { Button } from '@/components/ui/button';
 import { Check } from 'lucide-react';
 
 const steps = [
@@ -23,6 +25,7 @@ const steps = [
 export default function NewBroadcastPage() {
   const router = useRouter();
   const { accountId } = useAuth();
+  const canRun = useCan('run-broadcasts');
   const { createAndSendBroadcast, isProcessing, progress } = useBroadcastSending();
 
   const [currentStep, setCurrentStep] = useState(0);
@@ -136,8 +139,20 @@ export default function NewBroadcastPage() {
         </p>
       </div>
 
-      {/* Step Indicator */}
-      <div className="flex items-center justify-between">
+      {!canRun ? (
+        <div className="flex flex-col items-center justify-center gap-2 rounded-xl border border-border bg-card p-12">
+          <p className="text-sm font-medium text-foreground">Access Denied</p>
+          <p className="text-sm text-muted-foreground">
+            Your role does not have permission to create broadcasts.
+          </p>
+          <Button variant="outline" className="mt-4" onClick={() => router.push('/broadcasts')}>
+            Back to Broadcasts
+          </Button>
+        </div>
+      ) : (
+        <>
+          {/* Step Indicator */}
+          <div className="flex items-center justify-between">
         {steps.map((step, index) => {
           const isActive = index === currentStep;
           const isCompleted = index < currentStep;
@@ -225,6 +240,8 @@ export default function NewBroadcastPage() {
           )}
         </div>
       </div>
+        </>
+      )}
     </div>
   );
 }
